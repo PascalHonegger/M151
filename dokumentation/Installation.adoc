@@ -1,0 +1,15 @@
+Installation
+============
+Alain Keller, Pascal Honegger und Seraphin Rihm
+Version 1, 02.02.2016
+:toc:
+
+== Aufsetzen MsSql
+. Download link:https://www.microsoft.com/de-ch/download/details.aspx?id=42299[Microsoft SQL Server 2014 Express] (LocalDB 64BIT\SqlLocalDB.msi)
+. Installation Micrososft SQL Server 2014 Express
+. Download link:https://msdn.microsoft.com/en-us/library/mt238290.aspx[SQL Server Management Studio]
+. Installation SQL Server Management Studio
+
+== Temporär
+. Download link:https://www.microsoft.com/en-us/download/details.aspx?id=20098[Microsoft Drivers for PHP for SQL Server]
+. Installation Microsoft Drivers for PHP for SQL Server
