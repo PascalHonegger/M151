@@ -1,15 +1,23 @@
 Installation
 ============
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 1, 02.02.2016
+Version 2, 23.02.2016
 :toc:
 
-== Aufsetzen MsSql
-. Download link:https://www.microsoft.com/de-ch/download/details.aspx?id=42299[Microsoft SQL Server 2014 Express] (LocalDB 64BIT\SqlLocalDB.msi)
-. Installation Micrososft SQL Server 2014 Express
+== Installation XAMPP
+. Download link:https://www.apachefriends.org/de/download.html[XAMPP] mit PHP7
+. Installieren
+.. Mindestens Apache und PHP installieren
+. Bei Problemen mit Apache:
+.. Skype beenden / Port umkonfigurieren
+.. Dienste -> WWW-Publishingdienst beenden
+
+=== Installation notwendige Treiber
+. Download link:https://github.com/Azure/msphpsql/releases/tag/v4.0.0[PHP7-SqlSrv-Treiber]
+. Heruntergeladene DLL nach "xampp\php\ext" ziehen
+. In der Datei "xampp\php\php.ini" den Eintrag "extension=php_sqlsrv_7_ts.dll" bei den Erweiterungen nachtragen.
+. Computer Neustarten
+
+== Aufsetzen SQL Server Management Studio
 . Download link:https://msdn.microsoft.com/en-us/library/mt238290.aspx[SQL Server Management Studio]
 . Installation SQL Server Management Studio
-
-== Temporär
-. Download link:https://www.microsoft.com/en-us/download/details.aspx?id=20098[Microsoft Drivers for PHP for SQL Server]
-. Installation Microsoft Drivers for PHP for SQL Server
