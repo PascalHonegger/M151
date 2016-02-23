@@ -4,7 +4,7 @@ Alain Keller, Pascal Honegger und Seraphin Rihm
 Version 2, 23.02.2016
 :toc:
 
-== Installation XAMPP
+= Installation XAMPP
 . Download link:https://www.apachefriends.org/de/download.html[XAMPP] mit PHP7
 . Installieren
 .. Mindestens Apache und PHP installieren
@@ -12,12 +12,21 @@ Version 2, 23.02.2016
 .. Skype beenden / Port umkonfigurieren
 .. Dienste -> WWW-Publishingdienst beenden
 
-=== Installation notwendige Treiber
+== Installation notwendige Treiber
 . Download link:https://github.com/Azure/msphpsql/releases/tag/v4.0.0[PHP7-SqlSrv-Treiber]
 . Heruntergeladene DLL nach "xampp\php\ext" ziehen
 . In der Datei "xampp\php\php.ini" den Eintrag "extension=php_sqlsrv_7_ts.dll" bei den Erweiterungen nachtragen.
 . Computer Neustarten
 
-== Aufsetzen SQL Server Management Studio
+= Aufsetzen SQL Server Management Studio
 . Download link:https://msdn.microsoft.com/en-us/library/mt238290.aspx[SQL Server Management Studio]
 . Installation SQL Server Management Studio
+
+= Azure aufsetzen
+Für dieses Projekt wurde die Datenbank zentral auf einem von Microsoft gehosteten Server erstellt.
+
+== Server
+Adresse: tbz.database.windows.net
+Username: Overlord
+Passwort: 123$321sehrSICHER
+Speziel: IP-Adresse muss freigeschalten werden
