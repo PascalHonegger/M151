@@ -1,4 +1,3 @@
----
 engines:
   csslint:
     enabled: true
@@ -19,11 +18,8 @@ ratings:
   - "**.css"
   - "**.inc"
   - "**.js"
-  - "**.jsx"
-  - "**.module"
   - "**.php"
-  - "**.py"
-  - "**.rb"
+  - "**.html"
 exclude_paths:
 - ".idea/*"
-- dokumentation/*
+- "dokumentation/*"

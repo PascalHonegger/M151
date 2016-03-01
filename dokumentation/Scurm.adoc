@@ -1,7 +1,7 @@
 Installation
 ============
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 2, 23.02.2016
+Version 3, 01.03.2016
 :toc:
 
 = Taiga
@@ -17,3 +17,8 @@ Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https
 == Retrospektive
 * Ziele wurden erreicht
 * Effizientes Arbeiten
+
+= 01.03.2016
+== Planung
+
+== Retrospektive
