@@ -35,8 +35,8 @@
             </div>
 
             <div id="search">
-                <form type="submit" id="searchForm">
-                    <input type="text" id="searchbox" name="searchbox">
+                <form id="searchForm">
+                    <input type="text" id="searchbox" name="searchbox" title="Suche">
                     <input type="submit" id="searchButton" value="">
                 </form>
             </div>
@@ -45,7 +45,18 @@
         </div>
 
         <div id="content">
+            <?php
+            include "../model/dbConnection.inc";
 
+            $db = Database::getInstance();
+            $dbconn = $db->getConnection();
+            $query = "SELECT * FROM [person];";
+            $msquery = sqlsrv_query($dbconn,$query);
+
+            while( $row = sqlsrv_fetch_array( $msquery, SQLSRV_FETCH_ASSOC) ) {
+            echo $row['name'].", ".$row['password']."<br />";
+            }
+        ?>
         </div>
 
         <div id="contentNavigation">
