@@ -14,7 +14,7 @@ Version 2, 23.02.2016
 
 == Installation notwendige Treiber
 . Download link:https://github.com/Azure/msphpsql/releases/tag/v4.0.0[PHP7-SqlSrv-Treiber]
-. Heruntergeladene DLL nach "xampp\php\ext" ziehen
+. Heruntergeladene DLL [php_sqlsrv_7_ts.dll] nach "xampp\php\ext" ziehen
 . In der Datei "xampp\php\php.ini" den Eintrag "extension=php_sqlsrv_7_ts.dll" bei den Erweiterungen nachtragen.
 . Download link:https://www.microsoft.com/en-us/download/details.aspx?id=36434[ODBC 11 Treiber]
 . ODBC 11 Treiber installieren
