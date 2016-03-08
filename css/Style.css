@@ -1,0 +1,155 @@
+*{
+    font-family: Arial, sans-serif ;
+    color: rgb(36,36,36);
+}
+
+body{
+    background-color: rgb(240,240,240);
+    margin-top: 0px;
+}
+
+#mainDiv {
+    width: 1440px;
+    min-height: 900px;
+    background-color: darkcyan;
+    margin: 0 auto;
+}
+
+
+/*Styles of the Header*/
+#header {
+    width: 1440px;
+    height: 80px;
+    background-color: rgb(36,36,36);
+}
+
+/*Searchbox in the Header*/
+#search {
+    background-color: transparent;
+    width: 400px;
+    height: 80px;
+}
+#searchbox {
+    width: 290px;
+    height: 50px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-left: 10%;
+    margin-top: 15px;
+    border: 0;
+    font-size: 20pt;
+    background-color: rgb(240,240,240);
+}
+#searchbox:focus {
+    outline: none;
+}
+#searchButton {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border:0;
+    width:30px;
+    height: 52px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 10%;
+    background: rgb(240,240,240) url(../ressources/icons/searchicon.png) no-repeat center;
+    background-size: 30px 30px;
+}
+#searchButton:focus {
+    outline: none;
+}
+
+/*Navigation in the Header*/
+#navigation {
+    width: 690px;
+    height: 80px;
+    background-color: transparent;
+    float:right;
+    margin-right: 200px;
+}
+#navigation a {
+    text-decoration: none;
+    color: rgb(220,220,220);
+    display: block;
+}
+#navigationList {
+    list-style-type: none;
+    font-size: 20pt;
+    padding: 0;
+    margin: 0;
+}
+.navigationButton {
+    border: 0;
+    display: block;
+    width: 230px;
+    height: 55px;
+    float:left;
+    padding-top: 25px;
+    text-align: center;
+    color: rgb(220,220,220);
+    background-color: transparent;
+}
+.navigationButton:hover {
+    border-bottom: 11px solid rgb(220,220,220);
+    height: 45px;
+    background-color: rgb(67,67,67);
+}
+#currentSite {
+    background-color: rgb(67,67,67);
+}
+
+/*Account Navigation in the Header*/
+#accountNavigation {
+    width: 150px;
+    height: 80px;
+    background-color: transparent;
+    float: right;
+}
+
+.dropdown-content {
+    margin-top: 80px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#accountNavigation:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: rgb(36,36,36);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+#accountNavigation:hover .dropdown-content {
+    display: block;
+}
+
+
+/*Contentnavigation*/
+#contentNavigation {
+    width: 240px;
+    min-height: 770px;
+    background-color: rgb(200,200,200);
+}
+
+
+/*Content*/
+#content {
+    width: 1200px;
+    min-height: 770px;
+    background-color: rgb(230,230,230);
+    float: right;
+}
+
+
+/*Footer*/
+#footer {
+    width: 1440px;
+    height: 50px;
+    background-color: rgb(36,36,36);
+}
