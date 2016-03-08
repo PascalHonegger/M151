@@ -18,6 +18,10 @@ Version 2, 23.02.2016
 . In der Datei "xampp\php\php.ini" den Eintrag "extension=php_sqlsrv_7_ts.dll" bei den Erweiterungen nachtragen.
 . Computer Neustarten
 
+= Aufsetzen Microsoft SQL Server 2014 Express
+. Download link:https://www.microsoft.com/de-ch/download/details.aspx?id=42299[Microsoft SQL Server 2014 Express] (ExpressAndTools | LocalDB)
+. Installation Microsoft SQL Server
+
 = Aufsetzen SQL Server Management Studio
 . Download link:https://msdn.microsoft.com/en-us/library/mt238290.aspx[SQL Server Management Studio]
 . Installation SQL Server Management Studio
@@ -29,4 +33,4 @@ Für dieses Projekt wurde die Datenbank zentral auf einem von Microsoft gehostet
 Adresse: tbz.database.windows.net
 Username: Overlord
 Passwort: 123$321sehrSICHER
-Speziel: IP-Adresse muss freigeschalten werden
+Speziell: IP-Adresse muss freigeschalten werden

@@ -1,0 +1,38 @@
+Installation
+============
+Alain Keller, Pascal Honegger und Seraphin Rihm
+Version 3, 01.03.2016
+:toc:
+
+= Taiga
+Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https://tree.taiga.io/project/pascalhonegger-m151[Scrum-Board]
+
+= 23.02.2016
+== Planung
+* Wir arbeiten aufgteilt
+** Alain => MsSQL
+** Seraphin => Setup
+** Pascal => Doku
+
+== Retrospektive
+* Ziele wurden erreicht
+* Effizientes Arbeiten
+
+= 01.03.2016
+== Planung
+* Wir erstellen die Planung für das Projekt
+* Wir erstellen das Datenmodell für die Datenbank
+* Alain erstellt das grundlegende Design unserer Seite als Konzept
+
+== Retrospektive
+* Schlechte Arbeitsaufteilung
+** Arbeit wurde duch andere Arbeit blockiert
+
+= 08.03.2016
+== Planung
+* Pascal setzt die Datenbank auf dem Azure-Server auf
+** Eine Connection kann hergestellt werden
+* Alain finalisiert das initiale Design und setzt dieses in HTML & CSS um
+* Seraphin Bereitet die PHP-Scripts für die Datenbank vor
+
+== Retrospektive
