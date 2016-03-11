@@ -54,9 +54,9 @@
             $msquery = sqlsrv_query($dbconn,$query);
 
             while( $row = sqlsrv_fetch_array( $msquery, SQLSRV_FETCH_ASSOC) ) {
-            echo $row['name'].", ".$row['password']."<br />";
+                echo $row['name'].", ".$row['password']."<br />";
             }
-        ?>
+            ?>
         </div>
 
         <div id="contentNavigation">
