@@ -12,6 +12,13 @@ require_once "Login.php";
 class Register
 {
 
+    private $model;
+
+    public function __construct()
+    {
+        $this->model = new RegisterModel();
+    }
+
     private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';
 
     /**
@@ -46,18 +53,19 @@ class Register
         // No Errors
         if ($error == 0) {
 
-            $insertedUser = RegisterModel::insert($username, $password);
+            $insertedUser = $this->model->insert($username, $password);
 
             if($insertedUser)
             {
                 Login::saveUser($insertedUser);
-            } else {
-                $error = 126;
-                header('Location: ../index.php?action=register&error='. $error);
+                return;
             }
-        } else {
-            header('Location: ../index.php?action=register&error=' . $error);
+
+            $error = 126;
         }
+
+        //Some Error Occured
+        header('Location: ../index.php?action=register&error=' . $error);
     }
 }
 

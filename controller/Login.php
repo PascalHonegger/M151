@@ -10,6 +10,13 @@ require_once "../model/LoginModel.php";
  */
 class Login
 {
+    private $model;
+
+    public function __construct()
+    {
+        $this->model = new LoginModel();
+    }
+
     /**
      * Login the specified User with the provided Username / Password
      * @param $username
@@ -19,7 +26,7 @@ class Login
      */
     public function loginPerson(string $username, string $password)
     {
-        $user = LoginModel::load($username);
+        $user = $this->model->load($username);
 
         $passwordCorrect = password_verify($password, $user['password']);
 
@@ -34,15 +41,13 @@ class Login
                 $result = $ga->verifyCode($user['secret'], "code", 2); // 2 = 2*30sec clock tolerance
 
                 //Entered Code correct
-                if($result)
+                if(!$result)
                 {
-                    $this->saveUser($user);
+                    return;
                 }
             }
-            else
-            {
-                $this->saveUser($user);
-            }
+
+            $this->saveUser($user);
         }
 
         //Password or Secret wrong
@@ -59,7 +64,6 @@ class Login
     {
         $_SESSION['CurrentUser'] = $user;
         header('Location: ../index.php?action=welcome');
-        exit;
     }
 }
 
