@@ -13,10 +13,14 @@ class Database{
     private static $instance;
 
     public static function getInstance() {
-        if(!self::$instance) { // If no instance then make one
+        if(!self::$instance) { // If no instance then create one
             self::$instance = new self();
         }
         return self::$instance;
+    }
+
+    public static function getConnection() {
+        return self::getInstance()->conn;
     }
 
     /**
@@ -30,10 +34,4 @@ class Database{
             print_r(sqlsrv_errors());
         }
     }
-
-    public function getConnection() {
-        return $this->conn;
-    }
-
 }
-?>

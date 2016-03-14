@@ -12,7 +12,7 @@
 
 <html>
     <head>
-        <title>Blablubla</title>
+        <title>Shareloc - Share your Location now!</title>
         <link rel="stylesheet" href="../css/Style.css">
     </head>
     <body>
@@ -46,10 +46,9 @@
 
         <div id="content">
             <?php
-            include "../model/dbConnection.inc";
+            include "../model/Database.inc";
 
-            $db = Database::getInstance();
-            $dbconn = $db->getConnection();
+            $dbconn = Database::getConnection();
             $query = "SELECT * FROM [person];";
             $msquery = sqlsrv_query($dbconn,$query);
 
