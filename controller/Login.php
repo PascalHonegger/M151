@@ -24,7 +24,7 @@ class Login
      * @param $password
      * Used for Login
      */
-    public function loginPerson(string $username, string $password)
+    public function loginPerson(string $username, string $password, string $googleAuthCode)
     {
         $user = $this->model->load($username);
 
@@ -37,8 +37,8 @@ class Login
             //If Secret is set
             if($secret)
             {
-                $ga = new PHPGangsta_GoogleAuthenticator();
-                $result = $ga->verifyCode($user['secret'], "code", 2); // 2 = 2*30sec clock tolerance
+                $authenticator = new PHPGangsta_GoogleAuthenticator();
+                $result = $authenticator->verifyCode($user['secret'], $googleAuthCode, 2); // 2 = 2*30sec clock tolerance
 
                 //Entered Code correct
                 if(!$result)
@@ -71,4 +71,8 @@ class Login
 $test = new Login();
 
 //Example Person which exists in Database
-$test->loginPerson("Serphin", "test");
+$test->loginPerson("Serphin", "test", "12345");
+
+//Should be something like:
+//
+//loginPerson($enteredUserName, $enterPassword (IF Equal to RepeatedPassword), $googleAuthCode (Optional));
