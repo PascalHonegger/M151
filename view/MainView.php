@@ -12,7 +12,7 @@
 
 <html>
     <head>
-        <title>Blablubla</title>
+        <title>Shareloc - Share your Location now!</title>
         <link rel="stylesheet" href="../css/Style.css">
     </head>
     <body>
@@ -35,8 +35,8 @@
             </div>
 
             <div id="search">
-                <form type="submit" id="searchForm">
-                    <input type="text" id="searchbox" name="searchbox">
+                <form id="searchForm">
+                    <input type="text" id="searchbox" name="searchbox" title="Suche">
                     <input type="submit" id="searchButton" value="">
                 </form>
             </div>
@@ -46,15 +46,15 @@
 
         <div id="content">
             <?php
-            if (isset($_GET)) {
-                if (!empty($_GET['content'])) {
-                    if($_GET['content'] = "login")
-                    {
-                        include "loginview.php";
-                    }
-                }
-            }
+            include "../model/Database.inc";
 
+            $dbconn = Database::getConnection();
+            $query = "SELECT * FROM [person];";
+            $msquery = sqlsrv_query($dbconn,$query);
+
+            while( $row = sqlsrv_fetch_array( $msquery, SQLSRV_FETCH_ASSOC) ) {
+                echo $row['name'].", ".$row['password']."<br />";
+            }
             ?>
         </div>
 
