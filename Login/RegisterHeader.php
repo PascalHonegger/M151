@@ -8,10 +8,6 @@
 ?>
 
 <div id="header">
-    <div id="accountNavigation">
-        <a href="login.php">LOGIN</a>
-    </div>
-
     <div id="navigation">
         <ul id="navigationList">
             <li ><a class="navigationButton" id="currentSite" href="#">Startseite</a></li>

@@ -35,4 +35,13 @@ class CustomSession
     {
         return isset($_SESSION['CurrentUser']) ? $_SESSION['CurrentUser'] : null;
     }
+
+    public function destroySession()
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        session_destroy();
+    }
 }

@@ -17,14 +17,12 @@ class Location
           $this->model = new LocationModel();
       }
 
-    public function Location(int $idcreator, string $name, string $description, string $position){
+    public function createLocation(int $idcreator, string $name, string $description, string $position){
 
         $error = 0;
 
-        if(!$idcreator || !$name || !$description || !$position){
-
+        if(!$idcreator || !$position) {
             $error = 1;
-
         }
 
         if(strlen($name) >= 40 || strlen($name) <= 1 || strlen($description) >= 100 || strlen($description) <= 1){
@@ -38,9 +36,7 @@ class Location
             $inserted = $this->model->creatLocation($idcreator,$name,$description,$position);
 
             if($inserted){
-
                 return;
-
             }
 
             $error = 126;
@@ -53,4 +49,4 @@ class Location
 
 $test = new Location();
 
-$test->Location(7,"LOOOvv","Low, Lower, The Lowest","123321");
+$test->createLocation(7,"LOOOvv","Low, Lower, The Lowest","123321");

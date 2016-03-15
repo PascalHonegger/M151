@@ -8,16 +8,14 @@
 
 include_once "controller/CustomSession.php";
 
-$session = CustomSession::getInstance();
-if($session->getCurrentUser())
+if(CustomSession::getInstance()->getCurrentUser())
 {
-    header('Location: /home/home.php');
+    header('Location: Home/Home.php');
 }
 else
 {
-    header('Location: login/login.php');
+    header('Location: Login/RegisterView.php');
 }
 ?>
 
 <meta charset="utf-8"/>
-

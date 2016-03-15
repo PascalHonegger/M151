@@ -10,6 +10,15 @@ require_once "Database.inc";
  */
 class RegisterModel
 {
+    /**
+     * Fügt einen neuen User der Person hinzu.
+     * @param string $username
+     * @param string $password
+     * @param string $surname
+     * @param string $name
+     * @param string $mail
+     * @return array|false|null
+     */
     public function insert(string $username, string $password, string $surname, string $name, string $mail)
     {
         $connection = DataBase::getConnection();
@@ -21,6 +30,7 @@ class RegisterModel
 
         //Select next Result (SCOPE_IDENTITY)
         sqlsrv_next_result($stmt);
+
         $res = sqlsrv_fetch_array($stmt);
 
         //Load inserted Row

@@ -8,7 +8,7 @@ body{
     margin-top: 0;
 }
 
-#mainDiv {
+#MainDiv {
     width: 1440px;
     min-height: 900px;
     background-color: blue;
@@ -170,7 +170,7 @@ body{
 
 /*Login*/
 
-#logincontent {
+#LoginContent {
     width: 1170px;
     min-height: 760px;
     background: rgb(230,230,230); /*url(../ressources/background/loginbackground.jpg) no-repeat center;
@@ -213,12 +213,12 @@ body{
     margin: 15px;
 }
 
-#submit {
+#Submit {
     margin-left: 25px;
     background-color: rgb(61, 87, 255);
 }
 
-#reset {
+#Reset {
     margin-right: 25px;
-    background-color: rgba(180, 180, 180, 1);
+    background-color: rgb(180, 180, 180);
 }

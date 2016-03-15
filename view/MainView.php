@@ -18,7 +18,7 @@ require_once "../controller/CustomSession.php";
         <link rel="stylesheet" href="../css/Style.css">
     </head>
     <body>
-    <div id="mainDiv">
+    <div id="MainDiv">
 
         <?php include "Header.php"; ?>
 

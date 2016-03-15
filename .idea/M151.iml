@@ -7,6 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/model" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/css" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/external" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Login" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Home" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
