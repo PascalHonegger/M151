@@ -13,8 +13,7 @@ class LoginModel
     public function load(string $username)
     {
         $query = 'SELECT * FROM person WHERE username = ?';
-        $stmt = sqlsrv_prepare(Database::getConnection(), $query, array($username));
-        sqlsrv_execute($stmt);
+        $stmt = sqlsrv_query(Database::getConnection(), $query, array($username));
         return sqlsrv_fetch_array($stmt);
     }
 }

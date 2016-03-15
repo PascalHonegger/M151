@@ -14,15 +14,17 @@ class RegisterModel
     {
         $connection = DataBase::getConnection();
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $query = "INSERT INTO person(username, password, surname, name, mail) VALUES(?, ?, ?, ?, ?)";
-        $stmt = sqlsrv_prepare($connection, $query, array($username, $hashedPassword, $surname, $name, $mail));
-        sqlsrv_execute($stmt);
+        $query = "INSERT INTO person(username, password, surname, name, mail) VALUES(?, ?, ?, ?, ?); SELECT SCOPE_IDENTITY() as ID;";
 
-        $query = "SELECT SCOPE_IDENTITY() as ID";
+        //Execute Query
+        $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail));
 
-        $id = sqlsrv_query($connection, $query);
+        //Select next Result (SCOPE_IDENTITY)
+        sqlsrv_next_result($stmt);
+        $res = sqlsrv_fetch_array($stmt);
 
-        $query = 'SELECT * FROM person WHERE id_person = '.$id['ID'];
+        //Load inserted Row
+        $query = 'SELECT * FROM person WHERE id_person = '.$res['ID'];
 
         $stmt = sqlsrv_query($connection, $query);
 
