@@ -10,9 +10,9 @@ require_once "Database.inc";
  */
 class LoginModel
 {
-    public static function load(string $username)
+    public function load(string $username)
     {
-        $query = 'SELECT * FROM person WHERE name = ?';
+        $query = 'SELECT * FROM person WHERE username = ?';
         $stmt = sqlsrv_prepare(Database::getConnection(), $query, array($username));
         sqlsrv_execute($stmt);
         return sqlsrv_fetch_array($stmt);

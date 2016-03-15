@@ -1,7 +1,7 @@
 <?php
 
 require_once "../model/RegisterModel.php";
-require_once "Login.php";
+require_once "CustomSession.php";
 
 /**
  * Created by PhpStorm.
@@ -13,10 +13,12 @@ class Register
 {
 
     private $model;
+    private $session;
 
     public function __construct()
     {
         $this->model = new RegisterModel();
+        $this->session = CustomSession::getInstance();
     }
 
     private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';
@@ -57,7 +59,8 @@ class Register
 
             if($insertedUser)
             {
-                Login::saveUser($insertedUser);
+                $this->session->setCurrentUser($insertedUser);
+                header('Location: ../index.php?action=welcome');
                 return;
             }
 
