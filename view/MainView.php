@@ -45,7 +45,17 @@
         </div>
 
         <div id="content">
+            <?php
+            if (isset($_GET)) {
+                if (!empty($_GET['content'])) {
+                    if($_GET['content'] = "login")
+                    {
+                        include "loginview.php";
+                    }
+                }
+            }
 
+            ?>
         </div>
 
         <div id="contentNavigation">
