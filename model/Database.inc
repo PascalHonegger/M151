@@ -28,10 +28,5 @@ class Database{
      */
     private function __construct() {
         $this->conn = sqlsrv_connect($this->serverName, $this->connectionInfo);
-
-        // Error handling, only for development
-        if(sqlsrv_errors()) {
-            print_r(sqlsrv_errors());
-        }
     }
 }
