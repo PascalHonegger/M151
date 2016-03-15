@@ -24,11 +24,11 @@ class Register
     private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';
 
     /**
-     * Login the specified User with the provided Username / Password
+     * login the specified User with the provided Username / Password
      * @param $username
-     * Used for Login
+     * Used for login
      * @param $password
-     * Used for Login
+     * Used for login
      */
     public function registerPerson(string $username, string $password)
     {
