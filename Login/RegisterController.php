@@ -68,12 +68,12 @@ class Register
 
 //Use FILTER_SANITIZE_EMAIL??
 
-$username = filter_input(INPUT_GET, 'Username', FILTER_SANITIZE_STRING) ?? "";
-$name = filter_input(INPUT_GET, 'Name') ?? "";
-$surname = filter_input(INPUT_GET, 'Surname') ?? "";
-$mail = filter_input(INPUT_GET, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";
-$password = filter_input(INPUT_GET, 'Passwort') ?? "";
-$repeatPassword = filter_input(INPUT_GET, 'WPasswort') ?? "";
+$username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
+$name = filter_input(INPUT_POST, 'Name') ?? "";
+$surname = filter_input(INPUT_POST, 'Surname') ?? "";
+$mail = filter_input(INPUT_POST, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";
+$password = filter_input(INPUT_POST, 'Passwort') ?? "";
+$repeatPassword = filter_input(INPUT_POST, 'WPasswort') ?? "";
 
 $controller = new Register();
 
