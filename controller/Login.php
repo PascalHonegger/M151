@@ -1,6 +1,7 @@
 <?php
 
 require_once "../model/LoginModel.php";
+require_once "CustomSession.php";
 
 /**
  * Created by PhpStorm.
@@ -11,22 +12,27 @@ require_once "../model/LoginModel.php";
 class Login
 {
     private $model;
+    private $session;
 
     public function __construct()
     {
         $this->model = new LoginModel();
+        $this->session = CustomSession::getInstance();
     }
 
     /**
      * Login the specified User with the provided Username / Password
-     * @param $username
+     * @param string $username
      * Used for Login
-     * @param $password
+     * @param string $password
      * Used for Login
+     * @param int $googleAuthCode
      */
-    public function loginPerson(string $username, string $password, string $googleAuthCode)
+    public function loginPerson(string $username, string $password, int $googleAuthCode)
     {
         $user = $this->model->load($username);
+
+        var_dump($user);
 
         $passwordCorrect = password_verify($password, $user['password']);
 
@@ -41,18 +47,20 @@ class Login
                 $result = $authenticator->verifyCode($user['secret'], $googleAuthCode, 2); // 2 = 2*30sec clock tolerance
 
                 //Entered Code correct
-                if(!$result)
+                if($result)
                 {
+                    $this->saveUser($user);
                     return;
                 }
             }
 
             $this->saveUser($user);
+            return;
         }
 
         //Password or Secret wrong
         $error = 132;
-        header('Location: ../index.php?error=' . $error);
+        //header('Location: ../index.php?error=' . $error);
     }
 
     /**
@@ -60,9 +68,9 @@ class Login
      * @param $user
      * The user to save
      */
-    public static function saveUser($user)
+    public function saveUser($user)
     {
-        $_SESSION['CurrentUser'] = $user;
+        $this->session->setCurrentUser($user);
         header('Location: ../index.php?action=welcome');
     }
 }
@@ -71,7 +79,7 @@ class Login
 $test = new Login();
 
 //Example Person which exists in Database
-$test->loginPerson("Serphin", "test", "12345");
+$test->loginPerson("Serphin", "test", 0);
 
 //Should be something like:
 //

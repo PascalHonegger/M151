@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <?php
@@ -8,6 +7,9 @@
  * Date: 01.03.2016
  * Time: 16:08
  */
+
+require_once "../controller/CustomSession.php";
+
 ?>
 
 <html>
@@ -46,15 +48,10 @@
 
         <div id="content">
             <?php
-            include "../model/Database.inc";
 
-            $dbconn = Database::getConnection();
-            $query = "SELECT * FROM [person];";
-            $msquery = sqlsrv_query($dbconn,$query);
+            $session = CustomSession::getInstance();
 
-            while( $row = sqlsrv_fetch_array( $msquery, SQLSRV_FETCH_ASSOC) ) {
-                echo $row['name'].", ".$row['password']."<br />";
-            }
+            echo $session->getCurrentUser()['id'];
             ?>
         </div>
 
