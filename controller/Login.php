@@ -21,11 +21,11 @@ class Login
     }
 
     /**
-     * Login the specified User with the provided Username / Password
+     * login the specified User with the provided Username / Password
      * @param string $username
-     * Used for Login
+     * Used for login
      * @param string $password
-     * Used for Login
+     * Used for login
      * @param int $googleAuthCode
      */
     public function loginPerson(string $username, string $password, int $googleAuthCode)

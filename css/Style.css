@@ -11,7 +11,7 @@ body{
 #mainDiv {
     width: 1440px;
     min-height: 900px;
-    background-color: darkcyan;
+    background-color: blue;
     margin: 0 auto;
 }
 
@@ -55,6 +55,13 @@ body{
     background: rgb(240,240,240) url(../ressources/icons/searchicon.png) no-repeat center;
     background-size: 30px 30px;
 }
+
+@-moz-document url-prefix() {
+    #searchButton {
+        margin-right: 9.5%;
+    }
+}
+
 #searchButton:focus {
     outline: none;
 }
@@ -106,6 +113,12 @@ body{
     float: right;
 }
 
+#accountNavigation a {
+    font-size: 17pt;
+    text-decoration: none;
+    color: rgb(220,220,220);
+}
+
 .dropdown-content {
     margin-top: 60px;
     display: none;
@@ -133,17 +146,18 @@ body{
 /*Contentnavigation*/
 #contentNavigation {
     width: 240px;
-    min-height: 770px;
+    min-height: 790px;
     background-color: rgb(200,200,200);
 }
 
 
 /*Content*/
 #content {
-    width: 1200px;
-    min-height: 770px;
+    width: 1170px;
+    min-height: 760px;
     background-color: rgb(230,230,230);
     float: right;
+    padding: 15px;
 }
 
 
@@ -152,4 +166,59 @@ body{
     width: 1440px;
     height: 50px;
     background-color: rgb(36,36,36);
+}
+
+/*Login*/
+
+#logincontent {
+    width: 1170px;
+    min-height: 760px;
+    background: rgb(230,230,230); /*url(../ressources/background/loginbackground.jpg) no-repeat center;
+    background-size: 1170px 760px;*/
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#LoginTitle {
+    font-size: 35pt;
+    text-align: center;
+    margin-top: 0;
+}
+
+.LoginLabel {
+    font-size: 18pt;
+}
+
+.LoginInput {
+    height: 35px;
+    width: 400px;
+    background-color: rgb(240,240,240);
+    border-radius: 7px;
+    border: 0;
+    font-size: 15pt;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.LoginInput:focus {
+    outline: none;
+}
+
+.LoginButtom {
+    font-size: 17pt;
+    height: 70px;
+    width: 150px;
+    border: 0;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+#submit {
+    margin-left: 25px;
+    background-color: rgb(61, 87, 255);
+}
+
+#reset {
+    margin-right: 25px;
+    background-color: rgba(180, 180, 180, 1);
 }
