@@ -11,7 +11,6 @@ require_once "../controller/CustomSession.php";
  */
 class Register
 {
-
     private $model;
     private $session;
 
@@ -49,6 +48,8 @@ class Register
         // No Errors
         if ($usernameValid && $passwordValid && $surnameValid && $nameValid && $mailValid) {
 
+            var_dump("swag");
+
             $insertedUser = $this->model->insert($username, $password, $surname, $name, $mail);
 
             if($insertedUser)
@@ -72,8 +73,8 @@ $username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
 $name = filter_input(INPUT_POST, 'Name') ?? "";
 $surname = filter_input(INPUT_POST, 'Surname') ?? "";
 $mail = filter_input(INPUT_POST, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";
-$password = filter_input(INPUT_POST, 'Passwort') ?? "";
-$repeatPassword = filter_input(INPUT_POST, 'WPasswort') ?? "";
+$password = filter_input(INPUT_POST, 'Password') ?? "";
+$repeatPassword = filter_input(INPUT_POST, 'RepPassword') ?? "";
 
 $controller = new Register();
 

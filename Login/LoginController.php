@@ -73,12 +73,13 @@ class Login
     }
 }
 
+$username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
+$password = filter_input(INPUT_POST, 'Password') ?? "";
+$authenticationCode = filter_input(INPUT_POST, 'GoogleAuthenticatorCode', FILTER_SANITIZE_NUMBER_INT) ?? 0;
 
-$test = new Login();
+$controller = new Login();
+
+$controller->loginPerson($username, $password, $authenticationCode);
 
 //Example Person which exists in Database
-$test->loginPerson("Mustards", "TollesPasswort!2015", 0);
-
-//Should be something like:
-//
-//loginPerson($enteredUserName, $enterPassword (IF Equal to RepeatedPassword), $googleAuthCode (Optional));
+//$controller->loginPerson("Mustards", "TollesPasswort!2015", 0);
