@@ -10,19 +10,19 @@ require_once "Database.inc";
  */
 class RegisterModel
 {
-    public static function insert(string $username, string $password)
+    public function insert(string $username, string $password, string $surname, string $name, string $mail)
     {
         $connection = DataBase::getConnection();
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $query = "INSERT INTO person(name, password) VALUES(?, ?)";
-        $stmt = sqlsrv_prepare($connection, $query, array($username, $hashedPassword));
+        $query = "INSERT INTO person(username, password, surname, name, mail) VALUES(?, ?, ?, ?, ?)";
+        $stmt = sqlsrv_prepare($connection, $query, array($username, $hashedPassword, $surname, $name, $mail));
         sqlsrv_execute($stmt);
 
         $query = "SELECT SCOPE_IDENTITY() as ID";
 
-        $stmt = sqlsrv_query($connection, $query);
+        $id = sqlsrv_query($connection, $query);
 
-        $query = 'SELECT * FROM person WHERE id_person = '.$stmt['ID'];
+        $query = 'SELECT * FROM person WHERE id_person = '.$id['ID'];
 
         $stmt = sqlsrv_query($connection, $query);
 

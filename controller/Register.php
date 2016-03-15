@@ -24,13 +24,19 @@ class Register
     private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';
 
     /**
-     * login the specified User with the provided Username / Password
-     * @param $username
-     * Used for login
-     * @param $password
-     * Used for login
+     * Login the specified User with the provided Username / Password
+     * @param string $username
+     * Used for Login
+     * @param string $password
+     * Used for Login
+     * @param string $surname
+     * Used for Login
+     * @param string $name
+     * Used for Login
+     * @param string $mail
+     * Used for Login.
      */
-    public function registerPerson(string $username, string $password)
+    public function registerPerson(string $username, string $password, string $surname, string $name, string $mail)
     {
         $error = 0;
 
@@ -52,11 +58,14 @@ class Register
             $error = 4;
         }
 
+        //TODO Mail
+
         // No Errors
         if ($error == 0) {
 
-            $insertedUser = $this->model->insert($username, $password);
+            $insertedUser = $this->model->insert($username, $password, $surname, $name, $mail);
 
+            var_dump($insertedUser);
             if($insertedUser)
             {
                 $this->session->setCurrentUser($insertedUser);
@@ -68,7 +77,7 @@ class Register
         }
 
         //Some Error Occured
-        header('Location: ../index.php?action=register&error=' . $error);
+        //header('Location: ../index.php?action=register&error=' . $error);
     }
 }
 
@@ -76,4 +85,4 @@ class Register
 $test = new Register();
 
 //Example Person which exists in Database
-$test->registerPerson("Serphin", "test");
+$test->registerPerson("Mustards", "TollesPasswort!2015", "Hunuggur", "Puscullususus", "BlaBla@Bla.Bla@ballba.com");

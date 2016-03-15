@@ -33,6 +33,6 @@ class CustomSession
 
     public function getCurrentUser()
     {
-        return $_SESSION['CurrentUser'];
+        return isset($_SESSION['CurrentUser']) ? $_SESSION['CurrentUser'] : null;
     }
 }

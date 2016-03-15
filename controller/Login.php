@@ -32,8 +32,6 @@ class Login
     {
         $user = $this->model->load($username);
 
-        var_dump($user);
-
         $passwordCorrect = password_verify($password, $user['password']);
 
         if ($passwordCorrect) {
@@ -79,7 +77,7 @@ class Login
 $test = new Login();
 
 //Example Person which exists in Database
-$test->loginPerson("Serphin", "test", 0);
+$test->loginPerson("Mustards", "TollesPasswort!2015", 0);
 
 //Should be something like:
 //
