@@ -34,6 +34,8 @@ class Register
      */
     public function registerPerson(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail)
     {
+        $error = 13;
+
         $usernameValid = strlen($username) < 40 && strlen($username) > 1;
 
         $passwordValid = $password == $repeatPassword && preg_match(Register::$passwordRegularExpression, $password);
@@ -57,10 +59,6 @@ class Register
             }
 
             $error = 126;
-        }
-        else
-        {
-            $error = 13;
         }
 
         //Some Error Occured
