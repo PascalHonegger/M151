@@ -8,6 +8,25 @@
 ?>
 
 <div id="header">
+    <div id="login" onclick="dropdown()">
+        <div id="loginDiv" class="Login-Div">
+            <h1 id="LoginTitle">Login</h1>
+
+            <form action="RegisterController.php" method="post" id="loginform">
+
+                <label for="Username" class="LoginLabel">Benutzername</label> <br />
+                <input type="text" id="Username" name="Username" class="LoginInput"> <br />
+
+                <label for="Password" class="LoginLabel">Passwort</label> <br />
+                <input type="password" id="Password" name="Password" class="LoginInput"> <br />
+
+                <input type="submit" name="Registrieren" class="LoginButton" id="SubmitLogin" value="Registrieren">
+                <input type="reset" onclick="hideLogin()">
+
+            </form>
+        </div>
+    </div>
+
     <div id="navigation">
         <ul id="navigationList">
             <li ><a class="navigationButton" id="currentSite" href="#">Startseite</a></li>
@@ -25,3 +44,20 @@
 
 
 </div>
+
+<script>
+    function dropdown() {
+     /*   if(document.getElementById("loginDiv").classList.contains('show'))
+        {
+            document.getElementById("loginDiv").classList.remove("show");
+        }
+        else
+        {
+            document.getElementById("loginDiv").classList.add("show");
+        }*/
+        document.getElementById("loginDiv").classList.add("show");
+    }
+    function hideLogin() {
+        document.getElementById("loginDiv").classList.remove("show");
+    }
+</script>

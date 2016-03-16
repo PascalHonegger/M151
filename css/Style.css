@@ -10,8 +10,7 @@ body{
 
 #MainDiv {
     width: 1440px;
-    min-height: 900px;
-    background-color: blue;
+    background-color: transparent;
     margin: 0 auto;
 }
 
@@ -170,27 +169,37 @@ body{
 
 /*Login*/
 
-#LoginContent {
-    width: 1170px;
-    min-height: 760px;
-    background: rgb(230,230,230); /*url(../ressources/background/loginbackground.jpg) no-repeat center;
-    background-size: 1170px 760px;*/
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px;
+#login {
+    width: 150px;
+    height: 60px;
+    background-color: green;
+    float: right;
+    display: block;
+
 }
 
-#LoginTitle {
+#LoginContent {
+    width: 1440px;
+    background: rgb(230,230,230) url(../ressources/background/loginbackground.jpg) no-repeat center;
+    background-size: 1440px ;
+    text-align: center;
+    margin: 0 auto;
+  /*  padding: 15px;*/
+}
+
+#RegisterTitle {
     font-size: 35pt;
     text-align: center;
     margin-top: 0;
 }
 
-.LoginLabel {
+.RegisterLabel {
     font-size: 18pt;
+    color: rgb(176, 176, 176);
+    font-weight: 200;
 }
 
-.LoginInput {
+.RegisterInput {
     height: 35px;
     width: 400px;
     background-color: rgb(240,240,240);
@@ -200,11 +209,11 @@ body{
     margin-top: 5px;
     margin-bottom: 20px;
 }
-.LoginInput:focus {
+.RegisterInput:focus {
     outline: none;
 }
 
-.LoginButtom {
+.RegisterButton {
     font-size: 17pt;
     height: 70px;
     width: 150px;
@@ -220,5 +229,17 @@ body{
 
 #Reset {
     margin-right: 25px;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(216, 216, 216);
 }
+
+.Login-Div {
+    display: none;
+    position: absolute;
+    background-color: #233276;
+    min-width: 160px;
+    overflow: auto;
+    margin-top: 60px;
+    margin-right: 800px;
+}
+
+.show {display:block;}
