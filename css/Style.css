@@ -115,7 +115,6 @@ body{
 #accountNavigation a {
     font-size: 17pt;
     text-decoration: none;
-    color: rgb(220,220,220);
 }
 
 .dropdown-content {
@@ -130,7 +129,7 @@ body{
     display: block;
 }
 .dropdown-content a {
-    color: rgb(36,36,36);
+    color: rgb(36,36,36); !important;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -175,7 +174,6 @@ body{
     background-color: green;
     float: right;
     display: block;
-
 }
 
 #LoginContent {
@@ -233,13 +231,39 @@ body{
 }
 
 .Login-Div {
-    display: none;
-    position: absolute;
-    background-color: #233276;
-    min-width: 160px;
-    overflow: auto;
+    display: block;
+    position: relative;
+    background-color: rgb(36,36,36);
+    min-width: 650px;
+    padding: 5px;
     margin-top: 60px;
-    margin-right: 800px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color: rgb(220,220,220);
 }
 
 .show {display:block;}
+
+#LoginTitle {
+    font-size: 35pt;
+    margin: 0;
+    color: rgb(220,220,220);
+    text-align: center;
+}
+
+.LoginLabel {
+    color: rgb(220,220,220);
+    font-size: 18pt;
+    font-weight: 200;
+    text-align: center;
+}
+
+.LoginInput {
+
+}
+#Submitlogin {
+
+}
+
+#Resetlogin {
+
+}

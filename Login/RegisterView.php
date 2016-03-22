@@ -22,7 +22,7 @@
 
                 require_once "RegisterContent.php";
 
-                require_once "../view/Footer.php"
+            require_once "../home/Footer.php"
             ?>
 
         </div>
