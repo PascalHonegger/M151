@@ -1,6 +1,7 @@
 <?php
 
 require_once "../controller/CustomSession.php";
+require_once "Database.inc";
 
 /**
  * Created by PhpStorm.
@@ -17,23 +18,25 @@ class EditSettingsModel
         $this->session = CustomSession::getInstance();
     }
 
+
     /**
      * Fügt einen neuen User der Person hinzu.
      * @param string $username
-     * @param string $password
-     * @param string $surname
      * @param string $name
+     * @param string $surname
      * @param string $mail
+     * @param string $password
+     * @param string $secret
      * @return array|false|null
      */
-    public function update(string $username, string $password, string $surname, string $name, string $mail)
+    public function update(string $username, string $name, string $surname, string $mail, string $password, string $secret)
     {
         $connection = Database::getConnection();
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $query = "UPDATE person SET username = ?, password = ?, surname = ?, name = ?, mail = ?, secret = ? WHERE id_person = ?";
 
         //Execute Query
-        $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail, $this->session->getCurrentUser()['id_person']));
+        $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail, $secret, $this->session->getCurrentUser()['id_person']));
 
         //Select next Result (SCOPE_IDENTITY)
         sqlsrv_next_result($stmt);

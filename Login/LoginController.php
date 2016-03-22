@@ -26,9 +26,9 @@ class Login
      * Used for login
      * @param string $password
      * Used for login
-     * @param int $googleAuthCode
+     * @param string $googleAuthCode
      */
-    public function loginPerson(string $username, string $password, int $googleAuthCode)
+    public function loginPerson(string $username, string $password, string $googleAuthCode)
     {
         $user = $this->model->load($username);
 
@@ -76,11 +76,6 @@ class Login
 $username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
 $password = filter_input(INPUT_POST, 'Password') ?? "";
 $authenticationCode = filter_input(INPUT_POST, 'GoogleAuthenticatorCode', FILTER_SANITIZE_NUMBER_INT) ?? 0;
-
-if($authenticationCode == "")
-{
-    $authenticationCode = 0;
-}
 
 $controller = new Login();
 
