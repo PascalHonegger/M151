@@ -25,12 +25,12 @@
             <form action="LoginController.php" method="post" id="loginform">
 
                 <label for="Username" class="LoginLabel">Benutzername</label> <br />
-                <input type="text" id="Username" name="Username" class="LoginInput"> <br />
-
+                <input type="text" id="Username" name="Username" class="LoginInput" required="required"> <br />
+                
                 <label for="Password" class="LoginLabel">Passwort</label> <br />
-                <input type="password" id="Password" name="Password" class="LoginInput"> <br />
+                <input type="password" id="Password" name="Password" class="LoginInput" required="required"> <br />
 
-                <label for="TwoWay" class="LoginLabel">Google Autentifizerungscode (Freiwillig)</label> <br />
+                <label for="TwoWayKey" class="LoginLabel">Google Autentifizerungscode (Freiwillig)</label> <br />
                 <input type="number" id="TwoWayKey" name="GoogleAuthenticatorCode" class="LoginInput"> <br />
 
                 <input type="reset" onclick="hideLogin()" class="LoginButton" id="ResetLogin" value="Abbrechen">
@@ -51,25 +51,10 @@
 </div>
 
 <script>
-    var bla;
     function dropdown() {
-     /*   if(document.getElementById("loginDiv").classList.contains('show'))
-        {
-            document.getElementById("loginDiv").classList.remove("show");
-        }
-        else
-        {
-            document.getElementById("loginDiv").classList.add("show");
-        }*/
-      //  if(bla != 1)
-      //  {
-            document.getElementById("loginDiv").classList.add("show");
-      //  }
-     //   alert ("fsfsdf");
-    //    bla = 0;
+        document.getElementById("loginDiv").classList.add("show");
     }
     function hideLogin() {
         document.getElementById("loginDiv").classList.remove("show");
-    //    bla = 1;
     }
 </script>

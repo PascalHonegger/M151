@@ -11,7 +11,7 @@
     <div id="accountNavigation">
         <div class="dropdown-content">
             <a href="#">Mein Account</a>
-            <a href="#">Einstellungen</a>
+            <a href="../EditSettings/EditSettingsView.php">Einstellungen</a>
             <a href="../Login/Logout.php">Logout</a>
         </div>
     </div>

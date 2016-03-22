@@ -45,3 +45,13 @@ Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https
 * Seraphin beginnt mit der ARbeit an den Locations
 * Alain erweitert die View mit Login und Register
 == Retrospektive
+*
+
+= 22.03.2016
+== Planung
+* Wir haben einen engen Zeitplan und möchten daher zuhause weiter Arbeiten.
+* Seraphin arbeitet weiter an den Locations
+* Pascal stellt die Einstellungen und Google-2-Way-Authentication fertig
+* Alain arbeitet an dem GUI und an den Events
+== Retrospektive
+*

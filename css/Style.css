@@ -10,7 +10,7 @@ body{
 
 #MainDiv {
     width: 1440px;
-    background-color: transparent;
+    background-color: blue;
     margin: 0 auto;
 }
 
@@ -129,7 +129,7 @@ body{
     display: block;
 }
 .dropdown-content a {
-    color: rgb(36,36,36); !important;
+    color: rgb(36,36,36) !important;
     padding: 12px 16px;
     text-decoration: none;
     display: block;

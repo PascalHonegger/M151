@@ -18,9 +18,9 @@ class EditSettingsController
     }
 }
 
-$newUsername = filter_input(INPUT_POST, 'NewUsername', FILTER_SANITIZE_STRING) ?? "";
-$newPassword = filter_input(INPUT_POST, 'NewPassword') ?? "";
-$newRepPassword = filter_input(INPUT_POST, 'NewRepPassword') ?? "";
+$newUsername = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
+$newPassword = filter_input(INPUT_POST, 'Password') ?? "";
+$newRepPassword = filter_input(INPUT_POST, 'RepPassword') ?? "";
 $secret = filter_input(INPUT_POST, 'GoogleSecret') ?? "";
 $authenticationCode = filter_input(INPUT_POST, 'GoogleAuthenticatorCode', FILTER_SANITIZE_NUMBER_INT) ?? 0;
 
