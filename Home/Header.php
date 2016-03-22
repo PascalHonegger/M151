@@ -12,7 +12,7 @@
         <div class="dropdown-content">
             <a href="#">Mein Account</a>
             <a href="#">Einstellungen</a>
-            <a href="#">Logout</a>
+            <a href="../Login/Logout.php">Logout</a>
         </div>
     </div>
 

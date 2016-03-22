@@ -6,7 +6,7 @@
  * Time: 15:20
  */
 
-include_once "controller/CustomSession.php";
+require_once "controller/CustomSession.php";
 
 if(CustomSession::getInstance()->getCurrentUser())
 {

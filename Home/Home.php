@@ -8,35 +8,23 @@
 
 require_once "../controller/CustomSession.php";
 
-$session = CustomSession::getInstance();
-
-var_dump($session->getCurrentUser());
-
 ?>
 <!DOCTYPE html>
 
-<?php
-
-require_once "../controller/CustomSession.php";
-
-?>
-
 <html>
-<head>
-    <title>Shareloc - Share your Location now!</title>
-    <link rel="stylesheet" href="../css/Style.css">
-</head>
-<body>
-<div id="MainDiv">
+    <head>
+        <title>Shareloc - Share your Location now!</title>
+        <link rel="stylesheet" href="../css/Style.css">
+    </head>
+    <body>
+        <div id="MainDiv">
+            <?php include "Header.php";
 
-    <?php include "Header.php";
+            require_once "content.php";
 
-    include "content.php";
+            require_once "contentmenu.php";
 
-    include "contentmenu.php";
-
-    include "Footer.php"; ?>
-
-</div>
-</body>
+            require_once "Footer.php"; ?>
+        </div>
+    </body>
 </html>

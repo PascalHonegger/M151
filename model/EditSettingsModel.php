@@ -1,15 +1,22 @@
 <?php
 
-require_once "Database.inc";
+require_once "../controller/CustomSession.php";
 
 /**
  * Created by PhpStorm.
  * User: Pascal
- * Date: 14.03.2016
- * Time: 20:12
+ * Date: 22.03.2016
+ * Time: 13:35
  */
-class RegisterModel
+class EditSettingsModel
 {
+    private $session;
+
+    public function __construct()
+    {
+        $this->session = CustomSession::getInstance();
+    }
+
     /**
      * Fügt einen neuen User der Person hinzu.
      * @param string $username
@@ -19,14 +26,14 @@ class RegisterModel
      * @param string $mail
      * @return array|false|null
      */
-    public function insert(string $username, string $password, string $surname, string $name, string $mail)
+    public function update(string $username, string $password, string $surname, string $name, string $mail)
     {
         $connection = Database::getConnection();
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $query = "INSERT INTO person(username, password, surname, name, mail) VALUES(?, ?, ?, ?, ?); SELECT SCOPE_IDENTITY() as ID;";
+        $query = "UPDATE person SET username = ?, password = ?, surname = ?, name = ?, mail = ?, secret = ? WHERE id_person = ?";
 
         //Execute Query
-        $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail));
+        $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail, $this->session->getCurrentUser()['id_person']));
 
         //Select next Result (SCOPE_IDENTITY)
         sqlsrv_next_result($stmt);
@@ -36,8 +43,6 @@ class RegisterModel
         //Load inserted Row
         $query = 'SELECT * FROM person WHERE id_person = '.$res['ID'];
 
-        $stmt = sqlsrv_query($connection, $query);
-
-        return sqlsrv_fetch_array($stmt);
+        sqlsrv_query($connection, $query);
     }
 }

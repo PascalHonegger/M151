@@ -48,8 +48,6 @@ class Register
         // No Errors
         if ($usernameValid && $passwordValid && $surnameValid && $nameValid && $mailValid) {
 
-            var_dump("swag");
-
             $insertedUser = $this->model->insert($username, $password, $surname, $name, $mail);
 
             if($insertedUser)
