@@ -42,10 +42,11 @@ Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https
 = 15.03.2016
 == Planung
 * Pascal überarbeitet die Datenbank und finalisiert danach die Logik des Logins und der Registrierung
-* Seraphin beginnt mit der ARbeit an den Locations
+* Seraphin beginnt mit der Arbeit an den Locations
 * Alain erweitert die View mit Login und Register
 == Retrospektive
-*
+* View unterschätzt
+* Abhängigkeit zur Datenbank
 
 = 22.03.2016
 == Planung
