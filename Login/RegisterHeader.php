@@ -14,7 +14,7 @@
 
     <div id="navigation">
         <ul id="navigationList">
-            <li ><a class="navigationButton" id="currentSite" href="#">Startseite</a></li>
+            <li ><a class="navigationButton" id="currentSite" href="#" onclick="dropdown()">Startseite</a></li>
             <li ><a class="navigationButton" href="#">Entdecken</a></li>
             <li ><a class="navigationButton" href="#">Neuer Event</a></li>
         </ul>
@@ -29,6 +29,9 @@
 
                 <label for="Password" class="LoginLabel">Passwort</label> <br />
                 <input type="password" id="Password" name="Password" class="LoginInput"> <br />
+
+                <label for="TwoWay" class="LoginLabel">Google Autentifizerungscode (Freiwillig)</label> <br />
+                <input type="number" id="TwoWayKey" name="GoogleAuthenticatorCode" class="LoginInput"> <br />
 
                 <input type="reset" onclick="hideLogin()" class="LoginButton" id="ResetLogin" value="Abbrechen">
                 <input type="submit" name="Registrieren" class="LoginButton" id="SubmitLogin" value="Einloggen">
