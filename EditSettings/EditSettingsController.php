@@ -1,6 +1,8 @@
 <?php
 
 require_once "../model/EditSettingsModel.php";
+require_once "../model/LoginModel.php";
+require_once "../external/GoogleAuthenticator.php";
 
 /**
  * Created by PhpStorm.
@@ -11,17 +13,30 @@ require_once "../model/EditSettingsModel.php";
 class EditSettingsController
 {
     private $model;
+    private $loginModel;
     private $session;
 
     public function __construct()
     {
         $this->model = new EditSettingsModel();
+        $this->loginModel = new LoginModel();
         $this->session = CustomSession::getInstance();
     }
 
     public function updateSettings(string $newUsername, string $newName, string $newSurname, string $newMail, string $newPassword, string $newRepPassword, string $secret, string $googleAuthenticatorCode)
     {
+        //TODO Validate
+        //Username
+        //Password
+        //Authenticator
+
         $this->model->update($newUsername, $newName, $newSurname, $newMail, $newPassword, $secret);
+
+        //Reload User from Database
+        $changedUser = $this->loginModel->load($newUsername);
+        $this->session->setCurrentUser($changedUser);
+
+        header('Location: EditSettingsView.php');
     }
 }
 
@@ -36,4 +51,4 @@ $secret = filter_input(INPUT_POST, 'GoogleAuthenticatorSecret') ?? "";
 
 $controller = new EditSettingsController();
 
-$controller->updateSettings($newUsername, $newName, $newSurname, $newMail, $newPassword, $newRepPassword, $authenticationCode, $secret );
+$controller->updateSettings($newUsername, $newName, $newSurname, $newMail, $newPassword, $newRepPassword, $secret, $authenticationCode );

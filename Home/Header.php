@@ -10,7 +10,7 @@
 <div id="header">
     <div id="accountNavigation">
         <div class="dropdown-content">
-            <a href="#">Mein Account</a>
+            <a href="">Mein Account</a>
             <a href="../EditSettings/EditSettingsView.php">Einstellungen</a>
             <a href="../Login/Logout.php">Logout</a>
         </div>
@@ -18,7 +18,7 @@
 
     <div id="navigation">
         <ul id="navigationList">
-            <li ><a class="navigationButton" id="currentSite" href="#">Startseite</a></li>
+            <li ><a class="navigationButton" id="currentSite" href="../Home/Home.php">Startseite</a></li>
             <li ><a class="navigationButton" href="#">Entdecken</a></li>
             <li ><a class="navigationButton" href="#">Neuer Event</a></li>
         </ul>

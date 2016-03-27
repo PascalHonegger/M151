@@ -2,6 +2,7 @@
 
 require_once "../model/LoginModel.php";
 require_once "../controller/CustomSession.php";
+require_once "../external/GoogleAuthenticator.php";
 
 /**
  * Created by PhpStorm.
@@ -50,13 +51,22 @@ class Login
                     $this->saveUser($user);
                     return;
                 }
+
+                //Code wrong
+                $this->loginError();
+                return;
             }
 
             $this->saveUser($user);
             return;
         }
 
-        //Password or Secret wrong
+        //Password wrong
+        $this->loginError();
+    }
+
+    private function loginError()
+    {
         $error = 132;
         header('Location: ../index.php?error=' . $error);
     }
@@ -66,7 +76,7 @@ class Login
      * @param $user
      * The user to save
      */
-    public function saveUser($user)
+    private function saveUser($user)
     {
         $this->session->setCurrentUser($user);
         header('Location: ../index.php?action=welcome');

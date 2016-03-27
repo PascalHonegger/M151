@@ -36,7 +36,7 @@ $secret = $user['secret'] ? $user['secret'] : $ga->createSecret();
         <label for="Mail" class="SettingsLabel">E-Mail</label> <br />
         <input type="email" id="Mail" name="Mail" class="SettingsInput" required="required" value="<?=$user['mail']?>"> <br />
 
-        <label for="Password" class="SettingsLabel">Passwort</label> <br />
+        <label for="Password" class="SettingsLabel">Passwort (Leer => Passwort behalten)</label> <br />
         <input type="password" id="Password" name="Password" class="SettingsInput" required="required" > <br />
 
         <label for="RepPassword" class="SettingsLabel">Passwort Wiederholen</label> <br />

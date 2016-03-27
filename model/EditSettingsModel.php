@@ -36,16 +36,6 @@ class EditSettingsModel
         $query = "UPDATE person SET username = ?, password = ?, surname = ?, name = ?, mail = ?, secret = ? WHERE id_person = ?";
 
         //Execute Query
-        $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail, $secret, $this->session->getCurrentUser()['id_person']));
-
-        //Select next Result (SCOPE_IDENTITY)
-        sqlsrv_next_result($stmt);
-
-        $res = sqlsrv_fetch_array($stmt);
-
-        //Load inserted Row
-        $query = 'SELECT * FROM person WHERE id_person = '.$res['ID'];
-
-        sqlsrv_query($connection, $query);
+        sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail, $secret, $this->session->getCurrentUser()['id_person']));
     }
 }

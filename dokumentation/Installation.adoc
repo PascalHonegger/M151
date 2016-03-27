@@ -14,11 +14,24 @@ Version 2, 23.02.2016
 
 == Installation notwendige Treiber
 . Download link:https://github.com/Azure/msphpsql/releases/tag/v4.0.0[PHP7-SqlSrv-Treiber]
-. Heruntergeladene DLL [php_sqlsrv_7_ts.dll] nach "xampp\php\ext" ziehen
+. Heruntergeladene DLL [php_sqlsrv_7_ts.dll] nach "xampp\php\ext" kopieren
 . In der Datei "xampp\php\php.ini" den Eintrag "extension=php_sqlsrv_7_ts.dll" bei den Erweiterungen nachtragen.
 . Download link:https://www.microsoft.com/en-us/download/details.aspx?id=36434[ODBC 11 Treiber]
 . ODBC 11 Treiber installieren
 . Computer Neustarten
+
+== Installation optionaler Treiber
+. Download passende link:https://xdebug.org/download.php[Xdebug-Version]
+.. Diese link:https://xdebug.org/wizard.php[Seite] kann dabei helfen, die passende Version zu finden
+. Heruntergeladene DLL [php_xdebug.dll] nach "xampp\php\ext" kopieren
+. In der Datei "xampp\php\php.ini" folgendes unten anfügen: (Konfiguration für PhpStorm - IDE abhängig) "
+[Xdebug]
+zend_extension=<full_path_to_xdebug_extension>
+xdebug.remote_enable=1
+xdebug.remote_host=<the host where PhpStorm is running (e.g. localhost)>
+xdebug.remote_port=<the port to which Xdebug tries to connect on the host where PhpStorm is running (default 9000)>
+xdebug.idekey=PHPSTORM
+"
 
 = Aufsetzen Microsoft SQL Server 2014 Express
 . Download link:https://www.microsoft.com/de-ch/download/details.aspx?id=42299[Microsoft SQL Server 2014 Express] (ExpressAndTools | LocalDB)
