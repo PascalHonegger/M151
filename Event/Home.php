@@ -13,7 +13,7 @@ require_once "../controller/CustomSession.php";
 
 <html>
     <head>
-        <title>Shareloc - Share your Location now!</title>
+        <title>Shareloc - Event</title>
         <link rel="stylesheet" href="../css/Style.css">
     </head>
     <body>
@@ -24,7 +24,7 @@ require_once "../controller/CustomSession.php";
 
             require_once "contentmenu.php";
 
-            require_once "Footer.php"; ?>
+            require_once "../home/Footer.php"; ?>
         </div>
     </body>
 </html>

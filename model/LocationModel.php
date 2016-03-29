@@ -10,6 +10,14 @@ require_once "Database.inc";
  */
 class LocationModel
 {
+
+    private $connection;
+
+    public function __construct()
+    {
+        $this->connection = Database::getConnection();
+    }
+
     public function creatLocation(int $idcreator, string $name, string $description, string $position)
     {
         $query = 'INSERT INTO location(fk_person_creator,position,name,description) VALUES (?,?,?,?);SELECT SCOPE_IDENTITY() as ID';
@@ -21,7 +29,7 @@ class LocationModel
 
         if($stmt){
             $query = 'INSERT INTO image (fk_location) VALUES(?)';
-            sqlsrv_query(Database::getConnection(), $query, array($stmt['ID']));
+            sqlsrv_query($this->connection, $query, array($stmt['ID']));
         }
 
         return $stmt['ID'];
@@ -30,7 +38,15 @@ class LocationModel
 
     public function getImages(int $fk_location){
 
-        $query ='SELECT fk_location'
+        $query ='SELECT fk_location';
 
+    }
+
+    public function getLocations() {
+        $query = 'SELECT name, id_location AS id FROM location';
+
+        $stmt = sqlsrv_query($this->connection, $query);
+
+        return $stmt;
     }
 }
