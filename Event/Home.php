@@ -20,7 +20,14 @@ require_once "../controller/CustomSession.php";
         <div id="MainDiv">
             <?php include "Header.php";
 
-            require_once "content.php";
+            if($_GET['action'] == 'NewPlace')
+            {
+                require_once "../Location/LocationView.php";
+            }
+            else
+            {
+                require_once "content.php";
+            }
 
             require_once "contentmenu.php";
 
