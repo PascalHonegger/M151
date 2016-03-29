@@ -31,7 +31,7 @@ class Register
      * @param string $mail
      * @return array
      */
-    public static function InputValid(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail)
+    public static function inputValid(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail)
     {
         $usernameValid = strlen($username) < 40 && strlen($username) > 1;
 
