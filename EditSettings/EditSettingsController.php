@@ -25,16 +25,16 @@ class EditSettingsController
         $this->session = CustomSession::getInstance();
     }
 
-    public function updateSettings(string $newUsername, string $newName, string $newSurname, string $newMail, string $newPassword, string $newRepPassword, string $secret, string $googleAuthenticatorCode)
+    public function updateSettings(string $newUsername, string $newName, string $newSurname, string $newMail, string $newPassword, string $newRepPassword, string $secret, string $authenticatorCode)
     {
-        $valuesValid = Register::InputValid($newUsername, $newPassword, $newRepPassword, $newSurname, $newName, $newMail);
+        $valuesValid = Register::inputValid($newUsername, $newPassword, $newRepPassword, $newSurname, $newName, $newMail);
 
         $allValid = $valuesValid[0] && $valuesValid[2] && $valuesValid[3] && $valuesValid[4];
 
         //Authenticator
-        $ga = new PHPGangsta_GoogleAuthenticator();
+        $authenticator = new PHPGangsta_GoogleAuthenticator();
 
-        $codeCorrect = $ga->verifyCode($secret, $googleAuthenticatorCode);
+        $codeCorrect = $authenticator->verifyCode($secret, $authenticatorCode);
 
         if($allValid)
         {

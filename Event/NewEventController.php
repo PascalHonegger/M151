@@ -10,12 +10,9 @@ require_once "../controller/CustomSession.php";
  */
 class NewEventController
 {
-    public static function GetLocations()
-    {
-
-    }
 
 }
+
 if(CustomSession::getInstance()->getCurrentUser())
 {
     $controller = new NewEventController();

@@ -22,23 +22,15 @@ class Location
 
         $error = 0;
 
-        if(!$idCreator || !$position) {
-            $error = 1;
-        }
-
-        if(strlen($name) >= 40 || strlen($name) <= 1 || strlen($description) >= 100 || strlen($description) <= 1){
-
+        if (strlen($name) > 50 || strlen($name) < 1 || strlen($description) > 100 || strlen($description) < 1) {
             $error = 4;
-
         }
 
         if(!$_FILES['userfile']){
-
             $error = 5;
         }
 
         if($error == 0){
-
             $inserted = $this->model->creatLocation($idCreator,$name,$description,$position);
 
             if($inserted){

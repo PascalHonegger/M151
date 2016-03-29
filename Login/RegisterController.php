@@ -11,6 +11,7 @@ require_once "../controller/CustomSession.php";
  */
 class Register
 {
+    private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';
     private $model;
     private $session;
 
@@ -18,32 +19,6 @@ class Register
     {
         $this->model = new RegisterModel();
         $this->session = CustomSession::getInstance();
-    }
-
-    private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';
-
-    /**
-     * @param string $username
-     * @param string $password
-     * @param string $repeatPassword
-     * @param string $surname
-     * @param string $name
-     * @param string $mail
-     * @return array
-     */
-    public static function inputValid(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail)
-    {
-        $usernameValid = strlen($username) < 40 && strlen($username) > 1;
-
-        $passwordValid = $password == $repeatPassword && preg_match(Register::$passwordRegularExpression, $password);
-
-        $surnameValid = strlen($surname) < 40 && strlen($surname) > 1;
-
-        $nameValid = strlen($name) < 40 && strlen($name) > 1;
-
-        $mailValid = filter_var($mail, FILTER_VALIDATE_EMAIL);
-
-        return array($usernameValid, $passwordValid,  $surnameValid, $nameValid, $mailValid != "");
     }
 
     /**
@@ -59,7 +34,7 @@ class Register
     {
         $error = 13;
 
-        $validationResults = $this->InputValid($username, $password, $repeatPassword, $surname, $name, $mail);
+        $validationResults = $this->inputValid($username, $password, $repeatPassword, $surname, $name, $mail);
 
         $allValid = true;
         foreach ($validationResults as $res)
@@ -86,5 +61,29 @@ class Register
 
         //Some Error Occured
         header('Location: ../index.php?action=register&error=' . $error);
+    }
+
+    /**
+     * @param string $username
+     * @param string $password
+     * @param string $repeatPassword
+     * @param string $surname
+     * @param string $name
+     * @param string $mail
+     * @return array
+     */
+    public static function inputValid(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail)
+    {
+        $usernameValid = strlen($username) < 40 && strlen($username) > 1;
+
+        $passwordValid = $password == $repeatPassword && preg_match(Register::$passwordRegularExpression, $password);
+
+        $surnameValid = strlen($surname) < 40 && strlen($surname) > 1;
+
+        $nameValid = strlen($name) < 40 && strlen($name) > 1;
+
+        $mailValid = filter_var($mail, FILTER_VALIDATE_EMAIL);
+
+        return array($usernameValid, $passwordValid, $surnameValid, $nameValid, $mailValid != "");
     }
 }
