@@ -18,9 +18,13 @@
 
     <div id="navigation">
         <ul id="navigationList">
+<<<<<<< Updated upstream
             <li ><a class="navigationButton" id="currentSite" href="../Home/Home.php">Startseite</a></li>
+=======
+            <li ><a class="navigationButton" id="currentSite" href="Home.php">Startseite</a></li>
+>>>>>>> Stashed changes
             <li ><a class="navigationButton" href="#">Entdecken</a></li>
-            <li ><a class="navigationButton" href="#">Neuer Event</a></li>
+            <li ><a class="navigationButton" href="../Event/Event.php">Neuer Event</a></li>
         </ul>
     </div>
 

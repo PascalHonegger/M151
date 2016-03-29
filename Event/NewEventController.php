@@ -1,5 +1,7 @@
 <?php
 
+require_once "../controller/CustomSession.php";
+
 /**
  * Created by PhpStorm.
  * User: Alain
@@ -8,5 +10,14 @@
  */
 class NewEventController
 {
-    
+
 }
+if(CustomSession::getInstance()->getCurrentUser())
+{
+    $controller = new NewEventController();$controller = new NewEventController();}
+else
+{
+    header('Location: Login/RegisterView.php');
+}
+
+
