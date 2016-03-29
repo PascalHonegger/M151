@@ -23,22 +23,14 @@ class FileManager
         $this->model = new ImageModel();
     }
 
-    public function setImage($image, int $id_location){
-
-        $final = "";
-        $target_file = "../images/" . $this->model->createImage($id_location) . ".jpg";
-        /*foreach($image['tmp_name'] as $key => $image['tmp_name'])
-        {
-
-            $final = $final . $image['tmp_name'][$key];
-        }
-    var_dump($final);*/
-        move_uploaded_file($image['tmp_name'][0], $target_file);
+    public function setImage($image, int $idLocation){
+        $targetFile = "../images/" . $this->model->createImage($idLocation) . ".jpg";
+        move_uploaded_file($image['tmp_name'][0], $targetFile);
 
     }
 
-    public function getImage($id_location){
+    public function getImage($idLocation){
 
-        return $this->model->getImages($id_location);
+        return $this->model->getImages($idLocation);
     }
 }

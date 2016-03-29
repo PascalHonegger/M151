@@ -18,11 +18,11 @@ class Location
           $this->model = new LocationModel();
       }
 
-    public function createLocation(int $idcreator, string $name, string $description, string $position){
+    public function createLocation(int $idCreator, string $name, string $description, string $position){
 
         $error = 0;
 
-        if(!$idcreator || !$position) {
+        if(!$idCreator || !$position) {
             $error = 1;
         }
 
@@ -39,7 +39,7 @@ class Location
 
         if($error == 0){
 
-            $inserted = $this->model->creatLocation($idcreator,$name,$description,$position);
+            $inserted = $this->model->creatLocation($idCreator,$name,$description,$position);
 
             if($inserted){
                 $filemanager = new FileManager();
