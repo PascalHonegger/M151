@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Home" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EditSettings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Event" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Location" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

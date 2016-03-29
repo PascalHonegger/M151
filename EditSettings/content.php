@@ -23,7 +23,7 @@ $secret = $user['secret'] ? $user['secret'] : $ga->createSecret();
 
     <h1>Einstellungen</h1>
 
-    <form action="EditSettingsController.php" method="post" >
+    <form action="EditSettingsInput.php" method="post" >
         <label for="Username" class="SettingsLabel">Benutzername</label> <br />
         <input type="text" id="Username" name="Username" class="SettingsInput" required="required" value="<?=$user['username']?>"> <br />
 
@@ -37,10 +37,10 @@ $secret = $user['secret'] ? $user['secret'] : $ga->createSecret();
         <input type="email" id="Mail" name="Mail" class="SettingsInput" required="required" value="<?=$user['mail']?>"> <br />
 
         <label for="Password" class="SettingsLabel">Passwort (Leer => Passwort behalten)</label> <br />
-        <input type="password" id="Password" name="Password" class="SettingsInput" required="required" > <br />
+        <input type="password" id="Password" name="Password" class="SettingsInput" ><br />
 
         <label for="RepPassword" class="SettingsLabel">Passwort Wiederholen</label> <br />
-        <input type="password" id="RepPassword" name="RepPassword" class="SettingsInput" required="required"> <br />
+        <input type="password" id="RepPassword" name="RepPassword" class="SettingsInput" > <br />
 
         <label for="GoogleAuthenticatorCode" class="SettingsLabel">Validierungscode (Leer => 2-Way-Authentication entfernen)</label> <br />
         <input type="number" id="GoogleAuthenticatorCode" name="GoogleAuthenticatorCode" class="SettingsInput"> <br />

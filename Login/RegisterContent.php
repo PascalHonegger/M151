@@ -11,7 +11,7 @@
 <div id="LoginContent">
     <h1 id="RegisterTitle">Registrieren</h1>
 
-    <form action="RegisterController.php" method="post" id="registerform">
+    <form action="RegisterInput.php" method="post" id="registerform">
         <label for="Username" class="RegisterLabel">Benutzername</label> <br />
         <input type="text" id="Username" name="Username" class="RegisterInput" required="required"> <br />
 

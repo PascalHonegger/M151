@@ -54,9 +54,3 @@ class Location
     }
 
 }
-
-$Location = new Location();
-
-
-$Location->createLocation($_POST['creator'],$_POST['name'],$_POST['description'],$_POST['position']);
-

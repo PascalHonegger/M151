@@ -22,7 +22,7 @@
         <div id="loginDiv" class="Login-Div">
             <h1 id="LoginTitle">Login</h1>
 
-            <form action="LoginController.php" method="post" id="loginform">
+            <form action="LoginInput.php" method="post" id="loginform">
 
                 <label for="Username" class="LoginLabel">Benutzername</label> <br />
                 <input type="text" id="Username" name="Username" class="LoginInput" required="required"> <br />

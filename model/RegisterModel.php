@@ -1,6 +1,7 @@
 <?php
 
 require_once "Database.inc";
+require_once "LoginModel.php";
 
 /**
  * Created by PhpStorm.
@@ -21,6 +22,16 @@ class RegisterModel
      */
     public function insert(string $username, string $password, string $surname, string $name, string $mail)
     {
+        $loginModel = new LoginModel();
+
+        $user = $loginModel->load($username);
+
+        //User already exists
+        if($user != null)
+        {
+            return false;
+        }
+
         $connection = Database::getConnection();
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $query = "INSERT INTO person(username, password, surname, name, mail) VALUES(?, ?, ?, ?, ?); SELECT SCOPE_IDENTITY() as ID;";

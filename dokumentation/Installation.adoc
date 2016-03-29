@@ -32,7 +32,8 @@ xdebug.remote_host=<the host where PhpStorm is running (e.g. localhost)>
 xdebug.remote_port=<the port to which Xdebug tries to connect on the host where PhpStorm is running (default 9000)>
 xdebug.idekey=PHPSTORM
 "
-
+.. link:https://www.jetbrains.com/phpstorm/marklets/[Diese] Seite kann dabei helfen, den Debugger zu starten
+.. Weitere Hilfe kann link:https://www.jetbrains.com/help/phpstorm/2016.1/configuring-xdebug.html?origin=old_help[hier] gefunden werde
 = Aufsetzen Microsoft SQL Server 2014 Express
 . Download link:https://www.microsoft.com/de-ch/download/details.aspx?id=42299[Microsoft SQL Server 2014 Express] (ExpressAndTools | LocalDB)
 . Installation Microsoft SQL Server
