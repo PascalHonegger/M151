@@ -27,18 +27,7 @@ class LocationModel
         sqlsrv_next_result($stmt);
         $stmt = sqlsrv_fetch_array($stmt);
 
-        if($stmt){
-            $query = 'INSERT INTO image (fk_location) VALUES(?)';
-            sqlsrv_query($this->connection, $query, array($stmt['ID']));
-        }
-
         return $stmt['ID'];
-
-    }
-
-    public function getImages(int $fk_location){
-
-        $query ='SELECT fk_location';
 
     }
 

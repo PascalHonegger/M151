@@ -42,8 +42,8 @@ class Location
             $inserted = $this->model->creatLocation($idcreator,$name,$description,$position);
 
             if($inserted){
-                //$filemanager = new FileManager();
-                //$filemanager->setImage($_FILES['userfile'],$inserted);
+                $filemanager = new FileManager();
+                $filemanager->setImage($_FILES['userfile'],$inserted);
                 return;
             }
 
