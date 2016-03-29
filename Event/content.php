@@ -15,17 +15,37 @@ require_once "../model/LocationModel.php";
 
             echo "Hallo ".$session->getCurrentUser()['username'];
         ?>
+    <h1>Neuer Event</h1>
 
-    <select name="cars" style="height: 200px; width: 200px;">
-        <?php
-        $model = new LocationModel();
-        $temp = $model->getLocations();
-        while($locations = sqlsrv_fetch_array($temp))
-        {
+    <form method="post" action="NewEventController.php">
+
+
+        <label> Event Name
+            <input type="text" name="eventname" class="NewEventInput">
+        </label>
+        <label for="NewEventTextarea">Beschreibung</label><textarea name="eventdescription" id="NewEventTextarea">BESCHREIBUNG</textarea>
+
+        <label> Ort:
+            <select name="cars" style="height: 200px; width: 200px;">
+                <?php
+            $model = new LocationModel();
+            $temp = $model->getLocations();
+                while($locations = sqlsrv_fetch_array($temp))
+                {
                 $loc = $locations['name'];
                 $locID = $locations['id'];
-                echo "<option value='$locID'>$loc</option>";
-        }
-        ?>
-    </select>
+                echo "
+                <option value='$locID'>$loc</option>
+                ";
+                }
+                ?>
+            </select>
+        </label>
+        <a href="Home.php?action=NewPlace">Neuer Ort</a>
+
+        <input type="submit" id="NewEventSubmit" class="NewEventButton">
+        <input type="reset" id="NewEventReset" class="NewEventButton">
+    </form>
+
+
 </div>

@@ -1,8 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-    <body>
         <form action="LocationInput.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="creator"/><br>
             <input type="text" name="name" /><br>
@@ -11,5 +6,3 @@
             <label>File: </label><input type="file" name="userfile[]" id="userfile[]" /><br>
             <input type="submit" />
         </form>
-    </body>
-</html>
