@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/css" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/external" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Login" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/home" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Home" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EditSettings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Event" isTestSource="false" />
     </content>

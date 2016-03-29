@@ -69,6 +69,7 @@ class Login
     {
         $error = 132;
         header('Location: ../index.php?error=' . $error);
+
     }
 
     /**

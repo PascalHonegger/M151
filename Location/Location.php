@@ -1,6 +1,7 @@
 <?php
 
 require_once "../model/LocationModel.php";
+require_once "FileManager.php";
 
 /**
  * Created by PhpStorm.
@@ -31,22 +32,31 @@ class Location
 
         }
 
+        if(!$_FILES['userfile']){
+
+            $error = 5;
+        }
+
         if($error == 0){
 
             $inserted = $this->model->creatLocation($idcreator,$name,$description,$position);
 
             if($inserted){
+                //$filemanager = new FileManager();
+                //$filemanager->setImage($_FILES['userfile'],$inserted);
                 return;
             }
 
             $error = 126;
         }
 
-        header('Location: ../index.php?action=register&error=' . $error);
+        header('Location: ../swag.php?action=register&error=' . $error);
     }
 
 }
 
-$test = new Location();
+$Location = new Location();
 
-$test->createLocation(7,"LOOOvv","Low, Lower, The Lowest","123321");
+
+$Location->createLocation($_POST['creator'],$_POST['name'],$_POST['description'],$_POST['position']);
+
