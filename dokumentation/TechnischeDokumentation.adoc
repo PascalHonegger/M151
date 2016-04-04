@@ -1,6 +1,24 @@
 Technische Dokumentation
 ========================
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 1, 08.03.2016
+Version 2, 29.03.2016
 :toc:
 
+= Konventionen
+== Naming
+Die allgemeinen PHP7-Namingkonventionen wurden eingehalten (Überprüft durch PhpStorm und CodeClimate). Hier einige Projektspezifische Konventionen:
+
+* Input und Klasse wird getrennt (Input = subjectInput.php | Klasse = subjectController.php)
+* Namen der Model enden mit "Model"
+
+== HTML & CSS & JavaScript
+* HTML-Styles werden immer im CSS hinterlegt
+* Jegliches CSS und JS werden ausgelagert.
+* Jedes Input benötigt ein Label oder den Label-Tag
+* Code muss von CodeClimate als gut bewertet werden
+
+== PHP
+* Jedes Modul / Feature verfügt über eine eigene Klasse
+* Jede Klasse ist in einer separaten Datei
+* Das Model wird komplett getrennt => Auserhalb der Models is SQL verboten
+* Code muss von CodeClimate als gut bewertet werden

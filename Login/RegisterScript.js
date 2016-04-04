@@ -10,7 +10,7 @@ function login() {
 
     $.ajax({
         type: "POST",
-        url: "LoginController.php",
+        url: "LoginInput.php",
         data: dataString,
         cache: false,
         beforeSend: function(){ $("#SubmitLogin").val('Verbinde...');},

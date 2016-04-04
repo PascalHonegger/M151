@@ -2,7 +2,9 @@
 
 require_once "../model/EditSettingsModel.php";
 require_once "../model/LoginModel.php";
+require_once "../model/RegisterModel.php";
 require_once "../external/GoogleAuthenticator.php";
+require_once "../Login/RegisterController.php";
 
 /**
  * Created by PhpStorm.
@@ -23,14 +25,21 @@ class EditSettingsController
         $this->session = CustomSession::getInstance();
     }
 
-    public function updateSettings(string $newUsername, string $newName, string $newSurname, string $newMail, string $newPassword, string $newRepPassword, string $secret, string $googleAuthenticatorCode)
+    public function updateSettings(string $newUsername, string $newName, string $newSurname, string $newMail, string $newPassword, string $newRepPassword, string $secret, string $authenticatorCode)
     {
-        //TODO Validate
-        //Username
-        //Password
-        //Authenticator
+        $valuesValid = Register::inputValid($newUsername, $newPassword, $newRepPassword, $newSurname, $newName, $newMail);
 
-        $this->model->update($newUsername, $newName, $newSurname, $newMail, $newPassword, $secret);
+        $allValid = $valuesValid[0] && $valuesValid[2] && $valuesValid[3] && $valuesValid[4];
+
+        //Authenticator
+        $authenticator = new PHPGangsta_GoogleAuthenticator();
+
+        $codeCorrect = $authenticator->verifyCode($secret, $authenticatorCode);
+
+        if($allValid)
+        {
+            $this->model->update($newUsername, $newName, $newSurname, $newMail, $allValid[1] ? $newPassword : null, $codeCorrect ? $secret : null);
+        }
 
         //Reload User from Database
         $changedUser = $this->loginModel->load($newUsername);
@@ -39,16 +48,3 @@ class EditSettingsController
         header('Location: EditSettingsView.php');
     }
 }
-
-$newUsername = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
-$newName = filter_input(INPUT_POST, 'Name', FILTER_SANITIZE_STRING) ?? "";
-$newSurname = filter_input(INPUT_POST, 'Surname', FILTER_SANITIZE_STRING) ?? "";
-$newMail = filter_input(INPUT_POST, 'Mail', FILTER_SANITIZE_STRING) ?? "";
-$newPassword = filter_input(INPUT_POST, 'Password') ?? "";
-$newRepPassword = filter_input(INPUT_POST, 'RepPassword') ?? "";
-$authenticationCode = filter_input(INPUT_POST, 'GoogleAuthenticatorCode', FILTER_SANITIZE_NUMBER_INT) ?? 0;
-$secret = filter_input(INPUT_POST, 'GoogleAuthenticatorSecret') ?? "";
-
-$controller = new EditSettingsController();
-
-$controller->updateSettings($newUsername, $newName, $newSurname, $newMail, $newPassword, $newRepPassword, $secret, $authenticationCode );

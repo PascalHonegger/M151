@@ -54,5 +54,10 @@ Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https
 * Seraphin arbeitet weiter an den Locations
 * Pascal stellt die Einstellungen und Google-2-Way-Authentication fertig
 * Alain arbeitet an dem GUI und an den Events
-== Retrospektive
-*
+
+
+= 29.03.2016
+== Planung
+* Da wir uns langsam auf das Ende des Moduls zubewegen, möchten wir nun möglichts bald eine funktionsfähe Version besitzen
+* Alain arbeitet an der Eventerstellung
+* Seraphin finalisiert den Dateiupload / Ort

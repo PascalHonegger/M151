@@ -10,7 +10,15 @@ require_once "Database.inc";
  */
 class LocationModel
 {
-    public function creatLocation(int $idcreator, string $name, string $description, string $position )
+
+    private $connection;
+
+    public function __construct()
+    {
+        $this->connection = Database::getConnection();
+    }
+
+    public function creatLocation(int $idcreator, string $name, string $description, string $position)
     {
         $query = 'INSERT INTO location(fk_person_creator,position,name,description) VALUES (?,?,?,?);SELECT SCOPE_IDENTITY() as ID';
         $stmt = sqlsrv_query(Database::getConnection(), $query, array($idcreator,$position,$name,$description));
@@ -19,10 +27,15 @@ class LocationModel
         sqlsrv_next_result($stmt);
         $stmt = sqlsrv_fetch_array($stmt);
 
-        $query = 'SELECT * FROM location WHERE id_location = '.$stmt['ID'];
+        return $stmt['ID'];
 
-        $stmt = sqlsrv_query(Database::getConnection(), $query);
+    }
 
-        return sqlsrv_fetch_array($stmt);
+    public function getLocations() {
+        $query = 'SELECT name, id_location AS id FROM location';
+
+        $stmt = sqlsrv_query($this->connection, $query);
+
+        return $stmt;
     }
 }

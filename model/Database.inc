@@ -26,7 +26,8 @@ class Database{
     /**
      * Database constructor.
      */
-    private function __construct() {
+    private function __construct()
+    {
         $this->conn = sqlsrv_connect($this->serverName, $this->connectionInfo);
     }
 }

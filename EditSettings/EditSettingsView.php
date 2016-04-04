@@ -24,7 +24,7 @@
     </head>
     <body>
         <div id="MainDiv">
-            <?php include "../Home/Header.php";
+            <?php include "Header.php";
 
             require_once "content.php";
 

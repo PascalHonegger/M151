@@ -166,7 +166,7 @@ body{
     background-color: rgb(36,36,36);
 }
 
-/*Login*/
+/*Login and register*/
 
 #login {
     width: 150px;
@@ -235,8 +235,8 @@ body{
     display: none;
     position: relative;
     background-color: rgb(67,67,67);
-    min-width: 590px;
-    padding: 5px;
+    width: 570px;
+    padding: 10px 5px 5px 5px;
     margin-top: 60px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color: rgb(220,220,220);
@@ -292,4 +292,37 @@ body{
 }
 .LoginButton:focus {
     outline: none;
+}
+
+/* NEW LOCATION FORM */
+
+.LocationInput {
+    height: 35px;
+    width: 400px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 7px;
+    border: 0;
+    font-size: 15pt;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.LocationLabel {
+    font-size: 18pt;
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+}
+
+.Location-Div {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.LocationButton {
+    font-size: 17pt;
+    height: 70px;
+    width: 150px;
+    border: 0;
+    border-radius: 5px;
+    margin: 15px;
 }
