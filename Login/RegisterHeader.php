@@ -22,16 +22,16 @@
         <div id="loginDiv" class="Login-Div">
             <h1 id="LoginTitle">Login</h1>
 
-            <form action="LoginController.php" method="post" id="loginform">
+            <form id="loginform" onsubmit="return login()">
 
                 <label for="Username" class="LoginLabel">Benutzername</label> <br />
                 <input type="text" id="Username" name="Username" class="LoginInput" required="required"> <br />
-                
+
                 <label for="Password" class="LoginLabel">Passwort</label> <br />
                 <input type="password" id="Password" name="Password" class="LoginInput" required="required"> <br />
 
-                <label for="TwoWayKey" class="LoginLabel">Google Autentifizerungscode (Freiwillig)</label> <br />
-                <input type="number" id="TwoWayKey" name="GoogleAuthenticatorCode" class="LoginInput"> <br />
+                <label for="GoogleAuthenticatorCode" class="LoginLabel">Google Autentifizerungscode (Freiwillig)</label> <br />
+                <input type="number" id="GoogleAuthenticatorCode" name="GoogleAuthenticatorCode" class="LoginInput"> <br />
 
                 <input type="reset" onclick="hideLogin()" class="LoginButton" id="ResetLogin" value="Abbrechen">
                 <input type="submit" name="Registrieren" class="LoginButton" id="SubmitLogin" value="Einloggen">
@@ -49,12 +49,3 @@
 
 
 </div>
-
-<script>
-    function dropdown() {
-        document.getElementById("loginDiv").classList.add("show");
-    }
-    function hideLogin() {
-        document.getElementById("loginDiv").classList.remove("show");
-    }
-</script>

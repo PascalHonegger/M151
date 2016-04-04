@@ -67,8 +67,7 @@ class Login
 
     private function loginError()
     {
-        $error = 132;
-        header('Location: ../index.php?error=' . $error);
+        echo false;
     }
 
     /**
@@ -79,7 +78,7 @@ class Login
     private function saveUser($user)
     {
         $this->session->setCurrentUser($user);
-        header('Location: ../index.php?action=welcome');
+        echo true;
     }
 }
 
