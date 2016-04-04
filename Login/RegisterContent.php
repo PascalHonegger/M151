@@ -11,9 +11,9 @@
 <div id="LoginContent">
     <h1 id="RegisterTitle">Registrieren</h1>
 
-    <form action="RegisterInput.php" method="post" id="registerform">
-        <label for="Username" class="RegisterLabel">Benutzername</label> <br />
-        <input type="text" id="Username" name="Username" class="RegisterInput" required="required"> <br />
+    <form onsubmit="return register()" id="registerform">
+        <label for="RegisterUsername" class="RegisterLabel">Benutzername</label> <br />
+        <input type="text" id="RegisterUsername" name="RegisterUsername" class="RegisterInput" required="required"> <br />
 
         <label for="Name" class="RegisterLabel">Name</label> <br />
         <input type="text" id="Name" name="Name" class="RegisterInput" required="required"> <br />
@@ -24,8 +24,8 @@
         <label for="Mail" class="RegisterLabel">E-Mail</label> <br />
         <input type="email" id="Mail" name="Mail" class="RegisterInput" required="required"> <br />
 
-        <label for="Password" class="RegisterLabel">Passwort</label> <br />
-        <input type="password" id="Password" name="Password" class="RegisterInput" required="required"> <br />
+        <label for="RegisterPassword" class="RegisterLabel">Passwort</label> <br />
+        <input type="password" id="RegisterPassword" name="RegisterPassword" class="RegisterInput" required="required"> <br />
 
         <label for="RepPassword" class="RegisterLabel">Passwort Wiederholen</label> <br />
         <input type="password" id="RepPassword" name="RepPassword" class="RegisterInput" required="required"> <br />

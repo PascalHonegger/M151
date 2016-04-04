@@ -32,8 +32,6 @@ class Register
      */
     public function registerPerson(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail)
     {
-        $error = 13;
-
         $validationResults = $this->inputValid($username, $password, $repeatPassword, $surname, $name, $mail);
 
         $allValid = true;
@@ -52,15 +50,13 @@ class Register
             if($insertedUser)
             {
                 $this->session->setCurrentUser($insertedUser);
-                header('Location: ../index.php?action=welcome');
+                echo true;
                 return;
             }
-
-            $error = 126;
         }
 
         //Some Error Occured
-        header('Location: ../index.php?action=register&error=' . $error);
+        echo false;
     }
 
     /**

@@ -1,6 +1,45 @@
 /**
  * Created by Pascal on 04.04.2016.
  */
+
+function fadeToHome()
+{
+    $("body").load("../Home/home.php").hide().fadeIn(1500).delay(6000);
+}
+
+function register() {
+    var username=$("#RegisterUsername").val();
+    var name=$("#Name").val();
+    var surname=$("#Surname").val();
+    var mail=$("#Mail").val();
+    var password=$("#RegisterPassword").val();
+    var repPassword=$("#RepPassword").val();
+
+    var dataString = 'Username='+username+'&Name='+name+'&Surname='+surname+'&Mail='+mail+'&Password='+password+'&RepPassword='+repPassword;
+
+    $.ajax({
+        type: "POST",
+        url: "RegisterInput.php",
+        data: dataString,
+        cache: false,
+        beforeSend: function(){ $("#Submit").val('Verbinde...');},
+        success: function(data){
+            if(data)
+            {
+                fadeToHome();
+            }
+            else
+            {
+//Shake animation effect.
+                $("#registerform").effect("shake", {times: 2}, 750);
+                $("#Submit").val('Registrieren');
+            }
+        }
+    });
+
+    return false;
+}
+
 function login() {
     var username=$("#Username").val();
     var password=$("#Password").val();
@@ -17,9 +56,7 @@ function login() {
         success: function(data){
             if(data)
             {
-                $("body").load("../Home/home.php").hide().fadeIn(1500).delay(6000);
-//or
-                window.location.href = "../Home/home.php";
+                fadeToHome();
             }
             else
             {
