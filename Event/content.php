@@ -41,7 +41,7 @@ require_once "../model/LocationModel.php";
                 ?>
             </select>
         </label>
-        <a href="Home.php?action=NewPlace">Neuer Ort</a>
+        <a href="Event.php?action=NewPlace">Neuer Ort</a>
 
         <input type="submit" id="NewEventSubmit" class="NewEventButton">
         <input type="reset" id="NewEventReset" class="NewEventButton">

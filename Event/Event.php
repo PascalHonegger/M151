@@ -18,13 +18,27 @@ require_once "../controller/CustomSession.php";
     </head>
     <body>
         <div id="MainDiv">
-            <?php include "Header.php";
+            <?php
 
-            require_once "content.php";
+                include "Header.php";
 
-            require_once "contentmenu.php";
+                $action = filter_input(INPUT_GET, 'action');
 
-            require_once "../home/Footer.php"; ?>
+                if($action == 'NewPlace')
+                {
+                    require_once "../Location/LocationView.php";
+                }
+                else
+                {
+                    require_once "content.php";
+                }
+
+                require_once "contentmenu.php";
+
+                require_once "../home/Footer.php";
+
+                require_once "../home/Footer.php";
+            ?>
         </div>
     </body>
 </html>
