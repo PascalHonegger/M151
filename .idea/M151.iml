@@ -12,9 +12,12 @@
       <sourceFolder url="file://$MODULE_DIR$/EditSettings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Event" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Location" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Discover" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="jquery-ui" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
   </component>
