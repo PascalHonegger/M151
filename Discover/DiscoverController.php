@@ -22,6 +22,11 @@ class Login
 
     public function loadLocations(int $from, int $to, string $nameFilter)
     {
-        //TODO Alain
+        $datas = $this->model->loadLocationsByIdAndName($from,$to,$nameFilter);
+
+        while($locations = sqlsrv_fetch_array($datas))
+        {
+            echo '<p> Name = '&$locations['name']&' Dascription = '&$locations['description']&' Bild = '&$locations['imageName']&'</p>';
+        }
     }
 }

@@ -25,6 +25,8 @@
 
     require_once "DiscoverContent.php";
 
+    require_once "Discovercontentmenu.php";
+
     require_once "../home/Footer.php"
     ?>
 

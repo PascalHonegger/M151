@@ -38,4 +38,20 @@ class LocationModel
 
         return $stmt;
     }
+
+    public function loadLocationsByIdAndName(int $startId, int $endId, string $location)
+    {
+        $likeLocation = '%' & $location & '%';
+        $query = 'SELECT location.name AS name, 
+                    location.description AS description, 
+                    image.id_image AS imageName 
+                    FROM location 
+                    INNER JOIN image ON image.fk_location = location.id_location 
+                    where id_location > ? AND id_location < ? AND location.name LIKE ?';
+
+        $stmt = sqlsrv_query(Database::getConnection(), $query, array($startId,$endId,$likeLocation));
+
+        return $stmt;
+
+    }
 }

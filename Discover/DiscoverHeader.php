@@ -8,38 +8,20 @@
 ?>
 
 <div id="header">
-    <div id="login" onclick="dropdown()">
-
+    <div id="accountNavigation">
+        <div class="dropdown-content">
+            <a href="">Mein Account</a>
+            <a href="../EditSettings/EditSettingsView.php">Einstellungen</a>
+            <a href="../Login/Logout.php">Logout</a>
+        </div>
     </div>
 
     <div id="navigation">
         <ul id="navigationList">
-            <li><a class="navigationButton" href="#" onclick="dropdown()">Startseite</a></li>
-            <li><a class="navigationButton" id="currentSite" href="#">Entdecken</a></li>
-            <li><a class="navigationButton" href="#">Neuer Event</a></li>
+            <li ><a class="navigationButton" href="../home/home.php">Startseite</a></li>
+            <li ><a class="navigationButton" id="currentSite" href="Discover.php">Entdecken</a></li>
+            <li ><a class="navigationButton" href="../Event/Event.php">Neuer Event</a></li>
         </ul>
-
-        <div id="loginDiv" class="Login-Div">
-            <h1 id="LoginTitle">Login</h1>
-
-            <form id="loginform" onsubmit="return login()">
-
-                <label for="Username" class="LoginLabel">Benutzername</label> <br/>
-                <input type="text" id="Username" name="Username" class="LoginInput" required="required"> <br/>
-
-                <label for="Password" class="LoginLabel">Passwort</label> <br/>
-                <input type="password" id="Password" name="Password" class="LoginInput" required="required"> <br/>
-
-                <label for="GoogleAuthenticatorCode" class="LoginLabel">Google Autentifizerungscode (Freiwillig)</label>
-                <br/>
-                <input type="number" id="GoogleAuthenticatorCode" name="GoogleAuthenticatorCode" class="LoginInput">
-                <br/>
-
-                <input type="reset" onclick="hideLogin()" class="LoginButton" id="ResetLogin" value="Abbrechen">
-                <input type="submit" name="Registrieren" class="LoginButton" id="SubmitLogin" value="Einloggen">
-
-            </form>
-        </div>
     </div>
 
     <div id="search">
