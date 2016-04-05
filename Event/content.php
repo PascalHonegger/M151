@@ -26,7 +26,7 @@ require_once "../model/LocationModel.php";
         <label for="NewEventTextarea">Beschreibung</label><textarea name="eventdescription" id="NewEventTextarea">BESCHREIBUNG</textarea>
 
         <label> Ort:
-            <select name="cars" style="height: 200px; width: 200px;">
+            <select name="location">
                 <?php
             $model = new LocationModel();
             $temp = $model->getLocations();
@@ -35,7 +35,7 @@ require_once "../model/LocationModel.php";
                 $loc = $locations['name'];
                 $locID = $locations['id'];
                 echo "
-                <option value='$locID'>$loc</option>
+                <option value='$locID' >$loc</option>
                 ";
                 }
                 ?>
