@@ -35,8 +35,8 @@ function loadMoreElements(startAgain) {
 
     var filterString = $("#NameFilterString").val();
 
-    var dataString = 'Min=' + from + '&Max=' + to + '&StringFilter' + filterString;
-
+    var dataString = 'Min=' + from + '&Max=' + to + '&StringFilter=' + filterString;
+    alert(dataString);
     $.ajax({
         type: "POST",
         url: "DiscoverInput.php",
@@ -46,6 +46,7 @@ function loadMoreElements(startAgain) {
             $("#footer").val('Lade...');
         },
         success: function (data) {
+            alert(data);
             $("#infiniteScroll").val(data);
             from = to;
             to += 100;

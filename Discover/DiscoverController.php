@@ -26,7 +26,8 @@ class DiscoverController
 
         while($locations = sqlsrv_fetch_array($datas))
         {
-            echo '<p> Name = '&$locations['name']&' Dascription = '&$locations['description']&' Bild = '&$locations['imageName']&'</p>';
+            echo '<p> Name = '.$locations['name'].' Dascription = '.$locations['description'].' Bild = </p>';
         }
+        echo '<p>LÄCK BOBBY</p>';
     }
 }
