@@ -44,10 +44,12 @@ class LocationModel
         $likeLocation = '%' & $location & '%';
         $query = 'SELECT location.name AS name, 
                     location.description AS description, 
-                    image.id_image AS imageName 
-                    FROM location 
+                    image.id_image AS imageName,
+                    ROW_NUMBER() AS row
+                    FROM location
                     INNER JOIN image ON image.fk_location = location.id_location 
-                    where id_location > ? AND id_location < ? AND location.name LIKE ?';
+                    where row_number BETWEEN ? AND ?
+                    AND location.name LIKE ?';
 
         $stmt = sqlsrv_query(Database::getConnection(), $query, array($startId,$endId,$likeLocation));
 

@@ -9,7 +9,7 @@ require_once "../controller/CustomSession.php";
  * Date: 01.03.2016
  * Time: 15:44
  */
-class Login
+class DiscoverController
 {
     private $model;
     private $session;

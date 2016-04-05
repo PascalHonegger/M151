@@ -11,28 +11,13 @@ require_once "../model/EventModel.php";
  */
 class NewEventController
 {
-    public function createEvent()
+    public function createEvent(string $eventName, string $eventDescription, int $location)
     {
-        $eventName = $_POST['eventname'];
-        $eventDescription = $_POST['eventdescription'];
-        $locaion = $_POST['location'];
-
         $session = CustomSession::getInstance();
         $creator = $session->getCurrentUser();
         $userID = $creator['id_person'];
         
         $model = new EventModel();
-        $model->createEvent($userID,$eventName,$eventDescription,$locaion);
+        $model->createEvent($userID, $eventName, $eventDescription, $location);
     }
 }
-if(CustomSession::getInstance()->getCurrentUser())
-{
-    $controller = new NewEventController();
-    $controller->createEvent();
-}
-else
-{
-    header('Location: Login/RegisterView.php');
-}
-
-

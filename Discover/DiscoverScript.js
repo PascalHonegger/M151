@@ -1,77 +1,56 @@
 /**
  * Created by Pascal on 04.04.2016.
  */
+var from = 0;
+var to = 100;
 
-function fadeToHome() {
-    $("body").load("../Home/home.php").hide().fadeIn(1500).delay(6000);
-}
+$(document).on('click', 'div', function () {
+    if (this.id == "infiniteScroll") {
+        alert(this.id);
+    }
+});
 
-function register() {
-    var username = $("#RegisterUsername").val();
-    var name = $("#Name").val();
-    var surname = $("#Surname").val();
-    var mail = $("#Mail").val();
-    var password = $("#RegisterPassword").val();
-    var repPassword = $("#RepPassword").val();
+loadMoreElements(true);
 
-    var dataString = 'Username=' + username + '&Name=' + name + '&Surname=' + surname + '&Mail=' + mail + '&Password=' + password + '&RepPassword=' + repPassword;
+$(document).scroll(function () {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    //If reached bottom
+    if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+        loadMoreElements(false);
+    }
+});
+
+function loadMoreElements(startAgain) {
+
+    if (startAgain) {
+        from = 0;
+        to = 100;
+        $("#infiniteScroll").val("Lade...");
+    }
+
+    var filterString = $("#NameFilterString").val();
+
+    var dataString = 'Min=' + from + '&Max=' + to + '&StringFilter' + filterString;
 
     $.ajax({
         type: "POST",
-        url: "RegisterInput.php",
+        url: "DiscoverInput.php",
         data: dataString,
         cache: false,
         beforeSend: function () {
-            $("#Submit").val('Verbinde...');
+            $("#footer").val('Lade...');
         },
         success: function (data) {
-            if (data) {
-                fadeToHome();
-            }
-            else {
-//Shake animation effect.
-                $("#registerform").effect("shake", {times: 2}, 750);
-                $("#Submit").val('Registrieren');
-            }
+            $("#infiniteScroll").val(data);
+            from = to;
+            to += 100;
         }
     });
 
     return false;
-}
-
-function login() {
-    var username = $("#Username").val();
-    var password = $("#Password").val();
-    var googleAuthenticatorCode = $("#GoogleAuthenticatorCode").val();
-
-    var dataString = 'Username=' + username + '&Password=' + password + '&GoogleAuthenticatorCode' + googleAuthenticatorCode;
-
-    $.ajax({
-        type: "POST",
-        url: "LoginInput.php",
-        data: dataString,
-        cache: false,
-        beforeSend: function () {
-            $("#SubmitLogin").val('Verbinde...');
-        },
-        success: function (data) {
-            if (data) {
-                fadeToHome();
-            }
-            else {
-//Shake animation effect.
-                $("#loginDiv").effect("shake", {times: 2}, 750);
-                $("#SubmitLogin").val('Einloggen');
-            }
-        }
-    });
-
-    return false;
-}
-
-function dropdown() {
-    document.getElementById("loginDiv").classList.add("show");
-}
-function hideLogin() {
-    document.getElementById("loginDiv").classList.remove("show");
 }

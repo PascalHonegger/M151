@@ -2,15 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: Alain
- * Date: 22.03.2016
- * Time: 13:31
+ * Date: 15.03.2016
+ * Time: 15:00
  */
 
-require_once "../model/LocationModel.php";
 ?>
 
 <div id="content">
-    
+    <h1 id="RegisterTitle">Entdecken</h1>
 
+    <form onsubmit="return loadMoreElements(true)" id="discoverForm">
+        <label for="NameFilterString" class="RegisterLabel">Suchtext</label> <input type="text" id="NameFilterString"
+                                                                                    name="NameFilterString"
+                                                                                    class="RegisterInput"
+                                                                                    required="required">
+        <br/>
+        <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
 
+    </form>
+
+    <div id="infiniteScroll"></div>
 </div>
