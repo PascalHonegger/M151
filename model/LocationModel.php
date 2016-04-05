@@ -28,7 +28,6 @@ class LocationModel
         $stmt = sqlsrv_fetch_array($stmt);
 
         return $stmt['ID'];
-
     }
 
     public function getLocations() {
@@ -46,31 +45,13 @@ class LocationModel
                     image.id_image AS imageName
                     FROM location
                     LEFT OUTER JOIN image ON image.fk_location = location.id_location 
-                    WHERE location.name = '$location'
+                    WHERE location.name LIKE ?
                     ORDER BY id_location
                     OFFSET $startId ROWS 
                     FETCH NEXT $endId ROWS ONLY ";
 
-        /*
-         *WHERE location.name LIKE ?
-         * SELECT location.name AS name,
-                    location.description AS description,
-                    image.id_image AS imageName,
-                    ROW_NUMBER() OVER (ORDER BY location.id_location) AS RowNumber
-                    FROM location
-                    INNER JOIN image ON image.fk_location = location.id_location
-                    where RowNumber BETWEEN ? AND ?
-                    AND location.name LIKE ?';
-
-         */
-
-        //, array($likeLocation/*,$startId,$endId - $startId*/)
-
-        $stmt = sqlsrv_query(Database::getConnection(), $query);
-
-        var_dump(sqlsrv_errors(SQLSRV_ERR_ALL));
+        $stmt = sqlsrv_query(Database::getConnection(), $query, ['%' . $location . '%']);
 
         return $stmt;
-
     }
 }

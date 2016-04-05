@@ -14,8 +14,7 @@
     <form onsubmit="return loadMoreElements(true)" id="discoverForm">
         <label for="NameFilterString" class="RegisterLabel">Suchtext</label> <input type="text" id="NameFilterString"
                                                                                     name="NameFilterString"
-                                                                                    class="RegisterInput"
-                                                                                    required="required">
+                                                                                    class="RegisterInput">
         <br/>
         <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
 

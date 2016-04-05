@@ -28,6 +28,5 @@ class DiscoverController
         {
             echo '<p> Name = '.$locations['name'].' Dascription = '.$locations['description'].' Bild = </p>';
         }
-        echo '<p>LÄCK BOBBY</p>';
     }
 }

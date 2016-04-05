@@ -1,8 +1,8 @@
 /**
  * Created by Pascal on 04.04.2016.
  */
-var from = 0;
-var to = 100;
+var offset = 0;
+var amount = 100;
 
 $(document).on('click', 'div', function () {
     if (this.id == "infiniteScroll") {
@@ -12,15 +12,8 @@ $(document).on('click', 'div', function () {
 
 loadMoreElements(true);
 
-$(document).scroll(function () {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    //If reached bottom
-    if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+$(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
         loadMoreElements(false);
     }
 });
@@ -28,15 +21,19 @@ $(document).scroll(function () {
 function loadMoreElements(startAgain) {
 
     if (startAgain) {
-        from = 0;
-        to = 100;
-        $("#infiniteScroll").val("Lade...");
+        offset = 0;
+        amount = 20;
+        $("#infiniteScroll").empty();
     }
 
     var filterString = $("#NameFilterString").val();
 
-    var dataString = 'Min=' + from + '&Max=' + to + '&StringFilter=' + filterString;
-    alert(dataString);
+    if (filterString == undefined) {
+        filterString = "";
+    }
+
+    var dataString = 'Offset=' + offset + '&Amount=' + amount + '&StringFilter=' + filterString;
+
     $.ajax({
         type: "POST",
         url: "DiscoverInput.php",
@@ -46,10 +43,8 @@ function loadMoreElements(startAgain) {
             $("#footer").val('Lade...');
         },
         success: function (data) {
-            alert(data);
-            $("#infiniteScroll").val(data);
-            from = to;
-            to += 100;
+            $("#infiniteScroll").append(data);
+            offset += amount;
         }
     });
 
