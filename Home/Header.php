@@ -19,7 +19,7 @@
     <div id="navigation">
         <ul id="navigationList">
             <li ><a class="navigationButton" id="currentSite" href="Home.php">Startseite</a></li>
-            <li ><a class="navigationButton" href="#">Entdecken</a></li>
+            <li ><a class="navigationButton" href="../Discover/Discover.php">Entdecken</a></li>
             <li ><a class="navigationButton" href="../Event/Event.php">Neuer Event</a></li>
         </ul>
     </div>
