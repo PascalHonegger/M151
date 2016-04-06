@@ -39,12 +39,15 @@ class EditSettingsController
         if($allValid)
         {
             $this->model->update($newUsername, $newName, $newSurname, $newMail, $allValid[1] ? $newPassword : null, $codeCorrect ? $secret : null);
+
+            //Reload User from Database
+            $changedUser = $this->loginModel->load($newUsername);
+            $this->session->setCurrentUser($changedUser);
+
+            echo true;
+            return;
         }
 
-        //Reload User from Database
-        $changedUser = $this->loginModel->load($newUsername);
-        $this->session->setCurrentUser($changedUser);
-
-        header('Location: EditSettingsView.php');
+        echo false;
     }
 }

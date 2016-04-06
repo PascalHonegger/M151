@@ -32,7 +32,10 @@ function register() {
             {
 //Shake animation effect.
                 $("#registerform").effect("shake", {times: 2}, 750);
-                $("#Submit").val('Registrieren');
+                $("#Submit").val('✖');
+                setTimeout(function () {
+                    $('#Submit').val('Registrieren')
+                }, 750);
             }
         }
     });
@@ -62,7 +65,10 @@ function login() {
             {
 //Shake animation effect.
                 $("#loginDiv").effect("shake", {times: 2}, 750);
-                $("#SubmitLogin").val('Einloggen');
+                $("#SubmitLogin").val('✖');
+                setTimeout(function () {
+                    $('#SubmitLogin').val('Einloggen')
+                }, 750);
             }
         }
     });

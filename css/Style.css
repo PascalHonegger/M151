@@ -295,6 +295,11 @@ body{
     outline: none;
 }
 
+/* Edit Settings */
+#GoogleAuthenticatorHelp {
+    font-size: 10px;
+}
+
 /* NEW LOCATION FORM */
 
 .LocationInput {
