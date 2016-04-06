@@ -39,8 +39,6 @@ function register() {
             }
         }
     });
-
-    return false;
 }
 
 function login() {
@@ -72,8 +70,6 @@ function login() {
             }
         }
     });
-
-    return false;
 }
 
 function dropdown() {

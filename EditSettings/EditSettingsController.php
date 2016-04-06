@@ -29,7 +29,7 @@ class EditSettingsController
     {
         $valuesValid = Register::inputValid($newUsername, $newPassword, $newRepPassword, $newSurname, $newName, $newMail);
 
-        $allValid = $valuesValid[0] && $valuesValid[2] && $valuesValid[3] && $valuesValid[4];
+        $allValid = $valuesValid[0] && ($newPassword == "" || $valuesValid[1]) && $valuesValid[2] && $valuesValid[3] && $valuesValid[4];
 
         //Authenticator
         $authenticator = new PHPGangsta_GoogleAuthenticator();

@@ -22,7 +22,7 @@
         <div id="loginDiv" class="Login-Div">
             <h1 id="LoginTitle">Login</h1>
 
-            <form id="loginform" onsubmit="return login()">
+            <form id="loginform" onsubmit="login(); return false;">
 
                 <label for="Username" class="LoginLabel">Benutzername</label> <br />
                 <input type="text" id="Username" name="Username" class="LoginInput" required="required"> <br />

@@ -24,7 +24,10 @@ function applySettings() {
         },
         success: function (data) {
             if (data) {
-
+                $("#Submit").val('✔');
+                setTimeout(function () {
+                    $('#Submit').val('Übernehmen')
+                }, 5000);
             }
             else {
 //Shake animation effect.
@@ -32,10 +35,8 @@ function applySettings() {
                 $("#Submit").val('✖');
                 setTimeout(function () {
                     $('#Submit').val('Übernehmen')
-                }, 3000);
+                }, 2000);
             }
         }
     });
-
-    return false;
 }

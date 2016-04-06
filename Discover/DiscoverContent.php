@@ -11,7 +11,7 @@
 <div id="content">
     <h1 id="RegisterTitle">Entdecken</h1>
 
-    <form onsubmit="return loadMoreElements(true)" id="discoverForm">
+    <form onsubmit="loadMoreElements(true); return false;" id="discoverForm">
         <label for="NameFilterString" class="RegisterLabel">Suchtext</label> <input type="text" id="NameFilterString"
                                                                                     name="NameFilterString"
                                                                                     class="RegisterInput">

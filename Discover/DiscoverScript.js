@@ -47,6 +47,4 @@ function loadMoreElements(startAgain) {
             offset += amount;
         }
     });
-
-    return false;
 }

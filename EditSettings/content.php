@@ -22,8 +22,8 @@ $secret = $user['secret'] ? $user['secret'] : $ga->createSecret();
 
     <h1>Einstellungen</h1>
 
-    <form onsubmit="return applySettings()" id="settingsForm">
-        <div style="float:left; position:relative; width: 50%;">
+    <form onsubmit="applySettings(); return false;" id="settingsForm">
+        <div id="settingsLeft">
             <label for="Username" class="SettingsLabel">Benutzername</label> <br/>
             <input type="text" id="Username" name="Username" class="RegisterInput" required="required"
                    value="<?= $user['username'] ?>"> <br/>
@@ -41,7 +41,7 @@ $secret = $user['secret'] ? $user['secret'] : $ga->createSecret();
                    value="<?= $user['mail'] ?>"> <br/>
         </div>
 
-        <div style="float:right; position:relative; width: 50%;">
+        <div id="settingsRight">
             <label for="Password" class="SettingsLabel">Passwort (Leer => Passwort behalten)</label> <br/>
             <input type="password" id="Password" name="Password" class="RegisterInput"><br/>
 

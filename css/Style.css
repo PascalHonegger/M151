@@ -300,6 +300,18 @@ body{
     font-size: 10px;
 }
 
+#settingsLeft {
+    float: left;
+    position: relative;
+    width: 50%;
+}
+
+#settingsRight {
+    float: right;
+    position: relative;
+    width: 50%;
+}
+
 /* NEW LOCATION FORM */
 
 .LocationInput {

@@ -11,7 +11,7 @@
 <div id="LoginContent">
     <h1 id="RegisterTitle">Registrieren</h1>
 
-    <form onsubmit="return register()" id="registerform">
+    <form onsubmit="register(); return false;" id="registerform">
         <label for="RegisterUsername" class="RegisterLabel">Benutzername</label> <br />
         <input type="text" id="RegisterUsername" name="RegisterUsername" class="RegisterInput" required="required"> <br />
 
