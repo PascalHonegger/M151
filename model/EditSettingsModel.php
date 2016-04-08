@@ -13,6 +13,9 @@ class EditSettingsModel
 {
     private $session;
 
+    /**
+     * EditSettingsModel constructor.
+     */
     public function __construct()
     {
         $this->session = CustomSession::getInstance();
@@ -38,5 +41,9 @@ class EditSettingsModel
 
         //Execute Query
         sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail, $secret, $personId));
+
+        if (sqlsrv_errors()) {
+            http_response_code(500);
+        }
     }
 }

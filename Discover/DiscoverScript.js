@@ -18,17 +18,22 @@ $(window).scroll(function () {
     }
 });
 
+$('#NameFilterString').change(function () {
+        loadMoreElements(true);
+    }
+);
+
 function loadMoreElements(startAgain) {
 
     if (startAgain) {
         offset = 0;
-        amount = 20;
+        amount = 50;
         $("#infiniteScroll").empty();
     }
 
     var filterString = $("#NameFilterString").val();
 
-    if (filterString == undefined) {
+    if (filterString === undefined) {
         filterString = "";
     }
 
@@ -39,12 +44,17 @@ function loadMoreElements(startAgain) {
         url: "DiscoverInput.php",
         data: dataString,
         cache: false,
-        beforeSend: function () {
-            $("#footer").val('Lade...');
-        },
         success: function (data) {
             $("#infiniteScroll").append(data);
             offset += amount;
+            createSlides();
         }
+    });
+}
+
+function createSlides() {
+    $(".slides").slidesjs({
+        width: 90,
+        height: 50
     });
 }

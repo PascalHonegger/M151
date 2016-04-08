@@ -65,11 +65,6 @@ class Login
         $this->loginError();
     }
 
-    private function loginError()
-    {
-        echo false;
-    }
-
     /**
      * Saves the user to the Session and exites the script
      * @param $user
@@ -78,7 +73,11 @@ class Login
     private function saveUser($user)
     {
         $this->session->setCurrentUser($user);
-        echo true;
+    }
+
+    private function loginError()
+    {
+        http_response_code(500);
     }
 }
 

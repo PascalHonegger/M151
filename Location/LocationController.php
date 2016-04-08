@@ -13,11 +13,20 @@ class Location
 {
     private $model;
 
-      public function __construct()
+    /**
+     * Location constructor.
+     */
+    public function __construct()
       {
           $this->model = new LocationModel();
       }
 
+    /**
+     * @param int $idCreator
+     * @param string $name
+     * @param string $description
+     * @param string $position
+     */
     public function createLocation(int $idCreator, string $name, string $description, string $position){
 
         $error = 0;
@@ -38,11 +47,9 @@ class Location
                 $filemanager->setImage($_FILES['userfile'],$inserted);
                 return;
             }
-
-            $error = 126;
         }
 
-        header('Location: ../swag.php?action=register&error=' . $error);
+        http_response_code(500);
     }
 
 }

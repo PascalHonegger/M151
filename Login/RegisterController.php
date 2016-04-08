@@ -50,13 +50,12 @@ class Register
             if($insertedUser)
             {
                 $this->session->setCurrentUser($insertedUser);
-                echo true;
                 return;
             }
         }
 
         //Some Error Occured
-        echo false;
+        http_response_code(500);
     }
 
     /**

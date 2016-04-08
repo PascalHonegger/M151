@@ -16,7 +16,7 @@
                                                                                     name="NameFilterString"
                                                                                     class="RegisterInput">
         <br/>
-        <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
+        <input type="submit" name="Discover" class="RegisterButton" id="Discover" value="Discover">
 
     </form>
 

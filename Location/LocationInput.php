@@ -11,7 +11,6 @@ require_once "LocationController.php";
 
 $session = CustomSession::getInstance();
 
-
 $creator = $session->getCurrentUser();
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING) ?? "";
 $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING) ?? "";

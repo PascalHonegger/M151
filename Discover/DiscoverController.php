@@ -2,6 +2,7 @@
 
 require_once "../model/LocationModel.php";
 require_once "../controller/CustomSession.php";
+require_once "DiscoverRowBuilder.php";
 
 /**
  * Created by PhpStorm.
@@ -24,9 +25,9 @@ class DiscoverController
     {
         $datas = $this->model->loadLocationsByIdAndName($from,$to,$nameFilter);
 
-        while($locations = sqlsrv_fetch_array($datas))
+        while ($location = sqlsrv_fetch_array($datas))
         {
-            echo '<p> Name = '.$locations['name'].' Dascription = '.$locations['description'].' Bild = </p>';
+            new DiscoverRowBuilder($location);
         }
     }
 }

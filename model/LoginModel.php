@@ -14,6 +14,10 @@ class LoginModel
     {
         $query = 'SELECT * FROM person WHERE username = ?';
         $stmt = sqlsrv_query(Database::getConnection(), $query, array($username));
+        if (sqlsrv_errors()) {
+            http_response_code(500);
+        }
+
         return sqlsrv_fetch_array($stmt);
     }
 }

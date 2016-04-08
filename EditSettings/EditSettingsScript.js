@@ -23,20 +23,18 @@ function applySettings() {
             $("#Submit").val('Übernehme...');
         },
         success: function (data) {
-            if (data) {
-                $("#Submit").val('✔');
-                setTimeout(function () {
-                    $('#Submit').val('Übernehmen')
-                }, 5000);
-            }
-            else {
-//Shake animation effect.
-                $("#settingsForm").effect("shake", {times: 2}, 750);
-                $("#Submit").val('✖');
-                setTimeout(function () {
-                    $('#Submit').val('Übernehmen')
-                }, 2000);
-            }
+            $("#Submit").val('✔');
+            setTimeout(function () {
+                $('#Submit').val('Übernehmen')
+            }, 5000);
+        },
+        error: function (request, status, error) {
+            //Shake animation effect.
+            $("#settingsForm").effect("shake", {times: 2}, 750);
+            $("#Submit").val('✖');
+            setTimeout(function () {
+                $('#Submit').val('Übernehmen')
+            }, 2000);
         }
     });
 }

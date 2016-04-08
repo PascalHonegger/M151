@@ -29,6 +29,7 @@ class EditSettingsController
     {
         $valuesValid = Register::inputValid($newUsername, $newPassword, $newRepPassword, $newSurname, $newName, $newMail);
 
+        //Password can be empty or must be valid
         $allValid = $valuesValid[0] && ($newPassword == "" || $valuesValid[1]) && $valuesValid[2] && $valuesValid[3] && $valuesValid[4];
 
         //Authenticator
@@ -44,10 +45,9 @@ class EditSettingsController
             $changedUser = $this->loginModel->load($newUsername);
             $this->session->setCurrentUser($changedUser);
 
-            echo true;
             return;
         }
 
-        echo false;
+        http_response_code(500);
     }
 }

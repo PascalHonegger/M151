@@ -39,6 +39,10 @@ class RegisterModel
         //Execute Query
         $stmt = sqlsrv_query($connection, $query, array($username, $hashedPassword, $surname, $name, $mail));
 
+        if (sqlsrv_errors()) {
+            http_response_code(500);
+        }
+
         //Select next Result (SCOPE_IDENTITY)
         sqlsrv_next_result($stmt);
 

@@ -4,7 +4,11 @@
 
 function fadeToHome()
 {
-    $("body").load("../Home/home.php").hide().fadeIn(1500).delay(6000);
+    var delay = 750;
+    $("body").fadeOut(delay);
+    setTimeout(function () {
+        window.location.replace("../Home/home.php");
+    }, delay);
 }
 
 function register() {
@@ -24,19 +28,15 @@ function register() {
         cache: false,
         beforeSend: function(){ $("#Submit").val('Verbinde...');},
         success: function(data){
-            if(data)
-            {
-                fadeToHome();
-            }
-            else
-            {
-//Shake animation effect.
-                $("#registerform").effect("shake", {times: 2}, 750);
-                $("#Submit").val('✖');
-                setTimeout(function () {
-                    $('#Submit').val('Registrieren')
-                }, 750);
-            }
+            fadeToHome();
+        },
+        error: function (request, status, error) {
+            //Shake animation effect.
+            $("#registerform").effect("shake", {times: 2}, 750);
+            $("#Submit").val('✖');
+            setTimeout(function () {
+                $('#Submit').val('Registrieren')
+            }, 750);
         }
     });
 }
@@ -55,19 +55,16 @@ function login() {
         cache: false,
         beforeSend: function(){ $("#SubmitLogin").val('Verbinde...');},
         success: function(data){
-            if(data)
-            {
-                fadeToHome();
-            }
-            else
-            {
-//Shake animation effect.
-                $("#loginDiv").effect("shake", {times: 2}, 750);
-                $("#SubmitLogin").val('✖');
-                setTimeout(function () {
-                    $('#SubmitLogin').val('Einloggen')
-                }, 750);
-            }
+            fadeToHome();
+
+        },
+        error: function (request, status, error) {
+            //Shake animation effect.
+            $("#loginDiv").effect("shake", {times: 2}, 750);
+            $("#SubmitLogin").val('✖');
+            setTimeout(function () {
+                $('#SubmitLogin').val('Einloggen')
+            }, 750);
         }
     });
 }
