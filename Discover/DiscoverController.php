@@ -10,6 +10,10 @@ require_once "DiscoverRowBuilder.php";
  * Date: 01.03.2016
  * Time: 15:44
  */
+
+/**
+ * Controller für das Anzeigen der "Entdecken"-Steite. Lädt die Orte
+ */
 class DiscoverController
 {
     private $model;

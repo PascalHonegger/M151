@@ -9,6 +9,10 @@
 
 require_once "../model/ImageModel.php";
 
+/**
+ * Controller zum speichern der Bilder auf dem Server.
+ * Die Bilder werden direkt auf dem Webserver und nicht in der Datenbank hinterlegt.
+ */
 class FileManager
 {
     /**

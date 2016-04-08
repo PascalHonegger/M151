@@ -10,6 +10,10 @@ require_once "../external/GoogleAuthenticator.php";
  * Date: 01.03.2016
  * Time: 15:44
  */
+
+/**
+ * Controller für die Anmeldung
+ */
 class Login
 {
     private $model;
@@ -22,11 +26,9 @@ class Login
     }
 
     /**
-     * login the specified User with the provided Username / Password
+     * Melde den spezifizierte User mit dem angegebenen Benutername / Passwort an
      * @param string $username
-     * Used for login
      * @param string $password
-     * Used for login
      * @param string $googleAuthCode
      */
     public function loginPerson(string $username, string $password, string $googleAuthCode)
@@ -88,6 +90,3 @@ $authenticationCode = filter_input(INPUT_POST, 'GoogleAuthenticatorCode', FILTER
 $controller = new Login();
 
 $controller->loginPerson($username, $password, $authenticationCode);
-
-//Example Person which exists in Database
-//$controller->loginPerson("Mustards", "TollesPasswort!2015", 0);

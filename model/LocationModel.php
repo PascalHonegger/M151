@@ -8,6 +8,10 @@ require_once "Database.inc";
  * Date: 15.03.2016
  * Time: 14:02
  */
+
+/**
+ * Model für die Orte
+ */
 class LocationModel
 {
 
@@ -22,6 +26,7 @@ class LocationModel
     }
 
     /**
+     * Erstellt einen Ort in der Datenbank.
      * @param int $idcreator
      * @param string $name
      * @param string $description
@@ -45,6 +50,7 @@ class LocationModel
     }
 
     /**
+     * Alle Locations. Verwendet beim Erstellen der Events.
      * @return bool|resource
      */
     public function getLocations() {
@@ -60,6 +66,9 @@ class LocationModel
     }
 
     /**
+     * Lädt die Orte, welche den mitgegebenen String im Namen enthalten.
+     * Offset: Beim wievielten Datensatz das Laden beginnt
+     * Rows: Wie viele Datensätze geladen werden
      * @param int $offset
      * @param int $rows
      * @param string $location

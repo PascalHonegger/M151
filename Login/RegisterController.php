@@ -9,6 +9,10 @@ require_once "../controller/CustomSession.php";
  * Date: 01.03.2016
  * Time: 15:44
  */
+
+/**
+ * Controller für die Registrierung
+ */
 class Register
 {
     private static $passwordRegularExpression = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}/';

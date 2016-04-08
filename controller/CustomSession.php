@@ -6,16 +6,13 @@
  * Date: 15.03.2016
  * Time: 13:59
  */
+
+/**
+ * Eigene Implementation der Session, damit diese von der Logik getrennt ist.
+ */
 class CustomSession
 {
     private static $instance;
-
-    public static function getInstance() {
-        if(!self::$instance) { // If no instance then create one
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
 
     /**
      * SessionHandler constructor.
@@ -24,6 +21,14 @@ class CustomSession
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
+    }
+
+    public static function getInstance()
+    {
+        if (!self::$instance) { // If no instance then create one
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 
     public function setCurrentUser($user)

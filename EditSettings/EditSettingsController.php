@@ -12,6 +12,10 @@ require_once "../Login/RegisterController.php";
  * Date: 22.03.2016
  * Time: 13:32
  */
+
+/**
+ * Controller für das Anpassen der Daten eines Users.
+ */
 class EditSettingsController
 {
     private $model;

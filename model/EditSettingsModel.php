@@ -9,6 +9,10 @@ require_once "Database.inc";
  * Date: 22.03.2016
  * Time: 13:35
  */
+
+/**
+ * Model für das Anpassen der Daten eines Users.
+ */
 class EditSettingsModel
 {
     private $session;

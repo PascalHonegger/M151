@@ -8,6 +8,10 @@ require_once "Database.inc";
  * Date: 14.03.2016
  * Time: 19:04
  */
+
+/**
+ * Model für die Anmeldung
+ */
 class LoginModel
 {
     public function load(string $username)

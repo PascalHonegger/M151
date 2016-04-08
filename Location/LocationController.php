@@ -9,6 +9,10 @@ require_once "FileManager.php";
  * Date: 15.03.2016
  * Time: 15:09
  */
+
+/**
+ * Controller für die Orte
+ */
 class Location
 {
     private $model;

@@ -8,6 +8,10 @@ require_once "Database.inc";
  * Date: 15.03.2016
  * Time: 14:02
  */
+
+/**
+ * Model für die Events.
+ */
 class EventModel
 {
 
@@ -22,6 +26,7 @@ class EventModel
     }
 
     /**
+     * Erstellt einen Event und gib die ID dessen zurück
      * @param int $idcreator
      * @param string $name
      * @param string $description

@@ -8,6 +8,10 @@ require_once "../Location/FileManager.php";
  * Date: 08.04.2016
  * Time: 19:26
  */
+
+/**
+ * Hilfsklasse für DiscoverController. Stellt einen Location-Wert für das Entdecken bereit
+ */
 class DiscoverRowBuilder
 {
     /**

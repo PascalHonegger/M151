@@ -8,9 +8,14 @@ require_once "Database.inc";
  * Date: 29.03.2016
  * Time: 13:25
  */
+
+/**
+ * Model für die Bilder der Orte
+ */
 class ImageModel
 {
     /**
+     * Erstellt ein Bild in der Datenbank
      * @param int $idLocation
      * @return mixed
      */

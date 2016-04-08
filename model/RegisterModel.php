@@ -9,6 +9,10 @@ require_once "LoginModel.php";
  * Date: 14.03.2016
  * Time: 20:12
  */
+
+/**
+ * Model für die Registrierung
+ */
 class RegisterModel
 {
     /**

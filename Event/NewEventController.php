@@ -9,6 +9,10 @@ require_once "../model/EventModel.php";
  * Date: 22.03.2016
  * Time: 16:20
  */
+
+/**
+ * Controller für das Erstellen neuer Events
+ */
 class NewEventController
 {
     public function createEvent(string $eventName, string $eventDescription, int $location)
