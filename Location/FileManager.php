@@ -41,7 +41,6 @@ class FileManager
      */
     public function getImages(int $idLocation)
     {
-
         return $this->model->getImages($idLocation);
     }
 }

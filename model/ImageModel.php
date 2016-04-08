@@ -35,14 +35,13 @@ class ImageModel
      */
     public function getImages(int $idLocation)
     {
-
         $query = 'SELECT id_image from image where fk_location = ?';
+
+        $stmt = sqlsrv_query(Database::getConnection(), $query, array($idLocation));
 
         if (sqlsrv_errors()) {
             http_response_code(500);
         }
-
-        $stmt = sqlsrv_query(Database::getConnection(), $query, array($idLocation));
 
         return $stmt;
     }

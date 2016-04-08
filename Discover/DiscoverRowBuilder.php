@@ -16,16 +16,26 @@ class DiscoverRowBuilder
      */
     function __construct(array $location)
     {
-        echo '<p> Name = ' . $location['name'] . ' Dascription = ' . $location['description'] . ' Bild = </p>';
+        echo '<p class="LocationRow"> Name = ' . $location['name'] . ' Description = ' . $location['description'];
 
         $filemanager = new FileManager();
 
-        if (is_int($location['id_location'])) {
-            $images = $filemanager->getImages($location['id_location']);
+        $stmt = $filemanager->getImages($location['id_location']);
 
-            while ($image = sqlsrv_fetch_array($images)['id_image']) {
-                echo '<img src="../images/' . $image . '.jpg" class="slides" \>';
-            }
+        $images = array();
+
+        while ($id = sqlsrv_fetch_array($stmt)['id_image']) {
+            array_push($images, $id);
         }
+
+        if (count($images) > 0) {
+            echo '<div class="slides">';
+            foreach ($images as $image) {
+                echo '<img src="../images/' . $image . '.jpg" \>';
+            }
+            echo '</div>';
+        }
+
+        echo '</p>';
     }
 }

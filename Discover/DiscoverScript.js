@@ -4,8 +4,8 @@
 var offset = 0;
 var amount = 100;
 
-$(document).on('click', 'div', function () {
-    if (this.id == "infiniteScroll") {
+$(document).on('click', 'p', function () {
+    if (this.class == "LocationRow") {
         alert(this.id);
     }
 });
@@ -55,6 +55,8 @@ function loadMoreElements(startAgain) {
 function createSlides() {
     $(".slides").slidesjs({
         width: 90,
-        height: 50
+        height: 50,
+        navigation: false,
+        effect: "fade"
     });
 }
