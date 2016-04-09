@@ -32,7 +32,6 @@ class Location
      * @param string $position
      */
     public function createLocation(int $idCreator, string $name, string $description, string $position){
-
         $error = 0;
 
         if (strlen($name) > 50 || strlen($name) < 1 || strlen($description) > 100 || strlen($description) < 1) {

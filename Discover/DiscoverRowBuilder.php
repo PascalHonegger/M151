@@ -20,7 +20,7 @@ class DiscoverRowBuilder
      */
     function __construct(array $location)
     {
-        echo '<p class="LocationRow"> Name = ' . $location['name'] . ' Description = ' . $location['description'];
+        echo '<div class="LocationRow" id="' . $location['id_location'] . '"> Name = ' . $location['name'] . ' Description = ' . $location['description'];
 
         $filemanager = new FileManager();
 
@@ -32,6 +32,7 @@ class DiscoverRowBuilder
             array_push($images, $id);
         }
 
+        //Mindestens ein Bild existiert
         if (count($images) > 0) {
             echo '<div class="slides">';
             foreach ($images as $image) {
@@ -40,6 +41,6 @@ class DiscoverRowBuilder
             echo '</div>';
         }
 
-        echo '</p>';
+        echo '</div>';
     }
 }
