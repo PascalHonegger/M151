@@ -406,7 +406,7 @@ body{
 }
 
 .slides {
-    width: 200px;
+
 }
 
 .LocationValue{
@@ -420,7 +420,7 @@ body{
     margin-bottom: 20px;
 }
 
-#contentLocation{
+.contentLocation {
     margin: 0 auto;
     border-bottom: 5px solid;
 }

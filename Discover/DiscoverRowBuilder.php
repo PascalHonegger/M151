@@ -40,7 +40,7 @@ class DiscoverRowBuilder
         if (count($images) > 0) {
             echo '<div class="slides">';
             foreach ($images as $image) {
-                echo '<img src="../images/' . $image . '.jpg" \>';
+                echo '<img src="../images/' . $image . '.jpg" width="160px"\>';
             }
             echo '</div>';
         }

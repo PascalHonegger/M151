@@ -48,11 +48,12 @@ function loadMoreElements(startAgain) {
 }
 
 function createSlides() {
-    $(".slides").slidesjs({
-        width: 90,
-        height: 50,
-        navigation: false,
-        effect: "fade"
+    $(".slides").bxSlider({
+        pager: false,
+        auto: true,
+        pause: 4000,
+        autoHover: true,
+        slideWidth: 200
     });
 }
 

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/Style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="../external/jquery.slides.min.js"></script>
+    <script src="../external/jquery.bxslider.min.js"></script>
     <script src="DiscoverScript.js"></script>
 </head>
 <body>

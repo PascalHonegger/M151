@@ -14,7 +14,6 @@ function createLocation() {
     form_data.append('description', description);
     form_data.append('position', position);
 
-
     $.ajax({
         type: "POST",
         url: "../Location/LocationInput.php",

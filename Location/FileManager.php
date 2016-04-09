@@ -36,7 +36,7 @@ class FileManager
      */
     public function setImage($image, int $idLocation){
         $targetFile = "../images/" . $this->model->createImage($idLocation) . ".jpg";
-        move_uploaded_file($image['tmp_name'][0], $targetFile);
+        move_uploaded_file($image['tmp_name'], $targetFile);
     }
 
     /**
