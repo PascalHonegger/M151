@@ -53,7 +53,6 @@ function createSlides() {
         auto: true,
         pause: 4000,
         autoHover: true,
-        slideWidth: 200
     });
 }
 

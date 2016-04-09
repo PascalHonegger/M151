@@ -406,21 +406,29 @@ body{
 }
 
 .slides {
-
+    margin-top: 5px;
 }
 
 .LocationValue{
-    height: 35px;
-    width: 400px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 7px;
     border: 0;
     font-size: 15pt;
-    margin-top: 5px;
-    margin-bottom: 20px;
 }
 
 .contentLocation {
     margin: 0 auto;
     border-bottom: 5px solid;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table, th, td{
+    border: 3px #ffffff solid;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+th{
+    text-align: left
 }
