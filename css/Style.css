@@ -108,7 +108,7 @@ body{
 #accountNavigation {
     width: 150px;
     height: 60px;
-    background-color: transparent;
+    background-color: rgb(67,67,67);
     float: right;
 }
 
@@ -343,4 +343,55 @@ body{
     border: 0;
     border-radius: 5px;
     margin: 15px;
+}
+
+/* Nev Event Content*/
+
+.ContentInput {
+    height: 35px;
+    width: 400px;
+    background-color: rgb(250,250,250);
+    border-radius: 7px;
+    border: 0;
+    font-size: 15pt;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.NevEventTextarea {
+    height: 150px;
+    width: 400px;
+    background-color: rgb(250,250,250);
+    border-radius: 7px;
+    border: 0;
+    font-size: 12pt;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.NewEventDropdown {
+    height: 35px;
+    width: 310px;
+    background-color: rgb(250,250,250);
+    border-radius: 7px;
+    border: 0;
+    font-size: 15pt;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.NewEventContent {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.SettingsLabel {
+    font-size: 15pt;
+}
+
+#NewLocLink {
+    text-decoration: none;
+    font-size: 15pt;
+
 }

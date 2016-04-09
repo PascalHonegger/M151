@@ -9,24 +9,20 @@
 require_once "../model/LocationModel.php";
 ?>
 
-<div id="content">
-        <?php
-            $session = CustomSession::getInstance();
-
-            echo "Hallo ".$session->getCurrentUser()['username'];
-        ?>
-    <h1>Neuer Event</h1>
+<div id="content" class="NewEventContent">
+    <h1 id="RegisterTitle">Entdecken</h1>
 
     <form method="post" action="NewEventController.php">
 
 
-        <label> Event Name
-            <input type="text" name="eventname" class="NewEventInput">
-        </label>
-        <label for="NewEventTextarea">Beschreibung</label><textarea name="eventdescription" id="NewEventTextarea">BESCHREIBUNG</textarea>
+        <label for="eventname" class="SettingsLabel"> Event Name </label> <br />
+             <input type="text" name="eventname" class="ContentInput" id="eventname"> <br />
 
-        <label> Ort:
-            <select name="location">
+        <label for="NewEventTextarea" class="SettingsLabel">Beschreibung</label> <br />
+            <textarea name="eventdescription" id="NewEventTextarea" class="NevEventTextarea"></textarea> <br />
+
+        <label for="NewEventLocationSelection" class="SettingsLabel"> Ort: </label> <br />
+            <select name="location" id="NewEventLocationSelection" class="NewEventDropdown">
                 <?php
             $model = new LocationModel();
             $temp = $model->getLocations();
@@ -40,11 +36,11 @@ require_once "../model/LocationModel.php";
                 }
                 ?>
             </select>
-        </label>
-        <a href="Event.php?action=NewPlace">Neuer Ort</a>
 
-        <input type="submit" id="NewEventSubmit" class="NewEventButton">
-        <input type="reset" id="NewEventReset" class="NewEventButton">
+        <a href="Event.php?action=NewPlace" id="NewLocLink">Neuer Ort</a> <br />
+
+        <input type="submit" id="Submit" class="RegisterButton" value="Erstellen">
+        <input type="reset" id="Reset" class="RegisterButton" value="Abbrechen">
     </form>
 
 
