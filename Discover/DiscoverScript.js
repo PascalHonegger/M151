@@ -7,7 +7,7 @@ var amount = 100;
 loadMoreElements(true);
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+    if ($(window).scrollTop() + $(window).height() === $(document).height()) {
         loadMoreElements(false);
     }
 });

@@ -33,8 +33,8 @@ class DiscoverRowBuilder
 
         $images = array();
 
-        while ($id = sqlsrv_fetch_array($stmt)['id_image']) {
-            array_push($images, $id);
+        while ($idImage = sqlsrv_fetch_array($stmt)['id_image']) {
+            array_push($images, $idImage);
         }
 
         if (count($images) > 0) {
