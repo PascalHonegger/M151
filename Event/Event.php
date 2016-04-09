@@ -29,7 +29,7 @@ require_once "../controller/CustomSession.php";
 
                 if($action == 'NewPlace')
                 {
-                    require_once "../Location/LocationView.php";
+                    require_once "../Location/LocationContent.php";
                 }
                 else
                 {

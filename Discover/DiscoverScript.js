@@ -4,12 +4,6 @@
 var offset = 0;
 var amount = 100;
 
-$(document).on('click', 'p', function () {
-    if (this.class == "LocationRow") {
-        alert(this.id);
-    }
-});
-
 loadMoreElements(true);
 
 $(window).scroll(function () {
@@ -48,6 +42,7 @@ function loadMoreElements(startAgain) {
             $("#infiniteScroll").append(data);
             offset += amount;
             createSlides();
+            addClickEvent();
         }
     });
 }
@@ -58,5 +53,11 @@ function createSlides() {
         height: 50,
         navigation: false,
         effect: "fade"
+    });
+}
+
+function addClickEvent() {
+    $(".LocationRow").unbind("click").click(function () {
+        alert("You clicked on a location wiht the id: " + this.id);
     });
 }

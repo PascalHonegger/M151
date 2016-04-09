@@ -395,3 +395,28 @@ body{
     font-size: 15pt;
 
 }
+
+
+/* smth else */
+
+.LocationRow{
+    font-size: 18pt;
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+}
+
+.LocationValue{
+    height: 35px;
+    width: 400px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 7px;
+    border: 0;
+    font-size: 15pt;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#contentLocation{
+    margin: 0 auto;
+    border-bottom: 5px solid;
+}
