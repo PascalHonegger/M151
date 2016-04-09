@@ -405,6 +405,10 @@ body{
     font-weight: bold;
 }
 
+.slides {
+    width: 200px;
+}
+
 .LocationValue{
     height: 35px;
     width: 400px;

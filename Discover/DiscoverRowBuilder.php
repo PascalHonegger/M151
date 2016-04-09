@@ -20,7 +20,12 @@ class DiscoverRowBuilder
      */
     function __construct(array $location)
     {
-        echo '<div id="contentLocation"><label class="LocationRow"> Name: </label> </br> <p class="LocationValue"> ' . $location['name'] . '</p></br> <label class="LocationRow"> Description: </label> </br> <p class="LocationValue"> ' . $location['description'] . '</p> ';
+        echo '
+        <div id="' . $location['id_location'] . '" class="LocationRowDiv">
+            <h3 class="LocationRow">Name:</h3>
+            <p class="LocationValue"> ' . $location['name'] . '</p>
+            <h3 class="LocationRow">Description:</h3>
+            <p class="LocationValue">' . $location['description'] . '</p>';
 
         $filemanager = new FileManager();
 
@@ -40,6 +45,6 @@ class DiscoverRowBuilder
             echo '</div>';
         }
 
-        echo '</p> </div>';
+        echo '</div>';
     }
 }

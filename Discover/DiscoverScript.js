@@ -57,7 +57,7 @@ function createSlides() {
 }
 
 function addClickEvent() {
-    $(".LocationRow").unbind("click").click(function () {
+    $(".LocationRowDiv").unbind("click").click(function () {
         alert("You clicked on a location wiht the id: " + this.id);
     });
 }

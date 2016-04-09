@@ -10,14 +10,10 @@
 
 <div id="content">
     <h1 id="RegisterTitle">Entdecken</h1>
-
-
-        <label for="NameFilterString" class="RegisterLabel">Suchtext</label> <input type="text" id="NameFilterString"
-                                                                                    name="NameFilterString"
-                                                                                    class="RegisterInput" onkeyup="loadMoreElements(true)">
-
-
-
-
+    <label for="NameFilterString">Suchtext</label>
+    <input type="text" id="NameFilterString"
+           name="NameFilterString"
+           class="RegisterInput"
+           onkeyup="loadMoreElements(true)">
     <div id="infiniteScroll"></div>
 </div>
