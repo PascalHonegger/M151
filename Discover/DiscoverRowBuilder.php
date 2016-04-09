@@ -22,7 +22,7 @@ class DiscoverRowBuilder
     {
         echo '
         <div id="' . $location['id_location'] . '" class="contentLocation">
-            <table style="width:100%">
+            <table style="width:100%" class="table">
             <tr>
             <th>Name:</th>
             <th>Description:</th>
@@ -46,7 +46,7 @@ class DiscoverRowBuilder
         if (count($images) > 0) {
             echo '<div class="slides">';
             foreach ($images as $image) {
-                echo '<img src="../images/' . $image . '.jpg" width="100%"\>';
+                echo '<img src="../images/' . $image . '.jpg"\>';
             }
             echo '</div>';
         }

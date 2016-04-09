@@ -52,12 +52,12 @@ function createSlides() {
         pager: false,
         auto: true,
         pause: 4000,
-        autoHover: true,
+        autoHover: true
     });
 }
 
 function addClickEvent() {
-    $(".LocationRowDiv").unbind("click").click(function () {
+    $(".contentLocation").unbind("click").click(function () {
         alert("You clicked on a location wiht the id: " + this.id);
     });
 }
