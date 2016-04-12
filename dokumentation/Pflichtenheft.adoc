@@ -1,32 +1,31 @@
 Pflichtenheft Shareloc
 ======================
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 2, 29.03.2016
+Version 3, 12.04.2016
 :toc:
 
-= Auftag
-Erstellung einer Webapplikation. Eine Social Medai Platform welche es einem ermöglicht reale Orte online zu erstellen so dass sie für jeden Sichtbar sind.
-Auf einem Ort können Event erstellt werden, damit der User immer sieht was an diesm Ort passiert und ob er dorthin gehen möchte.
+= Auftrag
+Erstellung einer Webapplikation. Eine Social Media Plattform, welche es einem ermöglicht reale Orte online zu erstellen, sodass sie für jeden sichtbar sind.
+An einem Ort können Events erstellt werden, damit der User immer sieht was an diesem Ort passiert und ob er dorthin gehen möchte.
 
 == Anforderungen
-.Kompatibelität
-* Die Applikation muss auf den unten aufgelisteten Browsern schön ausehen und voll funktionsfähig sein.
+.Kompatibilität
+* Die Applikation muss auf den unten aufgelisteten Browsern schön aussehen und voll funktionsfähig sein.
   - Google Chrome
   - Microsoft Edge
-  - Firefox
+  - Mozilla Firefox
 
 .Umsetzung
 * Datenbank
   - MsSQL
   - Normalform 3
-  - Transaktions sicher
 * Programmiersprachen
-  - Javascript (jquery, Ajax)
+  - JavaScript (jQuery, Ajax)
   - PHP 7.0
   - HTML
 * MVC
-  - Model, View und Controler sinvoll voneindander trenen
-* OOP (Objekt orientertes Programmiern)
+  - Model, View und Controller sinnvoll voneinander trennen
+* OOP (Objekt orientiertes Programmieren)
   - Eigene Klassen
   - Eigene Funktion
 
@@ -34,30 +33,30 @@ Auf einem Ort können Event erstellt werden, damit der User immer sieht was an d
 * Durchgehende Designvorlage an die sich gehalten wird
 * Modernes aber funktionales Design
 
-= Haubtfunktionen
+= Hauptfunktionen
 == Orte
 Ein Ort ist eine in der Realität existierende Lokation. Dieser Ort kann der User, wenn er sich auf der Website registriert hat oder eingeloggt ist,
 online erstellen. Dazu benötigt er die Koordinaten, einen Namen und eine Beschreibung. Ein Bild ist erwünscht aber nicht Pflicht. Es muss aber die
-Möglichkeit bestehen ein Bild zu einem Ord hochzuladen, zudem kann ein Ort mehrere Bilder besitzen. Der Ort bildet die Grundlage für spätere Events,
+Möglichkeit bestehen ein Bild zu einem Ort hochzuladen, zudem kann ein Ort mehrere Bilder besitzen. Der Ort bildet die Grundlage für spätere Events,
 welche auf ihm erstellte werden können. Ein Ort kann vom Ersteller später dann auch editiert werden (Bilder hochladen, Name ändern, Bilder löschen,
-Beschreibung ändern), natürlich kann er den Ort auch komplet löschen. Nur der Ersteller kan den Ort editeiren und löschen! Alle Orte werden auf einer
-zusätzlchen Seite dargestellt. Sie werden in einer Scroll liste präsentiert. Der Name, die Beschreibung und die Bilder werden angezeigt, wenn es mehrere
-Bilder sind werden sie in einem Slider zusammengefast.
+Beschreibung ändern), natürlich kann er den Ort auch komplett löschen. Nur der Ersteller kann den Ort editieren und löschen! Alle Orte werden auf einer
+zusätzlichen Seite dargestellt. Sie werden in einer Scroll liste präsentiert. Der Name, die Beschreibung und die Bilder werden angezeigt, wenn es mehrere
+Bilder sind werden sie in einem Slider zusammengefasst.
 
 .Anforderungen Orte
 * Angaben
   - Koordinaten (Pflichtangabe)
   - Name (Pflichtangabe)
-  - Berschreibung (Pflichtangabe)
+  - Beschreibung (Pflichtangabe)
   - Bilder
 * Bilder
   - Formate: JPG und PNG
-  - automatische skalierung auf der Website
+  - automatische Skalierung auf der Website
 * Editierung
   - Name
   - Beschreibung
   - Bilder
-  - komplette löschung
+  - komplette Löschung
 * Rechte
  - nur der Ersteller kann editieren
  - jeder kann Events auf dem Ort erstellen
@@ -67,27 +66,27 @@ Bilder sind werden sie in einem Slider zusammengefast.
 * Filterung nach Name
 
 .Darstellung
-* Eine Scroll-liste mit allen Orten und angaben zu den Orten (Invinite Scroll)
+* Eine Scroll-Liste mit allen Orten und Angaben zu den Orten (Unendliches Scroll)
 * Angaben
  - Name
  - Beschreibung
  - Bilder in Slider
 
 == Events
-Ein Event kann fast alles sein, die einzige Bedingung ist, dass er auf einem Ort erstellt wir beziehungsweise dort statfindet. Auf einem Ort können mehrere
-Events gleichzeitig stafinden. Jeder kann diese Events ertellen und ansehen. Der Event hat die Eingabefelder: Name, Beschreibung und der Ort an dem er
-ist/sttatfindet. Ein Event kann nicht mehr editiert werden aber vom Ersteller gelöscht werden. Ein Event ist temporär, im gegensatz zum Ort der dauerhaft ist.
-Events sollem dem User mitteilen was am Ort gerade passiert oder wer gerade dort ist. Wenn in der Ortdarstellung auf einen Ort geklickt wirt werden alle Events
-mit angaben aufgeklappt. Bei erneutem klicken werden die Events wieder eingeklappt. Es werden der Name und die Beschreibung dargestellt.
+Ein Event kann fast alles sein, die einzige Bedingung ist, dass er auf einem Ort erstellt wir beziehungsweise dort stattfindet. Auf einem Ort können mehrere
+Events gleichzeitig stattfinden. Jeder kann diese Events erstellen und ansehen. Der Event hat die Eingabefelder: Name, Beschreibung und der Ort, an welchem der Event
+stattfindet. Ein Event kann nicht mehr editiert werden aber vom Ersteller gelöscht werden. Ein Event ist temporär, im Gegensatz zum Ort der dauerhaft ist.
+Events sollen dem User mitteilen was am Ort gerade passiert oder wer gerade dort ist. Wenn in der Ortdarstellung auf einen Ort geklickt wird werden alle Events
+mit Angaben aufgeklappt. Bei erneutem klicken werden die Events wieder eingeklappt. Es werden der Name und die Beschreibung dargestellt.
 
 
 .Anforderungen Events
 * Angaben
   - Name (Pflichtangabe)
-  - Berschreibung (Pflichtangabe)
+  - Beschreibung (Pflichtangabe)
   - Ort (Pflichtfeld)
 * Editierung
-  - komplette löschung
+  - komplette Löschung
 * Rechte
  - jeder kann den Event sehen
  - jeder kann einen Event
@@ -104,21 +103,21 @@ mit angaben aufgeklappt. Bei erneutem klicken werden die Events wieder eingeklap
  - Beschreibung
 
 == Login/Registrierung
-Ein User muss sich, um zugriff auf die Features der Seite zu bekommen, registrieren oder einloggen. Um sich registrieren zu können muss der User folgende
-angaben bereitstellen: Benutzername, Name, E-Mail und Passwort. Nach dem registrienren wird er direkt eingeloggt. Der User kann für zusätzliche Sicherheit
-Google Two Way Authentication aktivieren. Wenn er dies tut muss er beim einloggen einen zusätzlichen Code eingeben, diesen bekommt er per App die von Google
-bereitgestellt wird. Wenn der User eingeloggt ist soll er sich ausloggen können. Wenn der User sich bereits registriert har kann er sich über seinen Benutzername
-und Passwort einloggen. Alle Accountangaben sollen zu einem spätern Zeitpunkt editierbar sein.
+Ein User muss sich, um Zugriff auf die Features der Seite zu bekommen, registrieren oder einloggen. Um sich registrieren zu können muss der User folgende
+Angaben bereitstellen: Benutzername, Name, E-Mail und Passwort. Nach dem registrieren wird er direkt eingeloggt. Der User kann für zusätzliche Sicherheit
+Google Two Way Authentication aktivieren. Wenn er dies tut muss er beim Einloggen einen zusätzlichen Code eingeben, diesen bekommt er per App die von Google
+bereitgestellt wird. Wenn der User eingeloggt ist soll er sich ausloggen können. Wenn der User bereits registriert ist, kann er sich über seinen Benutzernamen
+und sein Passwort einloggen. Alle eingetragenen Angaben sollen zu einem späteren Zeitpunkt editierbar sein.
 
 .Anforderungen Registrierung
 * Angaben
   - Name (Pflichtangabe)
   - E-Mail (Pflichtangabe)
-  - Passwort (Pflichtfeld)
-  - Benutzername (Pflichfeld)
+  - Passwort (Pflichtangabe)
+  - Benutzername (Pflichtangabe)
   - Google Two Way
 * Darstellung
-- Die Registrierung soll in einem Fromular dargestellt werden.
+- Die Registrierung soll in einem Formular dargestellt werden.
 
 .Anforderungen Login
 * Angaben
@@ -131,15 +130,11 @@ und Passwort einloggen. Alle Accountangaben sollen zu einem spätern Zeitpunkt e
 - Als Formular
 
 .Editierung
-* editierbare Angaben
+* Editierbare Angaben
   - Name
   - E-Mail
   - Passwort
   - Benutzername
   - Google Two Way
  * Rechte
- - nur der  Account ersteller kann diese editieren
-
-
-
-
+ - nur der Account Ersteller kann diese editieren

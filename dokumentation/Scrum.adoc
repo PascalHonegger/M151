@@ -1,63 +1,109 @@
 Installation
 ============
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 3, 01.03.2016
+Version 4, 12.04.2016
 :toc:
 
 = Taiga
 Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https://tree.taiga.io/project/pascalhonegger-m151[Scrum-Board]
 
-= 23.02.2016
-== Planung
-* Wir arbeiten aufgteilt
+== 23.02.2016
+=== Planung
+* Wir arbeiten aufgeteilt
 ** Alain => MsSQL
 ** Seraphin => Setup
 ** Pascal => Doku
 
-== Retrospektive
+=== Retrospektive
 * Ziele wurden erreicht
 * Effizientes Arbeiten
 
-= 01.03.2016
-== Planung
+== 01.03.2016
+=== Planung
 * Wir erstellen die Planung für das Projekt
 * Wir erstellen das Datenmodell für die Datenbank
 * Alain erstellt das grundlegende Design unserer Seite als Konzept
 
-== Retrospektive
+=== Retrospektive
 * Schlechte Arbeitsaufteilung
-** Arbeit wurde duch andere Arbeit blockiert
+** Arbeit wurde durch andere Arbeit blockiert
 
-= 08.03.2016
-== Planung
+== 08.03.2016
+=== Planung
 * Pascal setzt die Datenbank auf dem Azure-Server auf
 ** Eine Connection kann hergestellt werden
 * Alain finalisiert das initiale Design und setzt dieses in HTML & CSS um
 * Seraphin Bereitet die PHP-Scripts für die Datenbank vor
 
-== Retrospektive
+=== Retrospektive
 * Zu hohe Ziele angesetzt
 * Nicht alles erreicht
 
-= 15.03.2016
-== Planung
+== 15.03.2016
+=== Planung
 * Pascal überarbeitet die Datenbank und finalisiert danach die Logik des Logins und der Registrierung
 * Seraphin beginnt mit der Arbeit an den Locations
 * Alain erweitert die View mit Login und Register
-== Retrospektive
+
+=== Retrospektive
 * View unterschätzt
 * Abhängigkeit zur Datenbank
 
-= 22.03.2016
-== Planung
-* Wir haben einen engen Zeitplan und möchten daher zuhause weiter Arbeiten.
+== 22.03.2016
+=== Planung
+* Wir haben einen engen Zeitplan und möchten daher zuhause weiter Arbeiten
 * Seraphin arbeitet weiter an den Locations
 * Pascal stellt die Einstellungen und Google-2-Way-Authentication fertig
 * Alain arbeitet an dem GUI und an den Events
 
 
-= 29.03.2016
-== Planung
-* Da wir uns langsam auf das Ende des Moduls zubewegen, möchten wir nun möglichts bald eine funktionsfähe Version besitzen
+== 29.03.2016
+=== Planung
+* Da wir uns langsam auf das Ende des Moduls zubewegen, möchten wir nun möglichst bald eine funktionsfähige Version besitzen
 * Alain arbeitet an der Eventerstellung
 * Seraphin finalisiert den Dateiupload / Ort
+
+== 05.04.2016
+=== Planung
+* Seraphin ist auf Grund technischer Probleme nicht in der Lage, 100% zu arbeiten
+* Alain erweitert das allgemeine Design
+* Pascal und Seraphin versuchen die Darstellung des Ortes abzuschliessen
+
+=== Retrospektive
+* Technische Probleme kosten viel Zeit und sollte so gut wie möglich vermieden werden
+
+== 12.04.2016
+=== Planung
+* Pascal ist abwesend
+* Seraphin erweitert die Dokumentation und das Pflichtenheft
+* Alain erstellt die Tests
+
+== 19.04.2016
+Wir schliessen das Projekt ab und demonstrieren unsere Arbeit der Klasse.
+
+== Fazit
+=== Was haben wir geschafft / was wollten wir schaffen?
+==== Register & Login
+Die Registrierung und das Login funktionieren vollumfänglich. Sowohl die Inputvalidierung als die erweiterte Sicherheit mit dem Google 2-Way Authentifizierungscode sehen gut aus und erfüllen ihren Zweck. Lediglich die Inputvalidierung zeigt nicht spezifisch an, was falsch eingegeben wurde, jedoch wäre die Implementation für dieses erweiterte Feedback zu aufwändig gewesen.
+
+==== Einstellungen / Profil
+Das Konzept mit dem Anzeigen anderer Profile inklusive einem Freunde System war zu Beginn Teil unserer Implementation, wurde aber bei einer genaueren Analyse aus zeitlichen Gründen entfernt. Trotzdem wollten wir die Einstellungen beibehalten. In diesen Einstellungen kann man seine jetzigen Daten sehen, dazu kann man Änderungen an diesen vornehmen. Dazu konnte man dort die 2-Way Authentifizierung aktivieren. Problem hierbei war die Interaktion mit dem Benutzer. Da kein Benutzer immer das Passwort eingeben möchte, falls er beispielsweise seinen Benutzernamen ändern möchte, wird im Falle eines leeren Passworts das alte Passwort beibehalten.
+
+==== Orte erstellen
+Das Erstellen der Orte erlaubt es mehrere Bilder hochzuladen, damit man eine Idee von dem Ort bekommen kann. Dazu kann ein Name und ein Ort angegeben werden. Zu Beginn dachten wir, dass wir eine Karte integrieren mochten, auf welcher ein User entweder über die Adresse oder die Koordinaten einen Ort auswählen kann. Diese Feature wäre jedoch viel zu aufwändig gewesen und wurde daher während der Planung auf Eis gelegt.
+
+==== Orte darstellen
+Auch hier hatten wir zu Beginn die Idee alle Orte auf einer Karte anzuzeigen, doch wurde diese Idee wurde aus Zeitlichen Gründen direkt verworfen. Stattdessen entschieden wir uns für einen Ansatz, welchen wir von diversen Seiten kennen: Infinite Scrolling. Wir entschieden uns dafür die Orte mit den dazugehörigen Bildern in Form eines Sliders darstellen. Der Vorteil an dieser an sich ist, dass der User durch das scrollen an den unteren Bildschirmrand mehr Orte laden kann und nicht alle Ort direkt laden muss. Dies macht vor allem einen Unterschied, wenn mehrere hundert oder sogar tausend Orte existieren und das Laden aller Orte eine Ewigkeit dauern würde. 
+
+==== Events
+Die Events können mit einem dazugehörigen Ort erstellt werden, jedoch nicht direkt gesucht / angesehen werden. Die Einzige Möglichkeit einen Event zu finden ist momentan über den Ort. Klickt man auf diesen in der "Entdecken"-Seite, werden alle dazugehörigen Events angezeigt. Die Funktion für das Suchen nach Events wurde zusammen mit den Interessengruppen eingefroren.
+
+==== Interessengruppen
+Die Interessengruppen waren zu Beginn ein grösseres Feature der Events. Man sollte Interessengruppen finden, diesen beitreten und danach über diese Events finden können. Nach geraumer Zeit ist bei der täglichen Planung aufgefallen, dass unsere Zeit nicht mehr für alle Features reichen wird. Wir entschieden und danach die Interessengruppen auf das minimalste zu beschränken. Dies wurde in der Datenbank / im ERM angepasst. Bei dem täglichen Planen (Daily) viel auf, dass die anderen Features vielleicht nicht fertig werden. Wir entschieden uns die Implementation der Interessengruppen auf PHP und GUI Ebene verschieben und erledigen, falls vorig Zeit vorhanden bleibt. Diese Zeit am Schluss fehlte uns jedoch, da wir die Dokumentation stark unterschätz haben und Pascal einen Tag nicht mitarbeiten konnte.
+
+=== Was würden wir besser machen?
+==== Teamarbeit
+Die Teamarbeit während den Schulstunden war sehr gut! Jeder wusste immer, was er zu tun hatte und der Aktuelle Stand der Arbeit wurde jeweils im Daily oder während der Arbeit ausgetauscht. Das Problem war die Arbeit ausserhalb der Schule. Wir haben die Arbeit untereinander aufgeteilt und abgesprochen, was abgeschlossen werden muss. Doch unter der Woche hatte Seraphin oft keine Zeit und Alain musste verreisen. Daher wurden die geplanten Aufgaben nur selten abgeschlossen, was am Ende vermutlich der Grund für das nicht Erreichen aller Ziele ist.
+
+==== Planung
+Die Planung und das Arbeiten nach Scrum hat uns auf jeden Fall geholfen. So haben wir relativ früh gemerkt, dass wir uns überplant haben und konnten unsere Planung dementsprechend anpassen. image:taiga.png[Taiga] 

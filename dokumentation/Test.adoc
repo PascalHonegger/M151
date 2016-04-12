@@ -1,11 +1,11 @@
 Testprotokoll
 =============
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 2, 29.03.2016
+Version 3, 12.04.2016
 :toc:
 
 = Registrierung
-Dieser Test testet das Registrerungsformular und die PHP-Funktionen.
+Dieser Test testet das Registrierungsformular und die PHP-Funktionen.
 
 
 Voraussetzung: Benutzer ist noch nicht registriert, Registrierungsseite ist geladen
@@ -72,7 +72,7 @@ E-Mail: qwer@dd.sdd
 Passwort: QWER!123qwerr
 
 Passwort Wiederholen: QWER!123qwer 
-|  Registration Felhgeschlagen
+|  Registration Fehlgeschlagen
 |  
 |  
 |====================
@@ -137,7 +137,7 @@ Besucht die seite: http://localhost/M151/Discover/Discover.php
 |====================
 
 = Entdecken
-Testet die Entdekenseite
+Testet die Entdeckenseite
 
 Voraussetzung: Benutzer ist Eingeloggt
 |====================
@@ -149,7 +149,7 @@ Voraussetzung: Benutzer ist Eingeloggt
 |
 | 2.
 |Eingabe in Filter: O
-| Es werden nur och die Orte angezeigt, welche ein O im namen haben.
+| Es werden nur noch die Orte angezeigt, welche ein O im namen haben.
 |
 |
 |====================
