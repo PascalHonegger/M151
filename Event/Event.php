@@ -39,8 +39,6 @@ require_once "../controller/CustomSession.php";
                 require_once "contentmenu.php";
 
                 require_once "../home/Footer.php";
-
-                require_once "../home/Footer.php";
             ?>
         </div>
     </body>
