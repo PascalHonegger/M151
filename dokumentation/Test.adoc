@@ -1,0 +1,157 @@
+Testprotokoll
+=============
+Alain Keller, Pascal Honegger und Seraphin Rihm
+Version 2, 29.03.2016
+:toc:
+
+= Registrierung
+Dieser Test testet das Registrerungsformular und die PHP-Funktionen.
+
+
+Voraussetzung: Benutzer ist noch nicht registriert, Registrierungsseite ist geladen
+
+[width="100%",options="header,footer"]
+
+|====================
+| Test Nr. | Eingabe | Erwartetes Ergebnis | Ergebnis | Status
+| 1. 
+| Username: 70x(q)
+
+Vorname: QWER
+
+Nachname: QWER
+
+E-Mail: qwer@dd.sdd
+
+Passwort: QWER!123qwer
+
+Passwort Wiederholen: QWER!123qwer
+    
+| Login Fehlgschlagen 
+|  
+|  
+| 2. 
+| Username: QWER
+
+Vorname: QWER
+
+Nachname: QWER
+
+E-Mail: qwer@dd.sdd
+
+Passwort: QWER!123qwer
+
+Passwort Wiederholen: QWER!123qwer 
+| Login Erfolgreich weiterleiten zu Startseite.
+|  
+|  
+| 3. 
+|  Username: QWER
+
+Vorname: 
+
+Nachname: QWER
+
+E-Mail: qwer@dd.sdd
+
+Passwort: QWER!123qwer
+
+Passwort Wiederholen: QWER!123qwer 
+|  Meldung, Feld nicht Ausgefüllt
+|  
+|  
+| 4. 
+|  Username: QWER
+
+Vorname: qwer
+
+Nachname: QWER
+
+E-Mail: qwer@dd.sdd
+
+Passwort: QWER!123qwerr
+
+Passwort Wiederholen: QWER!123qwer 
+|  Registration Felhgeschlagen
+|  
+|  
+|====================
+
+= Login
+Testet die Loginfunktion
+
+[width="100%",options="header,footer"]
+
+|====================
+| Test Nr. | Eingabe | Erwartetes Ergebnis | Ergebnis | Status
+| 1.
+| Username: 
+
+Passwort: QWER!123qwer
+| Login Fehlgeschlagen
+|
+|
+| 2.
+| Username: QWER 
+
+Passwort: QWER!123qwer
+| Login Erfolgreich
+|
+|
+|3.
+|Username: qwer
+
+Passwort: QWER!123qwer
+| Login Fehlgeschlagen
+|
+|
+|4.
+|Username: QWER
+
+Passwort: qwer!123qwer
+| Login Fehlgeschlagen
+|
+|
+|====================
+
+= Logout
+Testet die Logoutfunktion
+
+Voraussetzung: Benutzer ist Eingeloggt
+|====================
+| Test Nr. | Eingabe | Erwartetes Ergebnis | Ergebnis | Status
+| 1.
+| Benutzer meldet sich ab
+
+Besucht die seite: http://localhost/M151/Discover/Discover.php
+| Kommt auf Registrierungsseite
+|
+|
+| 2.
+| Benutzer ist angemeldet
+
+Besucht die seite: http://localhost/M151/Discover/Discover.php
+| Discover wird angezeigt
+|
+|
+|====================
+
+= Entdecken
+Testet die Entdekenseite
+
+Voraussetzung: Benutzer ist Eingeloggt
+|====================
+| Test Nr. | Eingabe | Erwartetes Ergebnis | Ergebnis | Status
+| 1.
+| Man wählt in der Navigation die Entdeckenseite
+| Man kommt auf die Entdeckenseite und es werden alle Orte in einem Infinitescroll angezeigt
+|
+|
+| 2.
+|Eingabe in Filter: O
+| Es werden nur och die Orte angezeigt, welche ein O im namen haben.
+|
+|
+|====================
+
+

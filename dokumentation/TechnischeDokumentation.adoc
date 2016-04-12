@@ -92,6 +92,50 @@ Die Registration erfolg ähnlich. Auch hier werden zuerst die Daten clientseitig
 
 Die Verwaltung des Logins erfolgt über die PHP Session-Variabeln. Die Session-Variable mit den Userdaten wird über einen Singelton verwaltet. Dieser kann die Session erzeigen, abfragen und zerstören. Am Anfang von jeder Seite wird überprüft, ob die Session noch existiert, wenn nicht wird man auf die Anmeldung/Registrerung-Seite weitergeleitet.
 
+[source,php]
+----
+class CustomSession
+{
+    private static $instance;
+
+    /**
+     * SessionHandler constructor.
+     */
+    private function __construct() {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
+    public static function getInstance()
+    {
+        if (!self::$instance) { // If no instance then create one
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public function setCurrentUser($user)
+    {
+        $_SESSION['CurrentUser'] = $user;
+    }
+
+    public function getCurrentUser()
+    {
+        return isset($_SESSION['CurrentUser']) ? $_SESSION['CurrentUser'] : null;
+    }
+
+    public function destroySession()
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        session_destroy();
+    }
+}
+----
+
 Zusätzlich habn wir den Google Authenicathor implementiert. Die Api und deren Beschreibung finden Sie hier: 
 https://github.com/PHPGangsta/GoogleAuthenticator
 
@@ -103,7 +147,3 @@ Events und Orte kann man in der Seite 'Neuer Event' erstellen. Den Ort kann man 
 
 == Entdecken
 Das Infinite-Scrolling in der Entecken-Seite wird mit Ajax realisert. Javascript ruft eine Funktion auf dem Server auf, welche alle Orte zurückgibt. Zusätzlich kann man die Orte nach ihrem Namen filtern. Der Filtertext wird über Parameter PHP übergeben. Die Formatierung der Rückgabe wird übersichtshalber in einer zusätzlichen Datei gemacht.
-
-
-
-
