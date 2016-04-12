@@ -24,31 +24,51 @@ Die allgemeinen PHP7-Namingkonventionen wurden eingehalten (Überprüft durch Ph
 * Das Model wird komplett getrennt => Auserhalb der Models is SQL verboten
 * Code muss von CodeClimate als gut bewertet werden
 
+== Ordnerstruktur
+* Für jede Unterseite wird ein neuer Ordner mit passenden Namen rstellt
+* Im Ordner befinden sich die PHP- und Javascript-Dateien für diese Unterseite(ausser Model)
+* Models befinden sich in einem eigenen Ordner
+
 = Architektur
 Im diesem Kapitel wird die Umsetzung der verschiedenen Funktionen im Programm beschrieben.
 
 == Aufbau der Seite
 Die Seite ist in vier Elemente unterteilt: Header, Content Navigation, Content und Footer. Diese werden in separaten Dateien erstellt. Somit können verschiedene Seiten mit dem gleichen Header die selbe Datei brauchen.
+
+Discover.php:
 [source,PHP]
 ----
-<?php
-require_once "DiscoverHeader.php"; // Eigener Header 
+<!DOCTYPE html>
 
-require_once "DiscoverContent.php"; // Eigener Inhalt
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="../css/Style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="../external/jquery.bxslider.min.js"></script>
+        <script src="DiscoverScript.js"></script>
+    </head>
+    <body>
+        <div id="MainDiv">
+    
+            <?php
+                require_once "DiscoverHeader.php"; //Eigener Header
 
-require_once "Discovercontentmenu.php"; // Eigenes Inhaltsmenu
+                require_once "DiscoverContent.php"; // Eigener Inhalt
 
-require_once "../home/Footer.php" // Allgemeiner Footer
-?>
+                require_once "Discovercontentmenu.php"; // Eigenes Menu
+
+                require_once "../home/Footer.php" // Allgemeiner Footer
+            ?>
+        </div>
+    </body>
+</html>
 ----
 
 == Datenbank
 
-
-.Thumbnail linked to full image
 image:erm.png[
-"ERM",width=300,
-link="erm.png"]
+"ERM"]
 
 === Benutzer
 Beim Benutzer werden die Daten der Benutzer abgespeichert. Das Passwort wird von der Applikation verschlüsselt in der Datanbank abgespeichert.
@@ -57,7 +77,7 @@ Beim Benutzer werden die Daten der Benutzer abgespeichert. Das Passwort wird von
 Ein Event wird immer von einem Benutzer erstellt. Zusätzlich werden Name, Beschreibung und Ort erfasst.
 
 === Ort
-Orte werden immer von Benutzer erstellt. Zusätzlich werden Name, Beschreibung und die Koordinaten des Ortes gespeichert. Jeder Ort kann auch Bilder haben. Diese werden auf den Server geladen und der Ablageort wird in der Tabelle image gespeichert. Da wir noch keine erfahrungen in Dateiuploads hatten, haben wir uns einfach einmal für diese Methode entschieden.
+Orte werden immer von Benutzer erstellt. Zusätzlich werden Name, Beschreibung und die Koordinaten des Ortes gespeichert. Jeder Ort kann auch Bilder haben. Diese werden auf den Server geladen und der Ablageort wird in der Tabelle image gespeichert. Da wir noch keine erfahrungen in Dateiuploads hatten, haben wir uns zu Übungszwecken für diese Methode entschieden.
 
 === Gruppe
 User können auch Grupen erstellen. Zu diesen gehören die Interessen der Gruppe und eine Beschreibung. Gruppen können auch Event zugeschrieben werden. Somit lässt sich ermitteln welche Events für welche Gruppen gmeacht sind.
@@ -72,9 +92,14 @@ Die Registration erfolg ähnlich. Auch hier werden zuerst die Daten clientseitig
 
 Die Verwaltung des Logins erfolgt über die PHP Session-Variabeln. Die Session-Variable mit den Userdaten wird über einen Singelton verwaltet. Dieser kann die Session erzeigen, abfragen und zerstören. Am Anfang von jeder Seite wird überprüft, ob die Session noch existiert, wenn nicht wird man auf die Anmeldung/Registrerung-Seite weitergeleitet.
 
+Zusätzlich habn wir den Google Authenicathor implementiert. Die Api und deren Beschreibung finden Sie hier: 
+https://github.com/PHPGangsta/GoogleAuthenticator
+
 
 == Events und Orte erstellen
 Events und Orte kann man in der Seite 'Neuer Event' erstellen. Den Ort kann man nur über diese Seite erstellen. Will man einen Neuen Ort wird ein anderer Content geladen, welcher das Erstellformular für den Ort beinhaltet. Der Controller validert die Daten und übermittelt sie dem Model, welche den Event/Ort in die Datenbank schriebt.
+
+
 
 == Entdecken
 Das Infinite-Scrolling in der Entecken-Seite wird mit Ajax realisert. Javascript ruft eine Funktion auf dem Server auf, welche alle Orte zurückgibt. Zusätzlich kann man die Orte nach ihrem Namen filtern. Der Filtertext wird über Parameter PHP übergeben. Die Formatierung der Rückgabe wird übersichtshalber in einer zusätzlichen Datei gemacht.
