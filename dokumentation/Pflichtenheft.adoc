@@ -1,0 +1,145 @@
+Pflichtenheft Shareloc
+======================
+Alain Keller, Pascal Honegger und Seraphin Rihm
+Version 2, 29.03.2016
+:toc:
+
+= Auftag
+Erstellung einer Webapplikation. Eine Social Medai Platform welche es einem ermöglicht reale Orte online zu erstellen so dass sie für jeden Sichtbar sind.
+Auf einem Ort können Event erstellt werden, damit der User immer sieht was an diesm Ort passiert und ob er dorthin gehen möchte.
+
+== Anforderungen
+.Kompatibelität
+* Die Applikation muss auf den unten aufgelisteten Browsern schön ausehen und voll funktionsfähig sein.
+  - Google Chrome
+  - Microsoft Edge
+  - Firefox
+
+.Umsetzung
+* Datenbank
+  - MsSQL
+  - Normalform 3
+  - Transaktions sicher
+* Programmiersprachen
+  - Javascript (jquery, Ajax)
+  - PHP 7.0
+  - HTML
+* MVC
+  - Model, View und Controler sinvoll voneindander trenen
+* OOP (Objekt orientertes Programmiern)
+  - Eigene Klassen
+  - Eigene Funktion
+
+.Design
+* Durchgehende Designvorlage an die sich gehalten wird
+* Modernes aber funktionales Design
+
+= Haubtfunktionen
+== Orte
+Ein Ort ist eine in der Realität existierende Lokation. Dieser Ort kann der User, wenn er sich auf der Website registriert hat oder eingeloggt ist,
+online erstellen. Dazu benötigt er die Koordinaten, einen Namen und eine Beschreibung. Ein Bild ist erwünscht aber nicht Pflicht. Es muss aber die
+Möglichkeit bestehen ein Bild zu einem Ord hochzuladen, zudem kann ein Ort mehrere Bilder besitzen. Der Ort bildet die Grundlage für spätere Events,
+welche auf ihm erstellte werden können. Ein Ort kann vom Ersteller später dann auch editiert werden (Bilder hochladen, Name ändern, Bilder löschen,
+Beschreibung ändern), natürlich kann er den Ort auch komplet löschen. Nur der Ersteller kan den Ort editeiren und löschen! Alle Orte werden auf einer
+zusätzlchen Seite dargestellt. Sie werden in einer Scroll liste präsentiert. Der Name, die Beschreibung und die Bilder werden angezeigt, wenn es mehrere
+Bilder sind werden sie in einem Slider zusammengefast.
+
+.Anforderungen Orte
+* Angaben
+  - Koordinaten (Pflichtangabe)
+  - Name (Pflichtangabe)
+  - Berschreibung (Pflichtangabe)
+  - Bilder
+* Bilder
+  - Formate: JPG und PNG
+  - automatische skalierung auf der Website
+* Editierung
+  - Name
+  - Beschreibung
+  - Bilder
+  - komplette löschung
+* Rechte
+ - nur der Ersteller kann editieren
+ - jeder kann Events auf dem Ort erstellen
+
+.Vorbedingungen
+* Der User muss eingeloggt sein
+* Filterung nach Name
+
+.Darstellung
+* Eine Scroll-liste mit allen Orten und angaben zu den Orten (Invinite Scroll)
+* Angaben
+ - Name
+ - Beschreibung
+ - Bilder in Slider
+
+== Events
+Ein Event kann fast alles sein, die einzige Bedingung ist, dass er auf einem Ort erstellt wir beziehungsweise dort statfindet. Auf einem Ort können mehrere
+Events gleichzeitig stafinden. Jeder kann diese Events ertellen und ansehen. Der Event hat die Eingabefelder: Name, Beschreibung und der Ort an dem er
+ist/sttatfindet. Ein Event kann nicht mehr editiert werden aber vom Ersteller gelöscht werden. Ein Event ist temporär, im gegensatz zum Ort der dauerhaft ist.
+Events sollem dem User mitteilen was am Ort gerade passiert oder wer gerade dort ist. Wenn in der Ortdarstellung auf einen Ort geklickt wirt werden alle Events
+mit angaben aufgeklappt. Bei erneutem klicken werden die Events wieder eingeklappt. Es werden der Name und die Beschreibung dargestellt.
+
+
+.Anforderungen Events
+* Angaben
+  - Name (Pflichtangabe)
+  - Berschreibung (Pflichtangabe)
+  - Ort (Pflichtfeld)
+* Editierung
+  - komplette löschung
+* Rechte
+ - jeder kann den Event sehen
+ - jeder kann einen Event
+
+.Vorbedingungen
+* Der User muss eingeloggt sein
+* Ein Ort muss erstellt sein oder ausgewählt werden
+
+.Darstellung
+* Events werden zusammen mit den Orten dargestellt
+* Wenn man auf einen Ort klickt werden die zugehörigen Events angezeigt
+* Angaben
+ - Name
+ - Beschreibung
+
+== Login/Registrierung
+Ein User muss sich, um zugriff auf die Features der Seite zu bekommen, registrieren oder einloggen. Um sich registrieren zu können muss der User folgende
+angaben bereitstellen: Benutzername, Name, E-Mail und Passwort. Nach dem registrienren wird er direkt eingeloggt. Der User kann für zusätzliche Sicherheit
+Google Two Way Authentication aktivieren. Wenn er dies tut muss er beim einloggen einen zusätzlichen Code eingeben, diesen bekommt er per App die von Google
+bereitgestellt wird. Wenn der User eingeloggt ist soll er sich ausloggen können. Wenn der User sich bereits registriert har kann er sich über seinen Benutzername
+und Passwort einloggen. Alle Accountangaben sollen zu einem spätern Zeitpunkt editierbar sein.
+
+.Anforderungen Registrierung
+* Angaben
+  - Name (Pflichtangabe)
+  - E-Mail (Pflichtangabe)
+  - Passwort (Pflichtfeld)
+  - Benutzername (Pflichfeld)
+  - Google Two Way
+* Darstellung
+- Die Registrierung soll in einem Fromular dargestellt werden.
+
+.Anforderungen Login
+* Angaben
+  - Benutzername (Pflichtangabe)
+  - Passwort (Pflichtangabe)
+  - Google Two Way
+* Vorbedingungen
+ - Registriert
+* Darstellung
+- Als Formular
+
+.Editierung
+* editierbare Angaben
+  - Name
+  - E-Mail
+  - Passwort
+  - Benutzername
+  - Google Two Way
+ * Rechte
+ - nur der  Account ersteller kann diese editieren
+
+
+
+
