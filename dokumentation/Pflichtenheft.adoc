@@ -73,10 +73,10 @@ Bilder sind werden sie in einem Slider zusammengefasst.
  - Bilder in Slider
 
 == Events
-Ein Event kann fast alles sein, die einzige Bedingung ist, dass er auf einem Ort erstellt wir beziehungsweise dort stattfindet. Auf einem Ort können mehrere
+Ein Event kann fast alles sein, die einzige Bedingung ist, dass er auf einem Ort erstellt wird beziehungsweise dort stattfindet. An einem Ort können mehrere
 Events gleichzeitig stattfinden. Jeder kann diese Events erstellen und ansehen. Der Event hat die Eingabefelder: Name, Beschreibung und der Ort, an welchem der Event
 stattfindet. Ein Event kann nicht mehr editiert werden aber vom Ersteller gelöscht werden. Ein Event ist temporär, im Gegensatz zum Ort der dauerhaft ist.
-Events sollen dem User mitteilen was am Ort gerade passiert oder wer gerade dort ist. Wenn in der Ortdarstellung auf einen Ort geklickt wird werden alle Events
+Events sollen dem User mitteilen was am Ort gerade passiert oder wer gerade dort ist. Wenn in der Ortdarstellung auf einen Ort geklickt wird, werden alle Events
 mit Angaben aufgeklappt. Bei erneutem klicken werden die Events wieder eingeklappt. Es werden der Name und die Beschreibung dargestellt.
 
 
