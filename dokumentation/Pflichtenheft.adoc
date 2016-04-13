@@ -22,7 +22,7 @@ An einem Ort können Events erstellt werden, damit der User immer sieht was an d
 * Programmiersprachen
   - JavaScript (jQuery, Ajax)
   - PHP 7.0
-  - HTML
+  - HTML 5
 * MVC
   - Model, View und Controller sinnvoll voneinander trennen
 * OOP (Objekt orientiertes Programmieren)

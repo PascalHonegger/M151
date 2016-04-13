@@ -29,6 +29,12 @@ Die allgemeinen PHP7-Namingkonventionen wurden eingehalten (Überprüft durch Ph
 * Im Ordner befinden sich die PHP- und Javascript-Dateien für diese Unterseite(ausser Model)
 * Models befinden sich in einem eigenen Ordner
 
+== Continous Integration
+Wir haben die Continous Integration link:https://codeclimate.com/github/PascalHonegger/M151[Code Climate] aufgesetzt. Diese bewertet unseren Code anhand Konventionen und gibt danach eine Punktzahl
+Dadurch möchten wir unsere allgemeine Code-Qualität verbessern!
+* Jede Datei muss eine sehr gute Bewertung haben
+* Falls viele Fehler anstehen, sollten diese Korrigiert werden
+
 = Architektur
 Im diesem Kapitel wird die Umsetzung der verschiedenen Funktionen im Programm beschrieben.
 
@@ -67,8 +73,7 @@ Discover.php:
 
 == Datenbank
 
-image:erm.png[
-"ERM"]
+image:erm.png[ERM]
 
 === Benutzer
 Beim Benutzer werden die Daten der Benutzer abgespeichert. Das Passwort wird von der Applikation verschlüsselt in der Datanbank abgespeichert.
@@ -136,14 +141,11 @@ class CustomSession
 }
 ----
 
-Zusätzlich habn wir den Google Authenicathor implementiert. Die Api und deren Beschreibung finden Sie hier: 
+Zusätzlich haben wir den Google Authenicathor implementiert. Die Api und deren Beschreibung finden Sie hier:
 https://github.com/PHPGangsta/GoogleAuthenticator
-
 
 == Events und Orte erstellen
 Events und Orte kann man in der Seite 'Neuer Event' erstellen. Den Ort kann man nur über diese Seite erstellen. Will man einen Neuen Ort wird ein anderer Content geladen, welcher das Erstellformular für den Ort beinhaltet. Der Controller validert die Daten und übermittelt sie dem Model, welche den Event/Ort in die Datenbank schriebt.
-
-
 
 == Entdecken
 Das Infinite-Scrolling in der Entecken-Seite wird mit Ajax realisert. Javascript ruft eine Funktion auf dem Server auf, welche alle Orte zurückgibt. Zusätzlich kann man die Orte nach ihrem Namen filtern. Der Filtertext wird über Parameter PHP übergeben. Die Formatierung der Rückgabe wird übersichtshalber in einer zusätzlichen Datei gemacht.
