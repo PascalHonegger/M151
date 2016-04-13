@@ -77,16 +77,14 @@ class LocationModel
     public function loadLocationsByIdAndName(int $offset, int $rows, string $location)
     {
         $query = "SELECT 
-                    location.id_location AS id_location,
-                    location.name AS name, 
-                    location.description AS description, 
-                    image.id_image AS imageName
+                    id_location AS id_location,
+                    name AS name, 
+                    description AS description
                     FROM location
-                    LEFT OUTER JOIN image ON image.fk_location = location.id_location 
                     WHERE location.name LIKE ?
                     ORDER BY id_location
                     OFFSET $offset ROWS 
-                    FETCH NEXT $rows ROWS ONLY ";
+                    FETCH NEXT $rows ROWS ONLY";
 
         $stmt = sqlsrv_query(Database::getConnection(), $query, ['%' . $location . '%']);
 

@@ -26,13 +26,10 @@ require_once "../model/LocationModel.php";
                 <?php
             $model = new LocationModel();
             $temp = $model->getLocations();
-                while($locations = sqlsrv_fetch_array($temp))
-                {
+                while ($locations = sqlsrv_fetch_array($temp)) {
                 $loc = $locations['name'];
                 $locID = $locations['id'];
-                echo "
-                <option value='$locID' >$loc</option>
-                ";
+                    echo "<option value='$locID' >$loc</option>";
                 }
                 ?>
             </select>

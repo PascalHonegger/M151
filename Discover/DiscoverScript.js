@@ -41,23 +41,20 @@ function loadMoreElements(startAgain) {
         success: function (data) {
             $("#infiniteScroll").append(data);
             offset += amount;
-            createSlides();
+            createSlides(data);
             addClickEvent();
         }
     });
 }
 
-function createSlides() {
-    $(".slides").bxSlider({
-        pager: false,
-        auto: true,
-        pause: 4000,
-        autoHover: true
-    });
+function createSlides(html) {
+    $(".newSlides").bxSlider({
+        pager: false
+    }).addClass("slides").removeClass("newSlides");
 }
 
 function addClickEvent() {
     $(".contentLocation").unbind("click").click(function () {
-        alert("You clicked on a location wiht the id: " + this.id);
+        //alert("You clicked on a location wiht the id: " + this.id);
     });
 }

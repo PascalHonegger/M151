@@ -7,7 +7,8 @@
         <label class="LocationLabel" for="position"> Position</label><br>
         <input type="text" name="position" id="position" class="RegisterInput" required/><br>
         <label class="LocationLabel" for="userfile">File<br></label>
-        <input type="file" name="userfile[]" id="userfile" class="LocationInput"/><br>
+        <input type="file" name="userfile[]" multiple id="userfile" class="LocationInput"
+               accept="image/jpeg,  image/png"/><br>
 
         <button class="LocationButton" id="submit" type="submit">Absenden</button>
     </form>

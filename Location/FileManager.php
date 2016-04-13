@@ -31,12 +31,15 @@ class FileManager
     }
 
     /**
-     * @param $image
+     * @param array $images
      * @param int $idLocation
      */
-    public function setImage($image, int $idLocation){
-        $targetFile = "../images/" . $this->model->createImage($idLocation) . ".jpg";
-        move_uploaded_file($image['tmp_name'], $targetFile);
+    public function setImage(array $images, int $idLocation)
+    {
+        for ($i = 0; $i < count($images['name']); $i++) {
+            $targetFile = "../images/" . $this->model->createImage($idLocation) . '.' . pathinfo($images['name'][$i], PATHINFO_EXTENSION);
+            move_uploaded_file($images['tmp_name'][$i], $targetFile);
+        }
     }
 
     /**

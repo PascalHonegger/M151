@@ -44,9 +44,10 @@ class DiscoverRowBuilder
         }
 
         if (count($images) > 0) {
-            echo '<div class="slides">';
+            echo '<div class="newSlides">';
             foreach ($images as $image) {
-                echo '<img src="../images/' . $image . '.jpg"\>';
+                $fileName = glob('../images/' . $image . '.*')[0];
+                echo '<img src="../images/' . $fileName . '"\>';
             }
             echo '</div>';
         }

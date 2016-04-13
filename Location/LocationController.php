@@ -47,7 +47,7 @@ class Location
 
             if($inserted){
                 $filemanager = new FileManager();
-                $filemanager->setImage($_FILES['userfile'],$inserted);
+                $filemanager->setImage($_FILES['userfile'], $inserted);
                 return;
             }
         }

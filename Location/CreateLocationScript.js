@@ -3,21 +3,12 @@
  */
 
 function createLocation() {
-    var name=$("#name").val();
-    var description=$("#description").val();
-    var position=$("#position").val();
-
-    var file_data = $('#userfile').prop('files')[0];
-    var form_data = new FormData();
-    form_data.append('userfile', file_data);
-    form_data.append('name', name);
-    form_data.append('description', description);
-    form_data.append('position', position);
+    var genericFormData = new FormData($("form")[1]);
 
     $.ajax({
         type: "POST",
         url: "../Location/LocationInput.php",
-        data: form_data,
+        data: genericFormData,
         cache: false,
         contentType: false,
         processData: false,
@@ -43,4 +34,3 @@ function createLocation() {
         $("body").load("../Event/Event.php").hide().fadeIn(1500).delay(6000);
     }
 }
-
