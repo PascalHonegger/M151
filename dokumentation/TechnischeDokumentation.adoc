@@ -21,17 +21,18 @@ Die allgemeinen PHP7-Namingkonventionen wurden eingehalten (Überprüft durch Ph
 == PHP
 * Jedes Modul / Feature verfügt über eine eigene Klasse
 * Jede Klasse ist in einer separaten Datei
-* Das Model wird komplett getrennt => Auserhalb der Models is SQL verboten
+* Das Model wird komplett getrennt => Ausserhalb der Models is SQL verboten
 * Code muss von CodeClimate als gut bewertet werden
 
 == Ordnerstruktur
 * Für jede Unterseite wird ein neuer Ordner mit passenden Namen rstellt
-* Im Ordner befinden sich die PHP- und Javascript-Dateien für diese Unterseite(ausser Model)
+* Im Ordner befinden sich die PHP- und Javascript-Dateien für diese Unterseite (ausser Model)
 * Models befinden sich in einem eigenen Ordner
 
 == Continous Integration
 Wir haben die Continous Integration link:https://codeclimate.com/github/PascalHonegger/M151[Code Climate] aufgesetzt. Diese bewertet unseren Code anhand Konventionen und gibt danach eine Punktzahl
 Dadurch möchten wir unsere allgemeine Code-Qualität verbessern!
+
 * Jede Datei muss eine sehr gute Bewertung haben
 * Falls viele Fehler anstehen, sollten diese Korrigiert werden
 
@@ -39,7 +40,7 @@ Dadurch möchten wir unsere allgemeine Code-Qualität verbessern!
 Im diesem Kapitel wird die Umsetzung der verschiedenen Funktionen im Programm beschrieben.
 
 == Aufbau der Seite
-Die Seite ist in vier Elemente unterteilt: Header, Content Navigation, Content und Footer. Diese werden in separaten Dateien erstellt. Somit können verschiedene Seiten mit dem gleichen Header die selbe Datei brauchen.
+Die Seite ist in vier Elemente unterteilt: Header, Content Navigation, Content und Footer. Diese werden in separaten Dateien erstellt. Somit können verschiedene Seiten mit dem gleichen Header dieselbe Datei brauchen.
 
 Discover.php:
 [source,PHP]
@@ -76,26 +77,26 @@ Discover.php:
 image:erm.png[ERM]
 
 === Benutzer
-Beim Benutzer werden die Daten der Benutzer abgespeichert. Das Passwort wird von der Applikation verschlüsselt in der Datanbank abgespeichert.
+Beim Benutzer werden die Daten der Benutzer abgespeichert. Das Passwort wird von der Applikation verschlüsselt in der Datenbank abgespeichert.
 
 === Event
 Ein Event wird immer von einem Benutzer erstellt. Zusätzlich werden Name, Beschreibung und Ort erfasst.
 
 === Ort
-Orte werden immer von Benutzer erstellt. Zusätzlich werden Name, Beschreibung und die Koordinaten des Ortes gespeichert. Jeder Ort kann auch Bilder haben. Diese werden auf den Server geladen und der Ablageort wird in der Tabelle image gespeichert. Da wir noch keine erfahrungen in Dateiuploads hatten, haben wir uns zu Übungszwecken für diese Methode entschieden.
+Orte werden immer von Benutzer erstellt. Zusätzlich werden Name, Beschreibung und die Koordinaten des Ortes gespeichert. Jeder Ort kann auch Bilder haben. Diese werden auf den Server geladen und der Ablageort wird in der Tabelle image gespeichert. Da wir noch keine Erfahrungen in Dateiuploads hatten, haben wir uns zu Übungszwecken für diese Methode entschieden.
 
 === Gruppe
-User können auch Grupen erstellen. Zu diesen gehören die Interessen der Gruppe und eine Beschreibung. Gruppen können auch Event zugeschrieben werden. Somit lässt sich ermitteln welche Events für welche Gruppen gmeacht sind.
+User können auch Gruppen erstellen. Zu diesen gehören die Interessen der Gruppe und eine Beschreibung. Gruppen können auch Event zugeschrieben werden. Somit lässt sich ermitteln welche Events für welche Gruppen gemacht sind.
 
 === PHP
-Die Verbinung von PHP zur MSSql-DB wird in einem Singelton gemacht. Jede Datein, welche Zugiff zur Datenabank braucht, fordert diese von diesem Simgelton. Die einzigen Klassen, welche zur Datenbank zugreifen sind die Models. Diese Besitzen verschiedene Funktionen welche Daten auslsesn, oder in die Datenbank speichern. 
+Die Verbinung von PHP zur MSSql-DB wird in einem Singelton hergestellt. Jede Datei welche Zugiff auf die Datenbank benötigt fordert diesen von einem Singelton. Die einzigen Klassen, welche zur Datenbank zugreifen sind die Models. Diese Besitzen verschiedene Funktionen welche Daten auslsesn, oder in die Datenbank speichern. 
 
 == Login/Registrierung
-Das Login erfolgt hauptsächlich über PHP. Eine Clientseitige Javascript Funktion überprüft die Eingaben, bevor sie an den Server gesendet werden. Somit wird der Datenverkehr bei falscheingaben verringert. Im PHP werden die Daten nochmals überprüft, da man Javascript deaktivieren oder bearbeiten kann. Die Daten werden mit den Benutzerdaten in der Datenbank verglichen, ist ein Treffer vorhanden, wird man in den Benutzerbereich weitergeleitet.
+Das Login erfolgt hauptsächlich über PHP. Eine Clientseitige JavaScript Funktion überprüft die Eingaben, bevor sie an den Server gesendet werden. Somit wird der Datenverkehr bei falscheingaben verringert. Im PHP werden die Daten nochmals überprüft, da man JavaScript deaktivieren oder bearbeiten kann. Die Daten werden mit den Benutzerdaten in der Datenbank verglichen, ist ein Treffer vorhanden, wird man in den Benutzerbereich weitergeleitet.
 
-Die Registration erfolg ähnlich. Auch hier werden zuerst die Daten clientseitig geprüft, wie z.B. ob die eingegeben E-Mail Adressse ein @ beinhaltet. Auf dem Server werden die Daten nochmals überprüft und beim Erfolg in die Datenbank gespeichert. Ist die Registrierung erfolgreich, wird der Benutzer automatisch angemeldet.
+Die Registration Erfolg ähnlich. Auch hier werden zuerst die Daten clientseitig geprüft, wie z.B. ob die eingegeben E-Mail Adressse ein @ beinhaltet. Auf dem Server werden die Daten nochmals überprüft und beim Erfolg in die Datenbank gespeichert. Ist die Registrierung erfolgreich, wird der Benutzer automatisch angemeldet.
 
-Die Verwaltung des Logins erfolgt über die PHP Session-Variabeln. Die Session-Variable mit den Userdaten wird über einen Singelton verwaltet. Dieser kann die Session erzeigen, abfragen und zerstören. Am Anfang von jeder Seite wird überprüft, ob die Session noch existiert, wenn nicht wird man auf die Anmeldung/Registrerung-Seite weitergeleitet.
+Die Verwaltung des Logins erfolgt über die PHP Session-Variablen. Die Session-Variable mit den Userdaten wird über einen Singelton verwaltet. Dieser kann die Session erzeigen, abfragen und zerstören. Am Anfang von jeder Seite wird überprüft, ob die Session noch existiert, wenn nicht wird man auf die Anmeldung/Registrierung-Seite weitergeleitet.
 
 [source,php]
 ----
@@ -141,11 +142,11 @@ class CustomSession
 }
 ----
 
-Zusätzlich haben wir den Google Authenicathor implementiert. Die Api und deren Beschreibung finden Sie hier:
+Zusätzlich haben wir den Google Authenticator implementiert. Die Api und deren Beschreibung finden Sie hier:
 https://github.com/PHPGangsta/GoogleAuthenticator
 
 == Events und Orte erstellen
-Events und Orte kann man in der Seite 'Neuer Event' erstellen. Den Ort kann man nur über diese Seite erstellen. Will man einen Neuen Ort wird ein anderer Content geladen, welcher das Erstellformular für den Ort beinhaltet. Der Controller validert die Daten und übermittelt sie dem Model, welche den Event/Ort in die Datenbank schriebt.
+Events und Orte kann man in der Seite 'Neuer Event' erstellen. Den Ort kann man nur über diese Seite erstellen. Will man einen Neuen Ort wird ein anderer Content geladen, welcher das Erstellformular für den Ort beinhaltet. Der Controller validiert die Daten und übermittelt sie dem Model, welche den Event/Ort in die Datenbank schriebt.
 
 == Entdecken
-Das Infinite-Scrolling in der Entecken-Seite wird mit Ajax realisert. Javascript ruft eine Funktion auf dem Server auf, welche alle Orte zurückgibt. Zusätzlich kann man die Orte nach ihrem Namen filtern. Der Filtertext wird über Parameter PHP übergeben. Die Formatierung der Rückgabe wird übersichtshalber in einer zusätzlichen Datei gemacht.
+Das Infinite-Scrolling in der Entdecken-Seite wird mit Ajax realisiert. JavaScript ruft eine Funktion auf dem Server auf, welche alle Orte zurückgibt. Zusätzlich kann man die Orte nach ihrem Namen filtern. Der Filtertext wird über Parameter PHP übergeben. Die Formatierung der Rückgabe wird übersichtshalber in einer zusätzlichen Datei gemacht.
