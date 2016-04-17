@@ -8,7 +8,7 @@
 
 ?>
 
-<div id="LoginContent">
+<div id="LoginContent" onclick="hideLogin()">
     <h1 id="RegisterTitle">Registrieren</h1>
 
     <form onsubmit="register(); return false;" id="registerform">

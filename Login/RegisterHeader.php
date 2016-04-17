@@ -8,18 +8,16 @@
 ?>
 
 <div id="header">
-    <div id="login" onclick="dropdown()">
-
-    </div>
+    <div id="login" onclick="dropdown()"></div>
 
     <div id="navigation">
         <ul id="navigationList">
-            <li ><a class="navigationButton" id="currentSite" href="#" onclick="dropdown()">Startseite</a></li>
-            <li ><a class="navigationButton" href="#">Entdecken</a></li>
-            <li ><a class="navigationButton" href="#">Neuer Event</a></li>
+            <li><a class="navigationButton" href="#" onclick="dropdown()">Anmelden</a></li>
+            <li><a class="navigationButton" href="#" onclick="dropdown()">Entdecken</a></li>
+            <li><a class="navigationButton" href="#" onclick="dropdown()">Neuer Event</a></li>
         </ul>
 
-        <div id="loginDiv" class="Login-Div">
+        <div id="loginDiv" class="Login-Div" onclick="">
             <h1 id="LoginTitle">Login</h1>
 
             <form id="loginform" onsubmit="login(); return false;">
