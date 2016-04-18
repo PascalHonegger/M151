@@ -12,7 +12,7 @@ require_once "../model/LocationModel.php";
 <div id="content" class="NewEventContent">
     <h1 id="RegisterTitle">Entdecken</h1>
 
-    <form method="post" action="NewEventController.php">
+    <form method="post" action="NewEventInput.php">
 
 
         <label for="eventname" class="SettingsLabel"> Event Name </label> <br />

@@ -16,6 +16,7 @@ $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_NUMBER_INT) ?? 
 if (CustomSession::getInstance()->getCurrentUser()) {
     $controller = new NewEventController();
     $controller->createEvent($eventName, $eventDescription, $location);
+    header('Location: ../Discover/Discover.php');
 } else {
     header('Location: ../Login/RegisterView.php');
 }

@@ -58,3 +58,8 @@ function addClickEvent() {
         //alert("You clicked on a location wiht the id: " + this.id);
     });
 }
+
+function openlocation(location) {
+//    alert  ("sdgds");
+    window.location = "../Events/Event.php?loc=" + location;
+}
