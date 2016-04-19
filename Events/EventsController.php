@@ -11,13 +11,12 @@ require_once "../model/EventModel.php";
  */
 class EventsController
 {
-
-    public function ShowEvents(string $location)
+    public function ShowEvents(int $location, string $locationName)
     {
-        echo "<p>".$location."</p>";
-
         $model = new EventModel();
         $events = $model->loadEventsByLocation($location);
+
+        echo "<p>" . $locationName . "</p>";
 
         echo '
                     <table>

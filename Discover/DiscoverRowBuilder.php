@@ -22,7 +22,7 @@ class DiscoverRowBuilder
     {
         echo '
         <div id="' . $location['id_location'] . '" class="contentLocation">
-            <table style="width:100%" class="table" onclick="openlocation(\''. $location['name'] .'\')">
+            <table style="width:100%" class="table" onclick="openlocation(' . $location['id_location'] . ', \'' . $location['name'] . '\')">
             <tr>
             <th>Name:</th>
             <th>Description:</th>

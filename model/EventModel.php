@@ -50,11 +50,11 @@ class EventModel
 
     }
 
-    public function loadEventsByLocation(string $location)
+    public function loadEventsByLocation(int $location)
     {
-        $query = 'SELECT event.name as name, event.description as description FROM event INNER JOIN location ON event.fk_location = location.id_location WHERE location.name = \''. $location.'\'';
+        $query = 'SELECT event.name AS name, event.description AS description FROM event INNER JOIN location ON event.fk_location = location.id_location WHERE location.id_location = ?';
 
-        $stmt = sqlsrv_query($this->connection, $query);
+        $stmt = sqlsrv_query($this->connection, $query, [$location]);
 
         if (sqlsrv_errors()) {
             http_response_code(500);
