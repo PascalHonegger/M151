@@ -36,7 +36,15 @@ class FileManager
      */
     public function setImage(array $images, int $idLocation)
     {
-        for ($i = 0; $i < count($images['name']); $i++) {
+        $validImages = array();
+
+        for ($i = 0; $i < count($images['error']); $i++) {
+            if ($images['error'][$i] == 0) {
+                array_push($validImages, $image);
+            }
+        }
+
+        for ($i = 0; $i < count($validImages); $i++) {
             $targetFile = "../images/" . $this->model->createImage($idLocation) . '.' . pathinfo($images['name'][$i], PATHINFO_EXTENSION);
             move_uploaded_file($images['tmp_name'][$i], $targetFile);
         }
