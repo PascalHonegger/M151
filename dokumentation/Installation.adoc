@@ -1,7 +1,7 @@
 Installation
 ============
 Alain Keller, Pascal Honegger und Seraphin Rihm
-Version 2, 23.02.2016
+Version 2, 12.04.2016
 :toc:
 
 = Installation XAMPP

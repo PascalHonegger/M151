@@ -69,6 +69,14 @@ Unsere Planung und die Übersicht aller Tasks findet sich auf unserem link:https
 * Alain erweitert das allgemeine Design
 * Pascal und Seraphin versuchen die Darstellung des Ortes abzuschliessen
 
+
+
+
+
+
+
+
+
 === Retrospektive
 * Technische Probleme kosten viel Zeit und sollte so gut wie möglich vermieden werden
 
