@@ -25,10 +25,14 @@
         <input type="email" id="Mail" name="Mail" class="RegisterInput" required="required"> <br />
 
         <label for="RegisterPassword" class="RegisterLabel">Passwort</label> <br />
-        <input type="password" id="RegisterPassword" name="RegisterPassword" class="RegisterInput" required="required"> <br />
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}"
+               title="Mindestens 8 Zeichen lang. Inklusive Sonderzeichen, Grossbuchstaben und Zahlen." type="password"
+               id="RegisterPassword" name="RegisterPassword" class="RegisterInput" required="required"> <br/>
 
         <label for="RepPassword" class="RegisterLabel">Passwort Wiederholen</label> <br />
-        <input type="password" id="RepPassword" name="RepPassword" class="RegisterInput" required="required"> <br />
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&_-])[A-Za-z\d$@!%*?&_-]{8,}"
+               title="Mindestens 8 Zeichen lang. Inklusive Sonderzeichen, Grossbuchstaben und Zahlen." type="password"
+               id="RepPassword" name="RepPassword" class="RegisterInput" required="required"> <br/>
 
         <input type="reset" name="Abbrechen" class="RegisterButton" id="Reset" value="Abbrechen">
         <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
