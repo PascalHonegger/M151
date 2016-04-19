@@ -59,7 +59,6 @@ function addClickEvent() {
     });
 }
 
-function openlocation(location) {
-//    alert  ("sdgds");
-    window.location = "../Events/Event.php?loc=" + location;
+function openlocation(location, name) {
+    window.location = "../Events/Event.php?id=" + location + "&name=" + name;
 }

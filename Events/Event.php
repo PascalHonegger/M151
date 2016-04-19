@@ -28,9 +28,7 @@ if (!CustomSession::getInstance()->getCurrentUser()) {
         <div id="MainDiv">
             <?php
 
-                include "../Discover/DiscoverHeader.php";
-
-                $location = filter_input(INPUT_GET, 'loc');
+            include "header.php";
 
                 require_once "content.php";
 

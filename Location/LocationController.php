@@ -32,22 +32,15 @@ class Location
      * @param string $position
      */
     public function createLocation(int $idCreator, string $name, string $description, string $position){
-        $error = 0;
-
-        if (strlen($name) > 50 || strlen($name) < 1 || strlen($description) > 100 || strlen($description) < 1) {
-            $error = 4;
-        }
-
-        if(!$_FILES['userfile']){
-            $error = 5;
-        }
-
-        if($error == 0){
-            $inserted = $this->model->creatLocation($idCreator,$name,$description,$position);
+        if (strlen($name) < 50 && strlen($name) > 1 && strlen($description) < 100 && strlen($description) > 1) {
+            $inserted = $this->model->creatLocation($idCreator, $name, $description, $position);
 
             if($inserted){
-                $filemanager = new FileManager();
-                $filemanager->setImage($_FILES['userfile'], $inserted);
+                if (isset($_FILES['userfile']) && count($_FILES['userfile']) > 0) {
+                    $filemanager = new FileManager();
+                    $filemanager->setImage($_FILES['userfile'], $inserted);
+                }
+
                 return;
             }
         }

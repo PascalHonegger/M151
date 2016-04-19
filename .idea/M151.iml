@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Event" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Location" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Discover" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Events" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

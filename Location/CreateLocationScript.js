@@ -16,8 +16,8 @@ function createLocation() {
             $("#submit").val('Verbinde...');
         },
         success: function(data){
-            //backToEvent();
-            alert("Success!");
+            $("#submit").val('✔');
+            backToEvent();
         },
         error: function (request, status, error) {
             //Shake animation effect.

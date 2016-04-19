@@ -13,10 +13,11 @@ require_once "EventsController.php";
     <h1 id="RegisterTitle">Entdecken</h1>
 
     <?php
-        $location = $_GET['loc'];
+    $location = filter_input(INPUT_GET, 'id');
+    $locationName = filter_input(INPUT_GET, 'name');
 
     $controller = new EventsController();
-    $controller->ShowEvents($location);
+    $controller->ShowEvents($location, $locationName);
     ?>
 
 
